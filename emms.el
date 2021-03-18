@@ -1,4 +1,4 @@
-;;; emms.el --- The Emacs Multimedia System
+;;; emms.el --- The Emacs Multimedia System  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008,
 ;;   2009, 2018, 2020  Free Software Foundation, Inc.
@@ -375,7 +375,7 @@ Point will not be restored afterward."
   '("ogg" "mp3" "wav" "mpg" "mpeg" "wmv" "wma"
     "mov" "avi" "divx" "ogm" "ogv" "asf" "mkv"
     "rm" "rmvb" "mp4" "flac" "vob" "m4a" "ape"
-    "flv" "webm" "aif")
+    "flv" "webm" "aif" "opus")
   "A list of common formats which player definitions can use.")
 
 
@@ -1261,6 +1261,7 @@ ignore this."
 
 (defun emms-default-ok-track-function (track)
   "A function which OKs all tracks for playing by default."
+  (ignore track) ;; explicit ignore
   t)
 
 ;;; Helper functions

@@ -1,4 +1,4 @@
-;;; emms-i18n.el --- functions for handling coding systems
+;;; emms-i18n.el --- functions for handling coding systems  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
 
@@ -164,7 +164,7 @@ simply passed to `call-process'."
 (defun emms-i18n-detect-buffer-coding-system (&optional buf)
   "Before calling this function, make sure the buffer is literal."
   (let ((size (- (point-max) (point-min)))
-        (func (append emms-i18n-coding-detect-functions 'emms-i18n-detect-coding-function))
+        (_func (append emms-i18n-coding-detect-functions 'emms-i18n-detect-coding-function))
         coding)
     (save-excursion
       (and buf (set-buffer buf))

@@ -1,4 +1,4 @@
-;;; emms-later-do.el --- execute lisp code ... later
+;;; emms-later-do.el --- execute lisp code ... later -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2004, 2005, 2006, 2007, 2008,
 ;;   2009, 2018 Free Software Foundation, Inc.
@@ -76,7 +76,7 @@ empty."
       (setq emms-later-do-timer nil)
     (let (res)
       (unwind-protect
-          (dotimes (b (min emms-later-do-batch (length emms-later-do-list)) res)
+          (dotimes (_b (min emms-later-do-batch (length emms-later-do-list)) res)
             (let ((fun (caar emms-later-do-list))
                   (args (cdar emms-later-do-list)))
               (setq emms-later-do-list (cdr emms-later-do-list))
