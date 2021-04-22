@@ -1,6 +1,6 @@
 ;;; emms-playlist-sort.el --- sort emms playlist  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2005, 2006, 2007, 2008, 2009, 2018 Free Software Foundation, Inc.
+;; Copyright (C) 2005-2021  Free Software Foundation, Inc.
 
 ;; Author: William Xu <william.xwl@gmail.com>
 
@@ -38,14 +38,12 @@
 Currently it understands the following fields: name info-artist
 imfo-composer info-performer info-title info-album info-genre
 info-playing-time info-tracknumber info-discnumber."
-  :type 'symbol
-  :group 'emms-playlist-sort)
+  :type 'symbol)
 
 (defcustom emms-playlist-sort-prefix "S"
   "Prefix key sequence for `emms-playlist-sort-map'.
 Remember to call `emms-playlist-sort-map-setup' if you modify it."
-  :type 'string
-  :group 'emms-playlist-sort)
+  :type 'string)
 
 
 ;;; User Interfaces
@@ -138,21 +136,21 @@ With a prefix argument, oldest first."
   "Setup sort map with latest `emms-playlist-sort-prefix'."
   (setq emms-playlist-sort-map
         (let ((map (make-sparse-keymap)))
-          (define-key map (kbd "n") 'emms-playlist-sort-by-natural-order)
-          (define-key map (kbd "a") 'emms-playlist-sort-by-info-artist)
-          (define-key map (kbd "c") 'emms-playlist-sort-by-play-count)
-          (define-key map (kbd "b") 'emms-playlist-sort-by-info-album)
-          (define-key map (kbd "l") 'emms-playlist-sort-by-last-played)
-          (define-key map (kbd "t") 'emms-playlist-sort-by-info-title)
-          (define-key map (kbd "e") 'emms-playlist-sort-by-file-extension)
+          (define-key map (kbd "n") #'emms-playlist-sort-by-natural-order)
+          (define-key map (kbd "a") #'emms-playlist-sort-by-info-artist)
+          (define-key map (kbd "c") #'emms-playlist-sort-by-play-count)
+          (define-key map (kbd "b") #'emms-playlist-sort-by-info-album)
+          (define-key map (kbd "l") #'emms-playlist-sort-by-last-played)
+          (define-key map (kbd "t") #'emms-playlist-sort-by-info-title)
+          (define-key map (kbd "e") #'emms-playlist-sort-by-file-extension)
 
-          (define-key map (kbd "p") 'emms-playlist-sort-by-info-performer)
-          (define-key map (kbd "y") 'emms-playlist-sort-by-info-year)
-          (define-key map (kbd "o") 'emms-playlist-sort-by-info-note)
-          (define-key map (kbd "C") 'emms-playlist-sort-by-info-composer)
-          (define-key map (kbd "L") 'emms-playlist-sort-by-list)
-          (define-key map (kbd "N") 'emms-playlist-sort-by-name)
-	  (define-key map (kbd "T") 'emms-playlist-sort-by-file-mtime)
+          (define-key map (kbd "p") #'emms-playlist-sort-by-info-performer)
+          (define-key map (kbd "y") #'emms-playlist-sort-by-info-year)
+          (define-key map (kbd "o") #'emms-playlist-sort-by-info-note)
+          (define-key map (kbd "C") #'emms-playlist-sort-by-info-composer)
+          (define-key map (kbd "L") #'emms-playlist-sort-by-list)
+          (define-key map (kbd "N") #'emms-playlist-sort-by-name)
+	  (define-key map (kbd "T") #'emms-playlist-sort-by-file-mtime)
           map))
 
   (define-key emms-playlist-mode-map
@@ -173,7 +171,7 @@ With a prefix argument, oldest first."
                     (point-min) (point-max)))))
       (delete-region (point-min) (point-max))
       (run-hooks 'emms-playlist-cleared-hook)
-      (mapc 'emms-playlist-insert-track (sort tracks predicate))
+      (mapc #'emms-playlist-insert-track (sort tracks predicate))
       (let ((pos (when current (text-property-any (point-min) (point-max)
 					       'emms-track current))))
 	(if pos

@@ -1,6 +1,6 @@
 ;;; emms-metaplaylist-mode.el --- A major mode for lists of Emms playlists  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2006, 2007, 2008, 2009, 2017-2018 Free Software Foundation, Inc.
+;; Copyright (C) 2006-2021  Free Software Foundation, Inc.
 
 ;; Author: Yoni Rabkin <yrk@gnu.org>
 
@@ -43,14 +43,12 @@
   :group 'multimedia)
 
 (defcustom emms-metaplaylist-mode-buffer-name "*Emms Playlist Buffers*"
-  "*Name of the buffer in which Emms playlists will be listed."
-  :type 'string
-  :group 'emms-metaplaylist-mode)
+  "Name of the buffer in which Emms playlists will be listed."
+  :type 'string)
 
 (defcustom emms-metaplaylist-mode-hooks nil
-  "*List of hooks to run on entry to emms-metaplaylist-mode."
-  :type 'list
-  :group 'emms-metaplaylist-mode)
+  "List of hooks to run on entry to emms-metaplaylist-mode."
+  :type 'list)
 
 (defface emms-metaplaylist-mode-face
   '((((class color) (background dark))
@@ -60,8 +58,7 @@
     (((type tty) (class mono))
      (:inverse-video t))
     (t (:background "WhiteSmoke")))
-  "Face for the buffer names in the playlists buffer."
-  :group 'emms-metaplaylist-mode)
+  "Face for the buffer names in the playlists buffer.")
 
 (defface emms-metaplaylist-mode-current-face
   '((((class color) (background dark))
@@ -71,8 +68,7 @@
     (((type tty) (class mono))
      (:inverse-video t))
     (t (:background "red3")))
-  "Face for the current buffer name in the playlists buffer."
-  :group 'emms-metaplaylist-mode)
+  "Face for the current buffer name in the playlists buffer.")
 
 ;;; --------------------------------------------------------
 ;;; Keymap
@@ -81,16 +77,16 @@
 (defvar emms-metaplaylist-mode-map
   (let ((map (make-sparse-keymap)))
     (set-keymap-parent map text-mode-map)
-    (define-key map (kbd "n")   'next-line)
-    (define-key map (kbd "p")   'previous-line)
-    (define-key map (kbd "RET") 'emms-metaplaylist-mode-goto-current)
-    (define-key map (kbd "SPC") 'emms-metaplaylist-mode-set-active)
-    (define-key map (kbd "g")   'emms-metaplaylist-mode-update)
-    (define-key map (kbd "C")   'emms-metaplaylist-mode-new-buffer)
-    (define-key map (kbd "C-k") 'emms-metaplaylist-mode-kill-buffer)
-    (define-key map (kbd "c")   'emms-metaplaylist-mode-center-current)
-    (define-key map (kbd "q")   'kill-this-buffer)
-    (define-key map (kbd "?")   'describe-mode)
+    (define-key map (kbd "n")   #'next-line)
+    (define-key map (kbd "p")   #'previous-line)
+    (define-key map (kbd "RET") #'emms-metaplaylist-mode-goto-current)
+    (define-key map (kbd "SPC") #'emms-metaplaylist-mode-set-active)
+    (define-key map (kbd "g")   #'emms-metaplaylist-mode-update)
+    (define-key map (kbd "C")   #'emms-metaplaylist-mode-new-buffer)
+    (define-key map (kbd "C-k") #'emms-metaplaylist-mode-kill-buffer)
+    (define-key map (kbd "c")   #'emms-metaplaylist-mode-center-current)
+    (define-key map (kbd "q")   #'kill-this-buffer)
+    (define-key map (kbd "?")   #'describe-mode)
     map)
   "Keymap for `emms-metaplaylist-mode'.")
 

@@ -1,7 +1,6 @@
 ;;; emms-mode-line.el --- Mode-Line and titlebar infos for emms  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2004, 2005, 2006, 2007, 2008,
-;;   2009 Free Software Foundation, Inc.
+;; Copyright (C) 2004-2021  Free Software Foundation, Inc.
 
 ;; Author: Mario Domgörgen <kanaldrache@gmx.de>
 ;; Keywords: multimedia
@@ -39,15 +38,13 @@
   :prefix "emms-mode-line-"
   :group 'emms)
 
-(defcustom emms-mode-line-mode-line-function 'emms-mode-line-playlist-current
+(defcustom emms-mode-line-mode-line-function #'emms-mode-line-playlist-current
   "Function for showing infos in mode-line or nil if don't want to."
-  :type '(choice (const :tag "Don't show info on mode-line" nil) function)
-  :group 'emms-mode-line)
+  :type '(choice (const :tag "Don't show info on mode-line" nil) function))
 
 (defcustom emms-mode-line-titlebar-function nil
   "Function for showing infos in titlebar or nil if you don't want to."
-  :type '(choice (const :tag "Don't show info on titlebar" nil) function)
-  :group 'emms-mode-line)
+  :type '(choice (const :tag "Don't show info on titlebar" nil) function))
 
 (defcustom emms-mode-line-format " [ %s ] "
   "String used for displaying the current track in mode-line and titlebar."
@@ -72,10 +69,10 @@
   (if (and arg (> arg 0))
       (progn
         (setq emms-mode-line-active-p t)
-  	(add-hook 'emms-track-updated-functions 'emms-mode-line-alter)
-	(add-hook 'emms-player-finished-hook 'emms-mode-line-blank)
-	(add-hook 'emms-player-stopped-hook 'emms-mode-line-blank)
-	(add-hook 'emms-player-started-hook 'emms-mode-line-alter)
+  	(add-hook 'emms-track-updated-functions #'emms-mode-line-alter)
+	(add-hook 'emms-player-finished-hook #'emms-mode-line-blank)
+	(add-hook 'emms-player-stopped-hook #'emms-mode-line-blank)
+	(add-hook 'emms-player-started-hook #'emms-mode-line-alter)
 	(when (and emms-mode-line-mode-line-function
 		   (not (member 'emms-mode-line-string global-mode-string)))
 	  (setq global-mode-string
@@ -83,10 +80,10 @@
 			'(emms-mode-line-string))))
 	(when emms-player-playing-p (emms-mode-line-alter)))
     (setq emms-mode-line-active-p nil)
-    (remove-hook 'emms-track-updated-functions 'emms-mode-line-alter)
-    (remove-hook 'emms-player-finished-hook 'emms-mode-line-blank)
-    (remove-hook 'emms-player-stopped-hook 'emms-mode-line-blank)
-    (remove-hook 'emms-player-started-hook 'emms-mode-line-alter)
+    (remove-hook 'emms-track-updated-functions #'emms-mode-line-alter)
+    (remove-hook 'emms-player-finished-hook #'emms-mode-line-blank)
+    (remove-hook 'emms-player-stopped-hook #'emms-mode-line-blank)
+    (remove-hook 'emms-player-started-hook #'emms-mode-line-alter)
     (emms-mode-line-restore-titlebar)
     (emms-mode-line-restore-mode-line)))
 

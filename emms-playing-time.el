@@ -1,6 +1,6 @@
 ;;; emms-playing-time.el --- Display emms playing time on mode line  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2005, 2006, 2007, 2008, 2009, 2019 Free Software Foundation, Inc.
+;; Copyright (C) 2005-2021  Free Software Foundation, Inc.
 
 ;; Author: William Xu <william.xwl@gmail.com>, Yoni Rabkin (yrk@gnu.org)
 
@@ -52,21 +52,18 @@
 (defcustom emms-playing-time-display-short-p nil
   "Non-nil will only display elapsed time.
 e.g., display 02:37 instead of 02:37/05:49."
-  :type 'boolean
-  :group 'emms-playing-time)
+  :type 'boolean)
 
 (defcustom emms-playing-time-display-format " %s "
   "Format used for displaying playing time."
-  :type 'string
-  :group 'emms-playing-time)
+  :type 'string)
 
 (defcustom emms-playing-time-style 'time
   "Style used for displaying playing time.
 Valid styles are `time' (e.g., 01:30/4:20),
  `bar' (e.g., [===>  ]),
 and `downtime' (e.g. -03:58)."
-  :type 'symbol
-  :group 'emms-playing-time)
+  :type 'symbol)
 
 
 ;;; Emms Playing Time
@@ -89,7 +86,7 @@ and `downtime' (e.g. -03:58)."
   (setq emms-playing-time 0)
   (unless emms-playing-time-display-timer
     (setq emms-playing-time-display-timer
-	  (run-at-time t 1 'emms-playing-time-display))))
+	  (run-at-time t 1 #'emms-playing-time-display))))
 
 (defun emms-playing-time-stop ()
   "Remove playing time on the mode line."
@@ -107,7 +104,7 @@ and `downtime' (e.g. -03:58)."
       (emms-playing-time-stop)
     (unless emms-playing-time-display-timer
       (setq emms-playing-time-display-timer
-	    (run-at-time t 1 'emms-playing-time-display)))))
+	    (run-at-time t 1 #'emms-playing-time-display)))))
 
 (defun emms-playing-time-seek (sec)
   "Seek forward or backward SEC playing time."
@@ -136,22 +133,22 @@ could call `emms-playing-time-enable-display' and
 	(setq emms-playing-time-p t
               emms-playing-time-display-p t)
 	(emms-playing-time-mode-line)
-	(add-hook 'emms-player-started-hook       'emms-playing-time-start)
-	(add-hook 'emms-player-stopped-hook       'emms-playing-time-stop)
-	(add-hook 'emms-player-finished-hook      'emms-playing-time-stop)
-	(add-hook 'emms-player-paused-hook        'emms-playing-time-pause)
-	(add-hook 'emms-player-seeked-functions   'emms-playing-time-seek)
-	(add-hook 'emms-player-time-set-functions 'emms-playing-time-set))
+	(add-hook 'emms-player-started-hook       #'emms-playing-time-start)
+	(add-hook 'emms-player-stopped-hook       #'emms-playing-time-stop)
+	(add-hook 'emms-player-finished-hook      #'emms-playing-time-stop)
+	(add-hook 'emms-player-paused-hook        #'emms-playing-time-pause)
+	(add-hook 'emms-player-seeked-functions   #'emms-playing-time-seek)
+	(add-hook 'emms-player-time-set-functions #'emms-playing-time-set))
     (setq emms-playing-time-p nil
           emms-playing-time-display-p nil)
     (emms-playing-time-stop)
     (emms-playing-time-restore-mode-line)
-    (remove-hook 'emms-player-started-hook       'emms-playing-time-start)
-    (remove-hook 'emms-player-stopped-hook       'emms-playing-time-stop)
-    (remove-hook 'emms-player-finished-hook      'emms-playing-time-stop)
-    (remove-hook 'emms-player-paused-hook        'emms-playing-time-pause)
-    (remove-hook 'emms-player-seeked-functions   'emms-playing-time-seek)
-    (remove-hook 'emms-player-time-set-functions 'emms-playing-time-set)))
+    (remove-hook 'emms-player-started-hook       #'emms-playing-time-start)
+    (remove-hook 'emms-player-stopped-hook       #'emms-playing-time-stop)
+    (remove-hook 'emms-player-finished-hook      #'emms-playing-time-stop)
+    (remove-hook 'emms-player-paused-hook        #'emms-playing-time-pause)
+    (remove-hook 'emms-player-seeked-functions   #'emms-playing-time-seek)
+    (remove-hook 'emms-player-time-set-functions #'emms-playing-time-set)))
 
 ;;;###autoload
 (defun emms-playing-time-enable-display ()

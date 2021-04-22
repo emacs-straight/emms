@@ -1,6 +1,6 @@
 ;;; emms-playlist-limit.el --- Limit playlist by various info -*- lexical-binding: t -*-
 
-;; Copyright (C) 2018 Free Software Foundation, Inc.
+;; Copyright (C) 2018-2021 Free Software Foundation, Inc.
 
 ;; Author: William Xu <william.xwl@gmail.com>
 ;; Author: Fran Burstall <fran.burstall@gmail.com>
@@ -65,8 +65,7 @@
 
 (defcustom emms-playlist-limit-hook nil
   "Hooks to run after each limit operation."
-  :type 'symbol
-  :group 'emms-playlist-limit)
+  :type 'symbol)
 
 (defmacro define-emms-playlist-limit (attribute)
   "Macro for defining emms playlist limit to ATTRIBUTE function."
@@ -131,16 +130,16 @@ If this playlist is current, make the playlist we switch to current."
 	(emms-playlist-set-playlist-buffer))
       (bury-buffer old-buf))))
 
-(define-key emms-playlist-mode-map (kbd "/ n") 'emms-playlist-limit-to-name)
-(define-key emms-playlist-mode-map (kbd "/ a") 'emms-playlist-limit-to-info-artist)
-(define-key emms-playlist-mode-map (kbd "/ c") 'emms-playlist-limit-to-info-composer)
-(define-key emms-playlist-mode-map (kbd "/ p") 'emms-playlist-limit-to-info-performer)
-(define-key emms-playlist-mode-map (kbd "/ t") 'emms-playlist-limit-to-info-title)
-(define-key emms-playlist-mode-map (kbd "/ b") 'emms-playlist-limit-to-info-album)
-(define-key emms-playlist-mode-map (kbd "/ y") 'emms-playlist-limit-to-info-year)
-(define-key emms-playlist-mode-map (kbd "/ g") 'emms-playlist-limit-to-info-genre)
-(define-key emms-playlist-mode-map (kbd "/ d") 'emms-playlist-limit-to-description)
-(define-key emms-playlist-mode-map (kbd "/ /") 'emms-playlist-limit-to-all)
+(define-key emms-playlist-mode-map (kbd "/ n") #'emms-playlist-limit-to-name)
+(define-key emms-playlist-mode-map (kbd "/ a") #'emms-playlist-limit-to-info-artist)
+(define-key emms-playlist-mode-map (kbd "/ c") #'emms-playlist-limit-to-info-composer)
+(define-key emms-playlist-mode-map (kbd "/ p") #'emms-playlist-limit-to-info-performer)
+(define-key emms-playlist-mode-map (kbd "/ t") #'emms-playlist-limit-to-info-title)
+(define-key emms-playlist-mode-map (kbd "/ b") #'emms-playlist-limit-to-info-album)
+(define-key emms-playlist-mode-map (kbd "/ y") #'emms-playlist-limit-to-info-year)
+(define-key emms-playlist-mode-map (kbd "/ g") #'emms-playlist-limit-to-info-genre)
+(define-key emms-playlist-mode-map (kbd "/ d") #'emms-playlist-limit-to-description)
+(define-key emms-playlist-mode-map (kbd "/ /") #'emms-playlist-limit-to-all)
 
 
 ;;; Low Level Functions

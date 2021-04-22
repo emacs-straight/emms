@@ -1,6 +1,6 @@
 ;;; emms-setup.el --- Setup script for EMMS  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2005-2020 Free Software Foundation, Inc.
+;; Copyright (C) 2005-2021  Free Software Foundation, Inc.
 
 ;; Author: Yoni Rabkin <yrk@gnu.org>
 ;; Keywords: emms setup multimedia
@@ -54,8 +54,7 @@
     emms-player-mpv
     emms-player-vlc
     emms-player-vlc-playlist)
-  "*Default list of players for emms-setup."
-  :group 'emms-setup
+  "Default list of players for emms-setup."
   :type 'list)
 
 ;;;###autoload
@@ -113,17 +112,17 @@ the stable features which come with the Emms distribution."
     (require 'emms-librefm-scrobbler)
     (require 'emms-librefm-stream))
   ;; setup
-  (setq emms-playlist-default-major-mode 'emms-playlist-mode)
-  (add-to-list 'emms-track-initialize-functions 'emms-info-initialize-track)
+  (setq emms-playlist-default-major-mode #'emms-playlist-mode)
+  (add-to-list 'emms-track-initialize-functions #'emms-info-initialize-track)
   (setq emms-info-functions '(emms-info-native emms-info-cueinfo))
-  (setq emms-track-description-function 'emms-info-track-description)
+  (setq emms-track-description-function #'emms-info-track-description)
   (when (fboundp 'emms-cache)		; work around compiler warning
     (emms-cache 1))
   (emms-mode-line 1)
   (emms-mode-line-blank)
   (emms-lyrics 1)
   (emms-playing-time 1)
-  (add-hook 'emms-player-started-hook 'emms-last-played-update-current)
+  (add-hook 'emms-player-started-hook #'emms-last-played-update-current)
   (emms-score 1))
 
 

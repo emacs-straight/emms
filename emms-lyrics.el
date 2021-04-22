@@ -1,6 +1,6 @@
 ;;; emms-lyrics.el --- Display lyrics synchronically  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2005, 2006, 2007, 2008, 2009, 2010, 2013 Free Software Foundation, Inc.
+;; Copyright (C) 2005-2021  Free Software Foundation, Inc.
 
 ;; Author: William Xu <william.xwl@gmail.com>
 ;; Keywords: emms music lyrics
@@ -57,30 +57,25 @@
 
 (defcustom emms-lyrics-display-on-modeline t
   "If non-nil, display lyrics on mode line."
-  :type 'boolean
-  :group 'emms-lyrics)
+  :type 'boolean)
 
 (defcustom emms-lyrics-display-on-minibuffer nil
   "If non-nil, display lyrics on minibuffer."
-  :type 'boolean
-  :group 'emms-lyrics)
+  :type 'boolean)
 
 (defcustom emms-lyrics-display-buffer nil
   "Non-nil will create deciated `emms-lyrics-buffer' to display lyrics."
-  :type 'boolean
-  :group 'emms-lyrics)
+  :type 'boolean)
 
 (defcustom emms-lyrics-dir "~/music/lyrics"
   "Local lyrics repository.
 `emms-lyrics-find-lyric' will look for lyrics in current directory(i.e.,
 same as the music file) and this directory."
-  :type 'string
-  :group 'emms-lyrics)
+  :type 'string)
 
 (defcustom emms-lyrics-display-format " %s "
   "Format for displaying lyrics."
-  :type 'string
-  :group 'emms-lyrics)
+  :type 'string)
 
 (defcustom emms-lyrics-coding-system nil
   "Coding system for reading lyrics files.
@@ -90,31 +85,26 @@ variable to that value; else you'd better leave it to nil, and
 rely on `prefer-coding-system', `file-coding-system-alist' or
 \(info \"(emacs)File Variables\"), sorted by priority
 increasingly."
-  :type 'coding-system
-  :group 'emms-lyrics)
+  :type 'coding-system)
 
 (defcustom emms-lyrics-mode-hook nil
   "Normal hook run after entering Emms Lyric mode."
-  :type 'hook
-  :group 'emms-lyrics)
+  :type 'hook)
 
 (defcustom emms-lyrics-find-lyric-function 'emms-lyrics-find-lyric
   "Function for finding lyric files."
-  :type 'symbol
-  :group 'emms-lyrics)
+  :type 'symbol)
 
 (defcustom emms-lyrics-scroll-p t
   "Non-nil value will enable lyrics scrolling on mode line.
 
 Note: Even if this is set to t, it also depends on
 `emms-lyrics-display-on-modeline' to be t."
-  :type 'boolean
-  :group 'emms-lyrics)
+  :type 'boolean)
 
 (defcustom emms-lyrics-scroll-timer-interval 0.4
   "Interval between scroller timers. The shorter, the faster."
-  :type 'number
-  :group 'emms-lyrics)
+  :type 'number)
 
 
 ;;; User Interfaces
@@ -245,10 +235,11 @@ If we can't find it from local disk, then search it from internet."
         (if (fboundp 'eww)
             (progn (require 'eww)
                    (let ((readable-hook (when (fboundp 'eww-readable)
-                                          (add-hook 'eww-after-render-hook 'eww-readable))))
+                                          (add-hook 'eww-after-render-hook #'eww-readable)
+                                          #'eww-readable)))
                      (eww url)
                      (when readable-hook
-                       (remove-hook 'eww-after-render-hook 'eww-readable))))
+                       (remove-hook 'eww-after-render-hook readable-hook))))
           (browse-url url))
         (message "Lyric file does not exist on file-system.  Searching online...")))))
 
@@ -432,7 +423,7 @@ job."
                         (list
                          (run-at-time (format "%d sec" time)
                                       nil
-                                      'emms-lyrics-display-handler
+                                      #'emms-lyrics-display-handler
                                       lyric
                                       next-lyric
                                       line
@@ -522,7 +513,7 @@ NEXT-LYRIC."
                       (list
                        (run-at-time time
                                     nil
-                                    'emms-lyrics-display
+                                    #'emms-lyrics-display
                                     (if (>= (length lyric) pos)
                                         (substring scrolled-lyric pos)
                                       (throw 'return t))
@@ -535,9 +526,9 @@ NEXT-LYRIC."
 
 (defvar emms-lyrics-mode-map
   (let ((map (make-sparse-keymap)))
-    (define-key map "p" 'emms-lyrics-previous-line)
-    (define-key map "n" 'emms-lyrics-next-line)
-    (define-key map "i" 'emms-lyrics-insert-time)
+    (define-key map "p" #'emms-lyrics-previous-line)
+    (define-key map "n" #'emms-lyrics-next-line)
+    (define-key map "i" #'emms-lyrics-insert-time)
     map)
   "Keymap for `emms-lyrics-mode'.")
 

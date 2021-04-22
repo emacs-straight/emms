@@ -1,6 +1,6 @@
 ;;; jack.el --- Jack Audio Connection Kit support
 
-;; Copyright (C) 2005, 2006, 2007, 2008, 2009  Free Software Foundation, Inc.
+;; Copyright (C) 2005-2021  Free Software Foundation, Inc.
 
 ;; Author: Mario Lang <mlang@delysid.org>
 ;; Keywords: multimedia, processes
@@ -48,35 +48,29 @@
   :group 'processes)
 
 (defcustom jack-rc '("~/.jackdrc" "/etc/jackd.conf")
-  "*JACK run control paths."
-  :group 'jack
+  "JACK run control paths."
   :type 'repeat)
 
 (defcustom jack-use-jack-rc t
-  "*If non-nil, try to retrieve jack startup arguments from run control files
+  "If non-nil, try to retrieve jack startup arguments from run control files
 listed in `jack-rc'.  If no rc file is found or this variable is set
 to nil, use the Emacs variables to build the startup args."
-  :group 'jack
   :type 'boolean)
 
 (defcustom jack-program (executable-find "jackd")
-  "*JACK executable path."
-  :group 'jack
+  "JACK executable path."
   :type 'file)
 
 (defcustom jack-sample-rate 44100
-  "*Default sampling rate for JACK."
-  :group 'jack
+  "Default sampling rate for JACK."
   :type 'integer)
 
 (defcustom jack-period-size 128
-  "*Period size to use when launching new JACK process."
-  :group 'jack
+  "Period size to use when launching new JACK process."
   :type 'integer)
 
 (defcustom jack-alsa-device nil
-  "*ALSA soundcard to use."
-  :group 'jack
+  "ALSA soundcard to use."
   :type '(choice (const :tag "Ask" nil) string))
 
 (defun jack-read-alsa-device ()
@@ -94,8 +88,7 @@ to nil, use the Emacs variables to build the startup args."
   (or jack-alsa-device (jack-read-alsa-device)))
 
 (defcustom jack-output-buffer-name "*JACK output*"
-  "*Output buffer name."
-  :group 'jack
+  "Output buffer name."
   :type 'string)
 
 (defun jack-args ()
@@ -103,7 +96,7 @@ to nil, use the Emacs variables to build the startup args."
 First element is the executable path."
   (or (and jack-use-jack-rc
 	   (catch 'rc-found
-	     (let ((files (mapcar 'expand-file-name jack-rc)))
+	     (let ((files (mapcar #'expand-file-name jack-rc)))
 	       (while files
 		 (if (file-exists-p (car files))
 		     (with-temp-buffer
@@ -122,14 +115,12 @@ First element is the executable path."
 	    (format "-p%d" jack-period-size))))
 
 (defcustom jack-set-rtlimits t
-  "*Use set_rtlimits (if available) to gain realtime priorities if -R
+  "Use set_rtlimits (if available) to gain realtime priorities if -R
 is given in jackd command-line."
-  :group 'jack
   :type 'boolean)
 
 (defcustom jack-set-rtlimits-program (executable-find "set_rtlimits")
-  "*Path to set_rtlimits."
-  :group 'jack
+  "Path to set_rtlimits."
   :type 'file)
 
 (defun jack-maybe-rtlimits (args)
@@ -155,7 +146,7 @@ is given in jackd command-line."
 	      mode-line-format (copy-tree mode-line-format))
 	(setcar (nthcdr 16 mode-line-format)
 		`(:eval (format "load:%.2f" jack-load)))
-	(add-hook 'kill-buffer-hook 'jack-kill nil t)
+	(add-hook 'kill-buffer-hook #'jack-kill nil t)
 	(current-buffer))))
 
 (defvar jack-xruns nil)
@@ -181,8 +172,7 @@ is given in jackd command-line."
        (eq (process-status jack-process) 'run)))
 
 (defcustom jack-started-hook nil
-  "*Hook run when `jack-start' successfully started a new JACK intance."
-  :group 'jack
+  "Hook run when `jack-start' successfully started a new JACK intance."
   :type 'hook)
 
 (defun jack-start ()
@@ -190,7 +180,7 @@ is given in jackd command-line."
   (interactive)
   (if (jack-running-p) (error "JACK already running")
     (setq jack-process
-	  (apply 'start-process "jack" (jack-output-buffer)
+	  (apply #'start-process "jack" (jack-output-buffer)
 		 (jack-maybe-rtlimits (jack-args))))
     (set-process-filter jack-process #'jack-filter)
     (run-hooks 'jack-started-hook)
@@ -263,7 +253,7 @@ is given in jackd command-line."
 
 (defun jack-unique-port-name (strings)
   (let ((start "")
-	(maxlen (apply 'min (mapcar #'length strings))))
+	(maxlen (apply #'min (mapcar #'length strings))))
     (while (and (< (length start) maxlen)
 		(catch 'not-ok
 		  (let ((nextchar (substring (car strings) (length start) (1+ (length start)))))
@@ -280,7 +270,8 @@ is given in jackd command-line."
 		   (emms-remove-if-not predicate (jack-ports program))
 		 (jack-ports program))))
     (if (< (length ports) 2) (caar ports)
-      (completing-read prompt ports nil t (jack-unique-port-name (mapcar 'car ports))))))
+      (completing-read prompt ports nil t
+                       (jack-unique-port-name (mapcar #'car ports))))))
 
 (defun jack-connect (from-program from-port to-program to-port)
   "Connect FROM-PROGRAM's output port FROM-PORT to TO-PROGRAM's input port

@@ -1,7 +1,6 @@
 ;;; emms-info-libtag.el --- Info-method for EMMS using libtag  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008,
-;;   2009 Free Software Foundation, Inc.
+;; Copyright (C) 2003-2021  Free Software Foundation, Inc.
 
 ;; Authors: Ulrik Jensen <terryp@daimi.au.dk>
 ;;          Jorgen Schäfer <forcer@forcix.cx>
@@ -34,7 +33,7 @@
 ;; To activate this method for getting info, use something like:
 
 ;; (require 'emms-info-libtag)
-;; (add-to-list 'emms-info-functions 'emms-info-libtag)
+;; (add-hook 'emms-info-functions 'emms-info-libtag)
 
 ;; Note that you should remove emms-info-mp3info and emms-info-ogginfo
 ;; from the emms-info-functions list if you want to avoid
@@ -72,16 +71,14 @@
 
 (defcustom emms-info-libtag-program-name "emms-print-metadata"
   "Name of emms-info-libtag program."
-  :type '(string)
-  :group 'emms-info-libtag)
+  :type '(string))
 
 (defcustom emms-info-libtag-known-extensions
   (regexp-opt '("mp3" "mp4" "m4a" "ogg" "flac" "spx" "wma"))
   "Regexp of known extensions compatible with `emms-info-libtag-program-name'.
 
 Case is irrelevant."
-  :type '(string)
-  :group 'emms-info-libtag)
+  :type '(string))
 
 (defun emms-info-libtag (track)
   (when (and (eq 'file (emms-track-type track))

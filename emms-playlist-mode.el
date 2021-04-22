@@ -1,6 +1,6 @@
 ;;; emms-playlist-mode.el --- Playlist mode for Emms.  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2005-2019  Free Software Foundation, Inc.
+;; Copyright (C) 2005-2021  Free Software Foundation, Inc.
 
 ;; Author: Yoni Rabkin <yrk@gnu.org>
 
@@ -22,11 +22,11 @@
 
 ;;; Commentary:
 ;;;
-;;; This is a method of displaying and manipulating the different Emms
-;;; playlist buffers.
-;;;
-;;; Emms developer's motto: "When forcer says (require 'jump) we say
-;;; (funcall #'jump height)"
+;; This is a method of displaying and manipulating the different Emms
+;; playlist buffers.
+;;
+;; Emms developer's motto: "When forcer says (require 'jump) we say
+;; (funcall #'jump height)"
 
 ;;; Code:
 
@@ -64,23 +64,20 @@
   :group 'emms)
 
 (defcustom emms-playlist-mode-open-playlists nil
-  "*Determine whether to open playlists in a new EMMS buffer on RET.
+  "Determine whether to open playlists in a new EMMS buffer on RET.
 This is useful if you have a master playlist buffer that is
 composed of other playlists."
-  :type 'boolean
-  :group 'emms-playlist-mode)
+  :type 'boolean)
 
 (defcustom emms-playlist-mode-window-width 25
-  "*Determine the width of the Emms popup window.
+  "Determine the width of the Emms popup window.
 The value should a positive integer."
-  :type 'integer
-  :group 'emms-playlist-mode)
+  :type 'integer)
 
 (defcustom emms-playlist-mode-center-when-go nil
-  "*Determine whether to center on the currently selected track.
+  "Determine whether to center on the currently selected track.
 This is true for every invocation of `emms-playlist-mode-go'."
-  :type 'boolean
-  :group 'emms-playlist-mode)
+  :type 'boolean)
 
 ;;; --------------------------------------------------------
 ;;; Faces
@@ -94,8 +91,7 @@ This is true for every invocation of `emms-playlist-mode-go'."
     (((type tty) (class mono))
      (:inverse-video t))
     (t (:background "Blue")))
-  "Face for the tracks in a playlist buffer."
-  :group 'emms-playlist-mode)
+  "Face for the tracks in a playlist buffer.")
 
 (defface emms-playlist-selected-face
   '((((class color) (background dark))
@@ -105,8 +101,7 @@ This is true for every invocation of `emms-playlist-mode-go'."
     (((type tty) (class mono))
      (:inverse-video t))
     (t (:background "blue3")))
-  "Face for highlighting the selected track."
-  :group 'emms-playlist-mode)
+  "Face for highlighting the selected track.")
 
 ;;; --------------------------------------------------------
 ;;; Keys
@@ -115,41 +110,41 @@ This is true for every invocation of `emms-playlist-mode-go'."
 (defvar emms-playlist-mode-map
   (let ((map (make-sparse-keymap)))
     (set-keymap-parent map text-mode-map)
-    (define-key map (kbd "C-x C-s") 'emms-playlist-save)
-    (define-key map (kbd "C-y") 'emms-playlist-mode-yank)
-    (define-key map (kbd "C-k") 'emms-playlist-mode-kill-track)
-    (define-key map (kbd "C-w") 'emms-playlist-mode-kill)
-    (define-key map (kbd "C-_") 'emms-playlist-mode-undo)
-    (define-key map (kbd "C-/") 'emms-playlist-mode-undo)
-    (define-key map (kbd "C-x u") 'emms-playlist-mode-undo)
-    (define-key map (kbd "C-n") 'next-line)
-    (define-key map (kbd "C-p") 'previous-line)
-    (define-key map (kbd "C-j") 'emms-playlist-mode-insert-newline)
-    (define-key map (kbd "M-y") 'emms-playlist-mode-yank-pop)
-    (define-key map (kbd "M-<") 'emms-playlist-mode-first)
-    (define-key map (kbd "M->") 'emms-playlist-mode-last)
-    (define-key map (kbd "M-n") 'emms-playlist-mode-next)
-    (define-key map (kbd "M-p") 'emms-playlist-mode-previous)
-    (define-key map (kbd "a") 'emms-playlist-mode-add-contents)
-    (define-key map (kbd "b") 'emms-playlist-set-playlist-buffer)
-    (define-key map (kbd "D") 'emms-playlist-mode-kill-track)
-    (define-key map (kbd "n") 'emms-next)
-    (define-key map (kbd "p") 'emms-previous)
-    (define-key map (kbd "SPC") 'scroll-up)
-    (define-key map (kbd ">") 'emms-seek-forward)
-    (define-key map (kbd "<") 'emms-seek-backward)
-    (define-key map (kbd "P") 'emms-pause)
-    (define-key map (kbd "s") 'emms-stop)
-    (define-key map (kbd "f") 'emms-show)
-    (define-key map (kbd "c") 'emms-playlist-mode-center-current)
-    (define-key map (kbd "q") 'emms-playlist-mode-bury-buffer)
-    (define-key map (kbd "K") 'emms-playlist-mode-current-kill)
-    (define-key map (kbd "?") 'describe-mode)
-    (define-key map (kbd "r") 'emms-random)
-    (define-key map (kbd "C") 'emms-playlist-clear)
-    (define-key map (kbd "d") 'emms-playlist-mode-goto-dired-at-point)
-    (define-key map (kbd "<mouse-2>") 'emms-playlist-mode-play-current-track)
-    (define-key map (kbd "RET") 'emms-playlist-mode-play-smart)
+    (define-key map (kbd "C-x C-s") #'emms-playlist-save)
+    (define-key map (kbd "C-y") #'emms-playlist-mode-yank)
+    (define-key map (kbd "C-k") #'emms-playlist-mode-kill-track)
+    (define-key map (kbd "C-w") #'emms-playlist-mode-kill)
+    (define-key map (kbd "C-_") #'emms-playlist-mode-undo)
+    (define-key map (kbd "C-/") #'emms-playlist-mode-undo)
+    (define-key map (kbd "C-x u") #'emms-playlist-mode-undo)
+    (define-key map (kbd "C-n") #'next-line)
+    (define-key map (kbd "C-p") #'previous-line)
+    (define-key map (kbd "C-j") #'emms-playlist-mode-insert-newline)
+    (define-key map (kbd "M-y") #'emms-playlist-mode-yank-pop)
+    (define-key map (kbd "M-<") #'emms-playlist-mode-first)
+    (define-key map (kbd "M->") #'emms-playlist-mode-last)
+    (define-key map (kbd "M-n") #'emms-playlist-mode-next)
+    (define-key map (kbd "M-p") #'emms-playlist-mode-previous)
+    (define-key map (kbd "a") #'emms-playlist-mode-add-contents)
+    (define-key map (kbd "b") #'emms-playlist-set-playlist-buffer)
+    (define-key map (kbd "D") #'emms-playlist-mode-kill-track)
+    (define-key map (kbd "n") #'emms-next)
+    (define-key map (kbd "p") #'emms-previous)
+    (define-key map (kbd "SPC") #'scroll-up)
+    (define-key map (kbd ">") #'emms-seek-forward)
+    (define-key map (kbd "<") #'emms-seek-backward)
+    (define-key map (kbd "P") #'emms-pause)
+    (define-key map (kbd "s") #'emms-stop)
+    (define-key map (kbd "f") #'emms-show)
+    (define-key map (kbd "c") #'emms-playlist-mode-center-current)
+    (define-key map (kbd "q") #'emms-playlist-mode-bury-buffer)
+    (define-key map (kbd "K") #'emms-playlist-mode-current-kill)
+    (define-key map (kbd "?") #'describe-mode)
+    (define-key map (kbd "r") #'emms-random)
+    (define-key map (kbd "C") #'emms-playlist-clear)
+    (define-key map (kbd "d") #'emms-playlist-mode-goto-dired-at-point)
+    (define-key map (kbd "<mouse-2>") #'emms-playlist-mode-play-current-track)
+    (define-key map (kbd "RET") #'emms-playlist-mode-play-smart)
     map)
   "Keymap for `emms-playlist-mode'.")
 
@@ -599,11 +594,11 @@ WINDOW-WIDTH should be a positive integer."
 	mode-name "EMMS")
 
   (setq emms-playlist-insert-track-function
-	'emms-playlist-mode-insert-track)
+	#'emms-playlist-mode-insert-track)
   (setq emms-playlist-update-track-function
-	'emms-playlist-mode-update-track-function)
+	#'emms-playlist-mode-update-track-function)
   (add-hook 'emms-playlist-selection-changed-hook
-	    'emms-playlist-mode-overlay-selected)
+	    #'emms-playlist-mode-overlay-selected)
 
   (emms-playlist-mode-startup)
 

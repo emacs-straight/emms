@@ -1,6 +1,6 @@
 ;;; emms-browser.el --- a track browser supporting covers and filtering  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2006, 2007, 2008, 2009  Free Software Foundation, Inc.
+;; Copyright (C) 2006-2021  Free Software Foundation, Inc.
 
 ;; Author: Damien Elmes <emacs@repose.cx>
 ;; Keywords: emms, mp3, mpeg, multimedia
@@ -286,6 +286,7 @@
 (require 'cl-lib)
 (require 'emms)
 (require 'emms-cache)
+(require 'emms-volume)
 (require 'emms-source-file)
 (require 'emms-playlist-sort)
 (require 'sort)
@@ -307,117 +308,94 @@
 
 (defcustom emms-browser-default-browse-type
   'info-artist
-  "*The default browsing mode."
-  :group 'emms-browser
-  :type 'function)
-
-(defcustom emms-browser-make-name-function
-  'emms-browser-make-name-standard
-  "*A function to make names for entries and subentries.
-Overriding this function allows you to customise how various elements
-are displayed. It is called with two arguments - track and type."
-  :group 'emms-browser
+  "The default browsing mode."
   :type 'function)
 
 (defcustom emms-browser-get-track-field-function
-  'emms-browser-get-track-field-albumartist
-  "*A function to get an element from a track.
+  #'emms-browser-get-track-field-albumartist
+  "A function to get an element from a track.
 Change this to customize the way data is organized in the
 browser. For example,
 `emms-browser-get-track-field-use-directory-name' uses the
 directory name to determine the artist. This means that
 soundtracks, compilations and so on don't populate the artist
 view with lots of 1-track elements."
-  :group 'emms-browser
   :type '(choice (function :tag "Sort by album-artist" emms-browser-get-track-field-albumartist)
                  (function :tag "Simple" emms-browser-get-track-field-simple)))
 
 (defcustom emms-browser-covers
   '("cover_small" "cover_med" "cover_large")
-  "*Control how cover images are found.
+  "Control how cover images are found.
 Can be either a list of small, medium and large images (large
 currently not used), a function which takes a directory and one
 of the symbols `small', `medium' or `large', and should return a
 path to the cover, or nil to turn off cover loading."
-  :group 'emms-browser
   :type '(choice list function boolean))
 
 (defcustom emms-browser-covers-file-extensions
   '("jpg" "jpeg" "png" "gif" "bmp")
-  "*File extensions accepted for `emms-browser-covers'.
+  "File extensions accepted for `emms-browser-covers'.
 Should be a list of extensions as strings.  Should be set before
 emms-browser is required."
-  :group 'emms-browser
   :type '(repeat (string :tag "Extension")))
 
 (defconst emms-browser--covers-filename nil
   "*List of potential cover art names.")
 
 (defcustom emms-browser-default-covers nil
-  "*A list of default images to use if a cover isn't found."
-  :group 'emms-browser
+  "A list of default images to use if a cover isn't found."
   :type 'list)
 
 (defcustom emms-browser-comparison-test
   (if (fboundp 'define-hash-table-test)
       'case-fold
     'equal)
-  "*A method for comparing entries in the cache.
+  "A method for comparing entries in the cache.
 The default is to compare case-insensitively."
-  :group 'emms-browser
   :type 'symbol)
 
 (defcustom emms-browser-track-sort-function
-  'emms-sort-natural-order-less-p
-  "*How to sort tracks in the browser.
+  #'emms-sort-natural-order-less-p
+  "How to sort tracks in the browser.
 Ues nil for no sorting."
-  :group 'emms-browser
   :type 'function)
 
 (defcustom emms-browser-alpha-sort-function
-  (if (functionp 'string-collate-lessp) 'string-collate-lessp 'string<)
-  "*How to sort artists/albums/etc. in the browser.
+  (if (functionp 'string-collate-lessp) #'string-collate-lessp #'string<)
+  "How to sort artists/albums/etc. in the browser.
 Use nil for no sorting."
-  :group 'emms-browser
   :type 'function)
 
 (defcustom emms-browser-album-sort-function
-  'emms-browser-sort-by-year-or-name
-  "*How to sort artists/albums/etc. in the browser.
+  #'emms-browser-sort-by-year-or-name
+  "How to sort artists/albums/etc. in the browser.
 Use nil for no sorting."
-  :group 'emms-browser
   :type 'function)
 
 (defcustom emms-browser-show-display-hook nil
-  "*Hooks to run when starting or switching to a browser buffer."
-  :group 'emms-browser
+  "Hooks to run when starting or switching to a browser buffer."
   :type 'hook)
 
 (defcustom emms-browser-hide-display-hook nil
-  "*Hooks to run when burying or removing a browser buffer."
-  :group 'emms-browser
+  "Hooks to run when burying or removing a browser buffer."
   :type 'hook)
 
 (defcustom emms-browser-tracks-added-hook nil
-  "*Hooks to run when tracks are added to the playlist."
-  :group 'emms-browser
+  "Hooks to run when tracks are added to the playlist."
   :type 'hook)
 
 (defcustom emms-browser-filter-tracks-hook nil
-  "*Given a track, return t if the track should be ignored."
-  :group 'emms-browser
+  "Given a track, return t if the track should be ignored."
   :type 'hook)
 
 (defcustom emms-browser-filter-changed-hook nil
-  "*Hook run after the filter has changed."
-  :group 'emms-browser
+  "Hook run after the filter has changed."
   :type 'hook)
 
 (defcustom emms-browser-delete-files-hook nil
-  "*Hook run after files have been deleted.
+  "Hook run after files have been deleted.
 This hook can be used to clean up extra files, such as album covers.
 Called once for each directory."
-  :group 'emms-browser
   :type 'hook)
 
 (defvar emms-browser-buffer nil
@@ -445,55 +423,55 @@ Called once for each directory."
 
 (defvar emms-browser-mode-map
   (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "q") 'emms-browser-bury-buffer)
-    (define-key map (kbd "/") 'emms-isearch-buffer)
-    (define-key map (kbd "r") 'emms-browser-goto-random)
-    (define-key map (kbd "n") 'next-line)
-    (define-key map (kbd "p") 'previous-line)
-    (define-key map (kbd "C") 'emms-browser-clear-playlist)
-    (define-key map (kbd "?") 'describe-mode)
-    (define-key map (kbd "C-/") 'emms-playlist-mode-undo)
-    (define-key map (kbd "SPC") 'emms-browser-toggle-subitems)
-    (define-key map (kbd "^") 'emms-browser-move-up-level)
-    (define-key map (kbd "RET") 'emms-browser-add-tracks)
-    (define-key map (kbd "<C-return>") 'emms-browser-add-tracks-and-play)
-    (define-key map (kbd "C-j") 'emms-browser-add-tracks-and-play)
-    (define-key map (kbd "<tab>") 'emms-browser-next-non-track)
-    (define-key map (kbd "<backtab>") 'emms-browser-prev-non-track)
-    (define-key map (kbd "d") 'emms-browser-view-in-dired)
-    (define-key map (kbd "D") 'emms-browser-delete-files)
-    (define-key map (kbd "E") 'emms-browser-expand-all)
-    (define-key map (kbd "1") 'emms-browser-collapse-all)
-    (define-key map (kbd "2") 'emms-browser-expand-to-level-2)
-    (define-key map (kbd "3") 'emms-browser-expand-to-level-3)
-    (define-key map (kbd "4") 'emms-browser-expand-to-level-4)
-    (define-key map (kbd "b 1") 'emms-browse-by-artist)
-    (define-key map (kbd "b 2") 'emms-browse-by-album)
-    (define-key map (kbd "b 3") 'emms-browse-by-genre)
-    (define-key map (kbd "b 4") 'emms-browse-by-year)
-    (define-key map (kbd "b 5") 'emms-browse-by-composer)
-    (define-key map (kbd "b 6") 'emms-browse-by-performer)
-    (define-key map (kbd "s a") 'emms-browser-search-by-artist)
-    (define-key map (kbd "s c") 'emms-browser-search-by-composer)
-    (define-key map (kbd "s p") 'emms-browser-search-by-performer)
-    (define-key map (kbd "s A") 'emms-browser-search-by-album)
-    (define-key map (kbd "s t") 'emms-browser-search-by-title)
-    (define-key map (kbd "s s") 'emms-browser-search-by-names)
-    (define-key map (kbd "W A w") 'emms-browser-lookup-artist-on-wikipedia)
-    (define-key map (kbd "W C w") 'emms-browser-lookup-composer-on-wikipedia)
-    (define-key map (kbd "W P w") 'emms-browser-lookup-performer-on-wikipedia)
-    (define-key map (kbd "W a w") 'emms-browser-lookup-album-on-wikipedia)
-    (define-key map (kbd ">") 'emms-browser-next-filter)
-    (define-key map (kbd "<") 'emms-browser-previous-filter)
-    (define-key map (kbd "+") 'emms-volume-raise)
-    (define-key map (kbd "-") 'emms-volume-lower)
+    (define-key map (kbd "q") #'emms-browser-bury-buffer)
+    (define-key map (kbd "/") #'emms-isearch-buffer)
+    (define-key map (kbd "r") #'emms-browser-goto-random)
+    (define-key map (kbd "n") #'next-line)
+    (define-key map (kbd "p") #'previous-line)
+    (define-key map (kbd "C") #'emms-browser-clear-playlist)
+    (define-key map (kbd "?") #'describe-mode)
+    (define-key map (kbd "C-/") #'emms-playlist-mode-undo)
+    (define-key map (kbd "SPC") #'emms-browser-toggle-subitems)
+    (define-key map (kbd "^")   #'emms-browser-move-up-level)
+    (define-key map (kbd "RET") #'emms-browser-add-tracks)
+    (define-key map (kbd "<C-return>") #'emms-browser-add-tracks-and-play)
+    (define-key map (kbd "C-j") #'emms-browser-add-tracks-and-play)
+    (define-key map (kbd "<tab>") #'emms-browser-next-non-track)
+    (define-key map (kbd "<backtab>") #'emms-browser-prev-non-track)
+    (define-key map (kbd "d") #'emms-browser-view-in-dired)
+    (define-key map (kbd "D") #'emms-browser-delete-files)
+    (define-key map (kbd "E") #'emms-browser-expand-all)
+    (define-key map (kbd "1") #'emms-browser-collapse-all)
+    (define-key map (kbd "2") #'emms-browser-expand-to-level-2)
+    (define-key map (kbd "3") #'emms-browser-expand-to-level-3)
+    (define-key map (kbd "4") #'emms-browser-expand-to-level-4)
+    (define-key map (kbd "b 1") #'emms-browse-by-artist)
+    (define-key map (kbd "b 2") #'emms-browse-by-album)
+    (define-key map (kbd "b 3") #'emms-browse-by-genre)
+    (define-key map (kbd "b 4") #'emms-browse-by-year)
+    (define-key map (kbd "b 5") #'emms-browse-by-composer)
+    (define-key map (kbd "b 6") #'emms-browse-by-performer)
+    (define-key map (kbd "s a") #'emms-browser-search-by-artist)
+    (define-key map (kbd "s c") #'emms-browser-search-by-composer)
+    (define-key map (kbd "s p") #'emms-browser-search-by-performer)
+    (define-key map (kbd "s A") #'emms-browser-search-by-album)
+    (define-key map (kbd "s t") #'emms-browser-search-by-title)
+    (define-key map (kbd "s s") #'emms-browser-search-by-names)
+    (define-key map (kbd "W A w") #'emms-browser-lookup-artist-on-wikipedia)
+    (define-key map (kbd "W C w") #'emms-browser-lookup-composer-on-wikipedia)
+    (define-key map (kbd "W P w") #'emms-browser-lookup-performer-on-wikipedia)
+    (define-key map (kbd "W a w") #'emms-browser-lookup-album-on-wikipedia)
+    (define-key map (kbd ">") #'emms-browser-next-filter)
+    (define-key map (kbd "<") #'emms-browser-previous-filter)
+    (define-key map (kbd "+") #'emms-volume-raise)
+    (define-key map (kbd "-") #'emms-volume-lower)
     map)
   "Keymap for `emms-browser-mode'.")
 
 (defvar emms-browser-search-mode-map
   (let ((map (make-sparse-keymap)))
     (set-keymap-parent map emms-browser-mode-map)
-    (define-key map (kbd "q") 'emms-browser-kill-search)
+    (define-key map (kbd "q") #'emms-browser-kill-search)
     map)
   "Keymap for `emms-browser-mode'.")
 
@@ -1502,7 +1480,6 @@ tracks from point, it does not delete files."
 (defcustom emms-browser-switch-to-playlist-on-add
   nil
   "Whether to switch to to the playlist after adding files."
-  :group 'emms-browser
   :type 'boolean)
 
 ;;;###autoload
@@ -1512,12 +1489,12 @@ Toggle between selecting browser, playlist or hiding both. Tries
 to behave sanely if the user has manually changed the window
 configuration."
   (interactive)
-  (add-to-list 'emms-browser-show-display-hook
-               'emms-browser-display-playlist)
-  (add-to-list 'emms-browser-hide-display-hook
-               'emms-browser-hide-linked-window)
+  (add-hook 'emms-browser-show-display-hook
+            #'emms-browser-display-playlist)
+  (add-hook 'emms-browser-hide-display-hook
+            #'emms-browser-hide-linked-window)
   ;; switch to the playlist window when adding tracks?
-  (add-to-list 'emms-browser-tracks-added-hook
+  (add-hook 'emms-browser-tracks-added-hook
                (lambda (start-of-tracks) (interactive)
                  (let (playlist-window)
                    (when emms-browser-switch-to-playlist-on-add
@@ -2015,8 +1992,7 @@ the text that it generates."
          (t (:background ,dark-col)))
        ,(concat "Face for "
                 name
-                " in a browser/playlist buffer.")
-       :group 'emms-browser-mode)))
+                " in a browser/playlist buffer."))))
 
 (emms-browser-make-face "year/genre" "#aaaaff" "#444477" 1.5)
 (emms-browser-make-face "artist"     "#aaaaff" "#444477" 1.3)

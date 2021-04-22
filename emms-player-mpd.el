@@ -1,6 +1,6 @@
 ;;; emms-player-mpd.el --- MusicPD support for EMMS  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2005, 2006, 2007, 2008, 2009, 2014 Free Software Foundation, Inc.
+;; Copyright (C) 2005-2021  Free Software Foundation, Inc.
 
 ;; Author: Michael Olson <mwolson@gnu.org>, Jose Antonio Ortega Ruiz
 ;; <jao@gnu.org>
@@ -73,11 +73,11 @@
 
 ;; To get track info from MusicPD, do the following.
 ;;
-;;   (add-to-list 'emms-info-functions 'emms-info-mpd)
+;;   (add-to-list 'emms-info-functions #'emms-info-mpd)
 
 ;; To change the volume using MusicPD, do the following.
 ;;
-;;   (setq emms-volume-change-function 'emms-volume-mpd-change)
+;;   (setq emms-volume-change-function #'emms-volume-mpd-change)
 
 ;; Add 'emms-player-mpd to the top of `emms-player-list'.
 ;;
@@ -122,12 +122,11 @@
   :group 'emms-player
   :prefix "emms-player-mpd-")
 
-(defcustom emms-player-mpd (emms-player 'emms-player-mpd-start
-                                        'emms-player-mpd-stop
-                                        'emms-player-mpd-playable-p)
- "*Parameters for the MusicPD player."
- :type '(cons symbol alist)
- :group 'emms-player-mpd)
+(defcustom emms-player-mpd (emms-player #'emms-player-mpd-start
+                                        #'emms-player-mpd-stop
+                                        #'emms-player-mpd-playable-p)
+  "Parameters for the MusicPD player."
+  :type '(cons symbol alist))
 
 (defcustom emms-player-mpd-music-directory nil
   "The value of 'music_directory' in your MusicPD configuration file.
@@ -139,8 +138,7 @@ config."
   ;; next line, where there is more space to work with
   :type '(choice :format "%{%t%}:\n   %[Value Menu%] %v"
                  (const nil)
-                 directory)
-  :group 'emms-player-mpd)
+                 directory))
 
 (defun emms-player-mpd-get-supported-regexp ()
   "Returns a regexp of file extensions that MusicPD supports,
@@ -196,30 +194,25 @@ or nil if we cannot figure it out."
   :set (function
         (lambda (sym value)
           (set sym value)
-          (emms-player-set emms-player-mpd 'regex value)))
-  :group 'emms-player-mpd)
+          (emms-player-set emms-player-mpd 'regex value))))
 
 (defcustom emms-player-mpd-connect-function 'open-network-stream
   "Function used to initiate the connection to MusicPD.
 It should take same arguments as `open-network-stream' does."
-  :type 'function
-  :group 'emms-player-mpd)
+  :type 'function)
 
 (defcustom emms-player-mpd-server-name (or (getenv "MPD_HOST") "localhost")
   "The MusicPD server that we should connect to."
-  :type 'string
-  :group 'emms-player-mpd)
+  :type 'string)
 
 (defcustom emms-player-mpd-server-port (or (getenv "MPD_PORT") "6600")
   "The port of the MusicPD server that we should connect to."
-  :type '(choice number string)
-  :group 'emms-player-mpd)
+  :type '(choice number string))
 
 (defcustom emms-player-mpd-server-password nil
   "The password for the MusicPD server that we should connect to."
   :type '(choice (const :tag "None" nil)
-                 string)
-  :group 'emms-player-mpd)
+                 string))
 
 (defcustom emms-player-mpd-check-interval 1
   "How often to check to see whether MusicPD has advanced to the
@@ -230,14 +223,12 @@ performed.
 This variable is used only if `emms-player-mpd-sync-playlist' is
 non-nil."
   :type '(choice (const :tag "Disable check" nil)
-                 number)
-  :group 'emms-player-mpd)
+                 number))
 
 (defcustom emms-player-mpd-verbose nil
   "Whether to provide notifications for server connection events
 and errors."
-  :type 'boolean
-  :group 'emms-player-mpd)
+  :type 'boolean)
 
 (defcustom emms-player-mpd-sync-playlist t
   "Whether to synchronize the EMMS playlist with the MusicPD playlist.
@@ -246,8 +237,7 @@ If your EMMS playlist contains music files rather than playlists,
 leave this set to non-nil.
 
 If your EMMS playlist contains stored playlists, set this to nil."
-  :type 'boolean
-  :group 'emms-player-mpd)
+  :type 'boolean)
 
 (emms-player-set emms-player-mpd
                  'regex
@@ -318,7 +308,7 @@ return at the end of a request.")
 				:service emms-player-mpd-server-name
 				:family 'local)))
     (set-process-sentinel emms-player-mpd-process
-                          'emms-player-mpd-sentinel)
+                          #'emms-player-mpd-sentinel)
     (setq emms-player-mpd-queue
           (tq-create emms-player-mpd-process))
     (if (fboundp 'set-process-query-on-exit-flag)
@@ -886,7 +876,7 @@ playlist."
            (if emms-player-mpd-check-interval
                (setq emms-player-mpd-status-timer
                      (run-at-time t emms-player-mpd-check-interval
-                                  'emms-player-mpd-detect-song-change))
+                                  #'emms-player-mpd-detect-song-change))
              (emms-player-mpd-detect-song-change)))))
     ;; we only want to play one track, so don't start the timer
     (emms-player-mpd-send
@@ -957,7 +947,7 @@ This is called if `emms-player-mpd-sync-playlist' is non-nil."
       (when emms-player-mpd-check-interval
         (setq emms-player-mpd-status-timer
               (run-at-time t emms-player-mpd-check-interval
-                           'emms-player-mpd-detect-song-change))))))
+                           #'emms-player-mpd-detect-song-change))))))
 
 ;;;###autoload
 (defun emms-player-mpd-connect ()
@@ -1307,7 +1297,7 @@ Afterwards, clear the EMMS cache and call
 	    (progn
 	      (message "Updating DB with ID %s.  Waiting for the update to finish..." id)
 	      (setq emms-player-mpd-waiting-for-update-timer
-		    (run-at-time 1 nil 'emms-player-mpd-wait-for-update)))
+		    (run-at-time 1 nil #'emms-player-mpd-wait-for-update)))
 	  (message "Could not update the DB")))
     ;; Otherwise, check if update is still in progress
     (emms-player-mpd-get-status-part
@@ -1316,7 +1306,7 @@ Afterwards, clear the EMMS cache and call
        (ignore closure)
        (if updating
 	   ;; MPD update still in progress, so wait another second
-	   (run-at-time 1 nil 'emms-player-mpd-wait-for-update)
+	   (run-at-time 1 nil #'emms-player-mpd-wait-for-update)
 	 ;; MPD update finished
 	 (setq  emms-player-mpd-waiting-for-update-timer nil)
 	 (message "MPD update finished.")
