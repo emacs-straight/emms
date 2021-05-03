@@ -178,16 +178,16 @@ is non-nil."
 
 (defun emms-playlist-limit--limit-playlist (playlist type regexp)
   "Return a new playlist of tracks in PLAYLIST with TYPE matching REGEXP."
-  (let* ((bufname (concat (buffer-name playlist)
-			  (format "/%s=%s"
-				  (emms-replace-regexp-in-string "info-" "" (symbol-name type)) regexp))))
+  (let* ((bufname (format "%s/%s=%s"
+			  (buffer-name playlist)
+			  (emms-replace-regexp-in-string "info-" ""
+			                                 (symbol-name type))
+			  regexp)))
     (emms-playlist-limit--derive-playlist
      playlist
-     `(lambda (track) (let ((field (emms-playlist-limit-track-get track (quote ,type))))
-		       (and field (string-match ,regexp field))))
+     (lambda (track) (let ((field (emms-playlist-limit-track-get track type)))
+		       (and field (string-match regexp field))))
      bufname)))
-
-
 
 (defun emms-playlist-limit-do (type regexp)
   "Switch to a derived playlist containing the tracks with TYPE matching REGEXP.

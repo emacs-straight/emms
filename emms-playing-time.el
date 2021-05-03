@@ -68,8 +68,9 @@ and `downtime' (e.g. -03:58)."
 
 ;;; Emms Playing Time
 
-(defvar emms-playing-time-display-p nil
-  "Whether to display playing time on mode line or not")
+(define-obsolete-variable-alias 'emms-playing-time-display-p
+  'emms-playing-time-display-mode "Apr 2021")
+(defvar emms-playing-time-display-mode)
 
 (defvar emms-playing-time 0
   "Time elapsed in current track.")
@@ -78,8 +79,8 @@ and `downtime' (e.g. -03:58)."
 
 (defvar emms-playing-time-display-timer nil)
 
-(defvar emms-playing-time-p nil
-  "Whether emms-playing-time module is enabled or not")
+(define-obsolete-variable-alias 'emms-playing-time-p
+  'emms-playing-time-mode "Apr 2021")
 
 (defun emms-playing-time-start ()
   "Get ready for display playing time."
@@ -119,6 +120,11 @@ and `downtime' (e.g. -03:58)."
     (setq emms-playing-time 0)))
 
 (defun emms-playing-time (arg)
+  (declare (obsolete emms-playing-time-mode "Apr 2021"))
+  (emms-playing-time-mode (if (and arg (> arg 0)) 1 -1)))
+
+
+(define-minor-mode emms-playing-time-mode
   "Turn on emms playing time if ARG is positive, off otherwise.
 
 Note: `(emms-playing-time -1)' will disable emms-playing-time
@@ -128,10 +134,13 @@ modules may rely on it, such as `emms-lastfm.el')
 Instead, to toggle displaying playing time on mode line, one
 could call `emms-playing-time-enable-display' and
 `emms-playing-time-disable-display'."
-  (if (and arg (> arg 0))
+  :global t
+  (if emms-playing-time-mode
       (progn
-	(setq emms-playing-time-p t
-              emms-playing-time-display-p t)
+	;; FIXME: Maybe we shouldn't set this here, and instead the users
+        ;; should call `emms-playing-time-display-mode' if that's what
+        ;; they want.
+	(setq emms-playing-time-display-mode t)
 	(emms-playing-time-mode-line)
 	(add-hook 'emms-player-started-hook       #'emms-playing-time-start)
 	(add-hook 'emms-player-stopped-hook       #'emms-playing-time-stop)
@@ -139,8 +148,7 @@ could call `emms-playing-time-enable-display' and
 	(add-hook 'emms-player-paused-hook        #'emms-playing-time-pause)
 	(add-hook 'emms-player-seeked-functions   #'emms-playing-time-seek)
 	(add-hook 'emms-player-time-set-functions #'emms-playing-time-set))
-    (setq emms-playing-time-p nil
-          emms-playing-time-display-p nil)
+    (setq emms-playing-time-display-mode nil)
     (emms-playing-time-stop)
     (emms-playing-time-restore-mode-line)
     (remove-hook 'emms-player-started-hook       #'emms-playing-time-start)
@@ -151,69 +159,76 @@ could call `emms-playing-time-enable-display' and
     (remove-hook 'emms-player-time-set-functions #'emms-playing-time-set)))
 
 ;;;###autoload
+(define-minor-mode emms-playing-time-display-mode
+  "Minor mode to display playing time on mode line."
+  :global t
+  ;; When disabling the mode, don't disable `emms-playing-time-display-mode'
+  ;; since that may be used by other packages.
+  (if emms-playing-time-display-mode
+      (emms-playing-time-display-mode 1)))
+
+;;;###autoload
 (defun emms-playing-time-enable-display ()
   "Display playing time on mode line."
+  (declare (obsolete emms-playing-time-display-mode "Apr 2021"))
   (interactive)
-  (setq emms-playing-time-display-p t))
+  (setq emms-playing-time-display-mode t))
 
 ;;;###autoload
 (defun emms-playing-time-disable-display ()
   "Remove playing time from mode line."
+  (declare (obsolete emms-playing-time-display-mode "Apr 2021"))
   (interactive)
-  (setq emms-playing-time-display-p nil))
+  (setq emms-playing-time-display-mode nil))
 
 (defun emms-playing-time-display ()
   "Display playing time on the mode line."
   (setq emms-playing-time (round (1+ emms-playing-time)))
-  (setq emms-playing-time-string "")
-  (when emms-playing-time-display-p
-    (let* ((min (/ emms-playing-time 60))
-           (sec (% emms-playing-time 60))
-           (total-playing-time
-            (or (emms-track-get
-                 (emms-playlist-current-selected-track)
-                 'info-playing-time)
-                0))
-           (total-min-only (/ total-playing-time 60))
-           (total-sec-only (% total-playing-time 60)))
-      (cl-case emms-playing-time-style
-	((downtime)			; `downtime' style
-	 (setq emms-playing-time-string
-               (emms-replace-regexp-in-string
-                " " "0"
-                (if (or emms-playing-time-display-short-p
-                        ;; unable to get total playing-time
-                        (eq total-playing-time 0))
-                    (format "%2d:%2d" min sec)
-                  (format "-%2d:%2d"
-			  (/ (- total-playing-time emms-playing-time) 60)
-			  (% (- total-playing-time sec) 60))))))
-        ((bar)                          ; `bar' style
-         (if (zerop total-playing-time)
-             (setq emms-playing-time-string "[==>........]")
-           (let ((progress "[")
-                 ;; percent based on 10
-                 (percent (/ (* emms-playing-time 10) total-playing-time)))
-             (dotimes (_i percent)
-               (setq progress (concat progress "=")))
-             (setq progress (concat progress ">"))
-             (dotimes (_i (- 10 percent))
-               (setq progress (concat progress " ")))
-             (setq progress (concat progress "]"))
-             (setq emms-playing-time-string progress))))
-        (t                              ; `time' style
-         (setq emms-playing-time-string
-               (emms-replace-regexp-in-string
-                " " "0"
-                (if (or emms-playing-time-display-short-p
-                        ;; unable to get total playing-time
-                        (eq total-playing-time 0))
-                    (format "%2d:%2d" min sec)
-                  (format "%2d:%2d/%2s:%2s"
-                          min sec total-min-only total-sec-only))))))
-      (setq emms-playing-time-string
-            (format emms-playing-time-display-format
-                    emms-playing-time-string))))
+  (setq emms-playing-time-string
+        (if (null emms-playing-time-display-mode)
+            ""
+          (let* ((min (/ emms-playing-time 60))
+                 (sec (% emms-playing-time 60))
+                 (total-playing-time
+                  (or (emms-track-get
+                       (emms-playlist-current-selected-track)
+                       'info-playing-time)
+                      0))
+                 (total-min-only (/ total-playing-time 60))
+                 (total-sec-only (% total-playing-time 60))
+                 (string
+	          (cl-case emms-playing-time-style
+	            ((downtime)         ; `downtime' style
+	             (emms-replace-regexp-in-string
+                      " " "0"
+                      (if (or emms-playing-time-display-short-p
+                              ;; unable to get total playing-time
+                              (eq total-playing-time 0))
+                          (format "%2d:%2d" min sec)
+                        (format "-%2d:%2d"
+			        (/ (- total-playing-time emms-playing-time) 60)
+			        (% (- total-playing-time sec) 60)))))
+		    ((bar)              ; `bar' style
+		     (if (zerop total-playing-time)
+		         "[==>........]"
+                       (let (;; percent based on 10
+                             (percent (/ (* emms-playing-time 10)
+                                         total-playing-time)))
+                         (concat "["
+                                 (make-string percent ?=)
+                                 ">"
+                                 (make-string (- 10 percent) ?\s)
+                                 "]"))))
+                    (t                  ; `time' style
+                     (emms-replace-regexp-in-string
+                      " " "0"
+                      (if (or emms-playing-time-display-short-p
+                              ;; unable to get total playing-time
+                              (eq total-playing-time 0))
+                          (format "%2d:%2d" min sec)
+                        (format "%2d:%2d/%2s:%2s"
+                                min sec total-min-only total-sec-only)))))))
+            (format emms-playing-time-display-format string))))
   (force-mode-line-update))
 
 (defun emms-playing-time-mode-line ()
