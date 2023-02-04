@@ -4,7 +4,7 @@
 
 ;; Author: Jorgen Schäfer <forcer@forcix.cx>, the Emms developers (see AUTHORS file)
 ;; Maintainer: Yoni Rabkin <yrk@gnu.org>
-;; Version: 13
+;; Version: 14
 ;; Keywords: emms, mp3, ogg, flac, music, mpeg, video, multimedia
 ;; Package-Type: multi
 ;; Package-Requires: ((cl-lib "0.5") (nadvice "0.3") (seq))
@@ -45,7 +45,7 @@
 ;;; Code:
 (require 'emms-compat)
 
-(defvar emms-version "13"
+(defvar emms-version "14"
   "EMMS version string.")
 
 ;;; User Customization
@@ -485,6 +485,16 @@ In both forms seconds can be a floating point number."
   (emms-player-seek-to (max 0 (emms-timespec-to-secs timestamp))))
 
 (defun emms-timespec-to-secs (timespec)
+  "Convert TIMESPEC to seconds.
+
+If TIMESPEC is number, use it verbatim.  If TIMESPEC is string,
+use `emms-timestr-to-secs' for conversion.  Otherwise return
+zero."
+  (cond ((numberp timespec) timespec)
+        ((stringp timespec) (emms-timestr-to-secs timespec))
+        (t 0)))
+
+(defun emms-timestr-to-secs (timespec)
   "Convert TIMESPEC to seconds.
 
 TIMESPEC is assumed to be a string of form [-][[HH:]MM:]SS, where
