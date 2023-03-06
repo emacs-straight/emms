@@ -1,6 +1,6 @@
 ;;; emms-volume-pulse.el --- a mode for changing volume using PulseAudio pactl  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2015-2021 Free Software Foundation, Inc.
+;; Copyright (C) 2015-2023 Free Software Foundation, Inc.
 
 ;; Author: Rasmus Pank Roulund <emacs@pank.eu>
 
@@ -59,11 +59,6 @@ See full list of devices on your system by running
                  (const :tag "Default sink" nil))
   :group 'emms-volume)
 
-(defcustom emms-volume-pulse-max-volume 100
-  "The maximum volume percentage."
-  :type 'integer
-  :group 'emms-volume)
-
 ;; 'pactl get-sink-volume' was only added recently (version 14.1).
 ;; When that version is more widespread this function can be
 ;; simplified
@@ -79,26 +74,38 @@ See full list of devices on your system by running
          (output
           (shell-command-to-string
            (concat "pactl list sinks" "|"
-                   "grep -E -e 'Sink' -e 'Name' -e '^[^a-zA-Z]*Volume'"))))
-    (string-to-number
-     (car
-      (reverse
-       (funcall
-        (if sink-number-p #'assq #'assoc)
-        emms-volume-pulse-sink
-        (mapcar (if sink-number-p 'identity 'cdr)
-                (cl-loop while
-			 (string-match
-			  (mapconcat #'identity
-				     '(".*Sink[ \t]+\\#\\([0-9]+\\)"
-				       ".*Name:[ \t]\\([^\n]+\\)"
-				       ".*Volume:.*?\\([0-9]+\\)%.*\n?")
-				     "\n")
-			  output)
-			 collect (list (string-to-number (match-string 1 output))
-				       (match-string 2 output)
-				       (match-string 3 output))
-			 do (setq output (replace-match "" nil nil output))))))))))
+                   "grep -E -e 'Sink' -e 'Name' -e '^[^a-zA-Z]*Volume'")))
+	 (volume-string
+	  (car
+	   (reverse
+	    (funcall
+             (if sink-number-p #'assq #'assoc)
+             emms-volume-pulse-sink
+             (mapcar (if sink-number-p 'identity 'cdr)
+                     (cl-loop while
+			      (string-match
+			       (mapconcat #'identity
+					  '(".*Sink[ \t]+\\#\\([0-9]+\\)"
+					    ".*Name:[ \t]\\([^\n]+\\)"
+					    ".*Volume:.*?\\([0-9]+\\)%.*\n?")
+					  "\n")
+			       output)
+			      collect (list (string-to-number (match-string 1 output))
+					    (match-string 2 output)
+					    (match-string 3 output))
+			      do (setq output (replace-match "" nil nil output)))))))))
+    (if volume-string
+	(string-to-number volume-string)
+      (error "cannot get volume from sink, check `emms-volume-pulse-sink'"))))
+
+(defun emms-volume-pulse-limit (v)
+  "Limit V to the range [0-100]"
+  (max (min v 100) 0))
+
+(defun emms-volume-pulse-get ()
+  "Return the pulse volume."
+  (emms-volume-pulse-limit
+   (emms-volume--pulse-get-volume)))
 
 ;;;###autoload
 (defun emms-volume-pulse-change (amount)
@@ -106,9 +113,8 @@ See full list of devices on your system by running
   (message "Volume is %s%%"
            (let ((pactl (or (executable-find "pactl")
                             (error "pactl is not in PATH")))
-                 (next-vol (max (min (+ (emms-volume--pulse-get-volume) amount)
-                                     emms-volume-pulse-max-volume)
-                                0)))
+                 (next-vol (emms-volume-pulse-limit
+			    (+ (emms-volume--pulse-get-volume) amount))))
              (when (zerop (shell-command
                            (format "%s set-sink-volume %s %s%%"
                                    pactl

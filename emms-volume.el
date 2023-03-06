@@ -1,6 +1,6 @@
 ;;; emms-volume.el --- Volume functions and a minor mode to adjust volume easily  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2006-2021  Free Software Foundation, Inc.
+;; Copyright (C) 2006-2023  Free Software Foundation, Inc.
 
 ;; Author: Martin Schoenmakers <aiviru@diamond-age.net>
 ;;         Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>
@@ -59,7 +59,6 @@
   "Volume setting for EMMS."
   :group 'emms)
 
-;; General volume setting related code.
 (defcustom emms-volume-change-function
   (cond
    ;; check for sndioctl first to avoid picking up mixerctl or pactl
@@ -85,15 +84,30 @@ emms-volume interface.
 This should be a positive integer."
   :type 'integer)
 
+(defun emms-volume-select-get-function ()
+  "Return the corresponding get function."
+  (cond ((not emms-volume-change-function)
+	 (error "`emms-volume-change-function' is not set"))
+	((eq emms-volume-change-function #'emms-volume-amixer-change)
+	 #'emms-volume-amixer-get)
+	((eq emms-volume-change-function #'emms-volume-pulse-change)
+	 #'emms-volume-pulse-get)
+	(t (error "could not find corresponding volume getter function for %s"
+		  emms-volume-change-function))))
+
+(defun emms-volume-get ()
+  "Return the volume as an integer in the range [0-100]."
+  (funcall (emms-volume-select-get-function)))
+
 ;;;###autoload
 (defun emms-volume-raise ()
-  "Raise the speaker volume."
+  "Raise the volume."
   (interactive)
   (funcall emms-volume-change-function emms-volume-change-amount))
 
 ;;;###autoload
 (defun emms-volume-lower ()
-  "Lower the speaker volume."
+  "Lower the volume."
   (interactive)
   (funcall emms-volume-change-function (- emms-volume-change-amount)))
 
