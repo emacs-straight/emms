@@ -105,6 +105,7 @@
 
 (require 'cl-lib)
 (require 'emms-player-simple)
+(require 'emms-playlist-mode)
 (require 'emms-source-playlist)  ; for emms-source-file-parse-playlist
 (require 'tq)
 (require 'emms-cache)
@@ -267,7 +268,7 @@ If your EMMS playlist contains stored playlists, set this to nil."
 (defvar emms-player-mpd-playlist-id nil)
 (make-variable-buffer-local 'emms-player-mpd-playlist-id)
 
-(defvar emms-player-mpd-current-song nil)
+(defvar emms-player-mpd-current-status nil)
 (defvar emms-player-mpd-last-state nil)
 (defvar emms-player-mpd-status-timer nil)
 
@@ -518,6 +519,30 @@ info from MusicPD."
     (setq callback (lambda (closure id) (ignore closure) id)))
   (emms-player-mpd-get-status-part closure callback "song" info))
 
+(defun emms-player-mpd-get-current-songid (closure callback &optional info)
+  "Get the current songid from MusicPD.
+This is in the form of a number, which is an immutable, unique
+identifier per track in a playlist.
+
+Call CALLBACK with CLOSURE and result when the request is complete.
+If INFO is specified, use that instead of acquiring the necessary
+info from MusicPD."
+  (when info
+    (setq callback (lambda (closure id) (ignore closure) id)))
+  (emms-player-mpd-get-status-part closure callback "songid" info))
+
+(defun emms-player-mpd-get-current-consume (closure callback &optional info)
+  "Get the current consume mode from MusicPD.
+When consume mode is enabled, MPD deletes tracks after they've been
+played, as it moves to the next track in the playlist.
+
+Call CALLBACK with CLOSURE and result when the request is complete.
+If INFO is specified, use that instead of acquiring the necessary
+info from MusicPD."
+  (when info
+    (setq callback (lambda (closure id) (ignore closure) id)))
+  (emms-player-mpd-get-status-part closure callback "consume" info))
+
 (defun emms-player-mpd-get-mpd-state (closure callback &optional info)
   "Get the current state of the MusicPD server.
 This is either \"play\", \"stop\", or \"pause\".
@@ -555,43 +580,48 @@ info from MusicPD."
 		     (string-to-number (match-string 1 time)))))
      "time" info)))
 
-(defun emms-player-mpd-select-song (prev-song new-song)
+(defun emms-player-mpd-select-song (prev-song new-song &optional consume)
   "Move to the given song position.
 
 The amount to move is the number difference between PREV-SONG and
 NEW-SONG.  NEW-SONG should be a string containing a number.
 PREV-SONG may be either a string containing a number or nil,
 which indicates that we should start from the beginning of the
-buffer and move to NEW-SONG."
+buffer and move to NEW-SONG. When CONSUME is non-nil, delete PREV-SONG
+from the playlist."
   (with-current-emms-playlist
     ;; move to current track
     (goto-char (if (and (stringp prev-song)
-			emms-playlist-selected-marker
-			(marker-position emms-playlist-selected-marker))
-		   emms-playlist-selected-marker
-		 (point-min)))
+			            emms-playlist-selected-marker
+			            (marker-position emms-playlist-selected-marker))
+		           emms-playlist-selected-marker
+		         (point-min)))
     ;; seek forward or backward
     (let ((diff (if (stringp prev-song)
-		    (- (string-to-number new-song)
-		       (string-to-number prev-song))
-		  (string-to-number new-song))))
+		            (- (string-to-number new-song)
+		               (string-to-number prev-song))
+		          (string-to-number new-song))))
+      (when consume
+        (emms-playlist-mode-kill-track)
+        (when (> diff 0)
+          (setq diff (1- diff))))
       (condition-case nil
-	  (progn
-	    ;; skip to first track if not on one
-	    (when (and (> diff 0)
-		       (not (emms-playlist-track-at (point))))
-	      (emms-playlist-next))
-	    ;; move to new track
-	    (while (> diff 0)
-	      (emms-playlist-next)
-	      (setq diff (- diff 1)))
-	    (while (< diff 0)
-	      (emms-playlist-previous)
-	      (setq diff (+ diff 1)))
-	    ;; select track at point
-	    (unless (emms-playlist-selected-track-at-p)
-	      (emms-playlist-select (point))))
-	(error (concat "Could not move to position " new-song))))))
+	      (progn
+	        ;; skip to first track if not on one
+	        (when (and (> diff 0)
+		               (not (emms-playlist-track-at (point))))
+	          (emms-playlist-next))
+
+	        ;; move to new track
+	        (while (> diff 0)
+	          (emms-playlist-next)
+	          (setq diff (- diff 1)))
+	        (while (< diff 0)
+	          (emms-playlist-previous)
+	          (setq diff (+ diff 1)))
+	        ;; select track at point
+	        (emms-playlist-select (point)))
+	    (error (concat "Could not move to position " new-song))))))
 
 (defun emms-player-mpd-sync-from-emms-1 (closure)
   (emms-player-mpd-get-playlist-id
@@ -666,58 +696,70 @@ main EMMS playlist buffer."
 
 (defun emms-player-mpd-detect-song-change-2 (state info)
   "Perform post-sync tasks after returning from a stop."
-  (setq emms-player-mpd-current-song nil)
-  (setq emms-player-playing-p 'emms-player-mpd)
-  (when (string= state "pause")
-    (setq emms-player-paused-p t))
+  (setq emms-player-mpd-current-status nil
+        emms-player-playing-p 'emms-player-mpd
+        emms-player-paused-p (string= state "pause"))
   (emms-player-mpd-detect-song-change info))
 
 (defun emms-player-mpd-detect-song-change-1 (closure info)
   (ignore closure)
-  (let ((song (emms-player-mpd-get-current-song nil #'ignore info))
-	(state (emms-player-mpd-get-mpd-state nil #'ignore info))
-	(time (emms-player-mpd-get-playing-time nil #'ignore info))
-	(err-msg (cdr (assoc "error" info))))
+  (let ((last-id (emms-player-mpd-get-current-songid nil #'ignore emms-player-mpd-current-status))
+        (current-id (emms-player-mpd-get-current-songid nil #'ignore info))
+        (last-pos (emms-player-mpd-get-current-song nil #'ignore emms-player-mpd-current-status))
+        (current-pos (emms-player-mpd-get-current-song nil #'ignore info))
+	    (state (emms-player-mpd-get-mpd-state nil #'ignore info))
+	    (time (emms-player-mpd-get-playing-time nil #'ignore info))
+	    (err-msg (cdr (assoc "error" info))))
     (if (stringp err-msg)
-	(progn
-	  (message "MusicPD error: %s" err-msg)
-	  (emms-player-mpd-send
-	   "clearerror"
-	   nil #'ignore))
-      (cond ((string= state "stop")
-	     (if song
-		 ;; a track remains: the user probably stopped MusicPD
-		 ;; manually, so we'll stop EMMS completely
-		 (let ((emms-player-stopped-p t))
-		   (setq emms-player-mpd-last-state "stop")
-		   (emms-player-stopped))
-	       ;; no more tracks are left: we probably ran out of things
-	       ;; to play, so let EMMS do something further if it wants
-	       (unless (string= emms-player-mpd-last-state "stop")
-		 (setq emms-player-mpd-last-state "stop")
-		 (emms-player-stopped))))
-	    ((and emms-player-mpd-last-state
-		  (string= emms-player-mpd-last-state "stop"))
-	     ;; resume from a stop that occurred outside of EMMS
-	     (setq emms-player-mpd-last-state nil)
-	     (emms-player-mpd-sync-from-mpd
-	      state
-	      #'emms-player-mpd-detect-song-change-2))
-	    ((string= state "pause")
-	     nil)
-	    ((string= state "play")
-	     (setq emms-player-mpd-last-state "play")
-	     (unless (or (null song)
-			 (and (stringp emms-player-mpd-current-song)
-			      (string= song emms-player-mpd-current-song)))
-	       (let ((emms-player-stopped-p t))
-		 (emms-player-stopped))
-	       (emms-player-mpd-select-song emms-player-mpd-current-song song)
-	       (setq emms-player-mpd-current-song song)
-	       (emms-player-started 'emms-player-mpd)
-	       (when time
-		 (run-hook-with-args 'emms-player-time-set-functions
-				     time))))))))
+	    (progn
+	      (message "MusicPD error: %s" err-msg)
+	      (emms-player-mpd-send
+	       "clearerror"
+	       nil #'ignore))
+
+      (cond
+       ((string= state "stop")
+	    (if current-pos
+		    ;; a track remains: the user probably stopped MusicPD
+		    ;; manually, so we'll stop EMMS completely
+		    (let ((emms-player-stopped-p t))
+		      (setq emms-player-mpd-last-state "stop")
+		      (emms-player-stopped))
+	      ;; no more tracks are left: we probably ran out of things
+	      ;; to play, so let EMMS do something further if it wants
+	      (unless (string= emms-player-mpd-last-state "stop")
+		    (setq emms-player-mpd-last-state "stop")
+		    (emms-player-stopped))))
+
+	   ((and emms-player-mpd-last-state
+		     (string= emms-player-mpd-last-state "stop"))
+	    ;; resume from a stop that occurred outside of EMMS
+	    (setq emms-player-mpd-last-state nil)
+	    (emms-player-mpd-sync-from-mpd
+	     state
+	     #'emms-player-mpd-detect-song-change-2))
+
+	   ((string= state "pause") nil)
+
+	   ((string= state "play")
+	    (setq emms-player-mpd-last-state "play")
+	    (unless (or (null current-id)
+			        (and (stringp last-id)
+			             (string= current-id last-id)))
+	      (let ((emms-player-stopped-p t))
+		    (emms-player-stopped))
+	      (emms-player-mpd-select-song
+           last-pos current-pos
+           (and emms-player-mpd-current-status
+                (string= "1" (emms-player-mpd-get-current-consume nil #'ignore emms-player-mpd-current-status))
+                (string= "play" (emms-player-mpd-get-mpd-state nil #'ignore emms-player-mpd-current-status))
+                (stringp current-id) (stringp last-id)
+                (not (string= current-id last-id))))
+	      (emms-player-started 'emms-player-mpd)
+	      (when time
+		    (run-hook-with-args 'emms-player-time-set-functions
+				                time))))))
+    (setq emms-player-mpd-current-status info)))
 
 (defun emms-player-mpd-detect-song-change (&optional info)
   "Detect whether a song change has occurred.
@@ -870,7 +912,7 @@ playlist."
 	 nil
 	 (lambda (closure response)
 	   (ignore closure response)
-          (setq emms-player-mpd-current-song nil)
+          (setq emms-player-mpd-current-status nil)
           (if emms-player-mpd-check-interval
               (setq emms-player-mpd-status-timer
                     (run-at-time t emms-player-mpd-check-interval
@@ -934,7 +976,7 @@ This is called if `emms-player-mpd-sync-playlist' is non-nil."
 
 (defun emms-player-mpd-connect-1 (closure info)
   (ignore closure)
-  (setq emms-player-mpd-current-song nil)
+  (setq emms-player-mpd-current-status nil)
   (let* ((state (emms-player-mpd-get-mpd-state nil #'ignore info)))
     (unless (string= state "stop")
       (setq emms-player-playing-p 'emms-player-mpd))
@@ -982,9 +1024,9 @@ stopped.  This argument is meant to be used when calling this
 from other functions."
   (interactive)
   (emms-cancel-timer emms-player-mpd-status-timer)
-  (setq emms-player-mpd-status-timer nil)
-  (setq emms-player-mpd-current-song nil)
-  (setq emms-player-mpd-last-state nil)
+  (setq emms-player-mpd-status-timer nil
+        emms-player-mpd-current-status nil
+        emms-player-mpd-last-state nil)
   (emms-player-mpd-close-process)
   (unless no-stop
     (let ((emms-player-stopped-p t))
@@ -1008,26 +1050,16 @@ from other functions."
 (defun emms-player-mpd-seek (amount)
   "Seek backward or forward by AMOUNT seconds, depending on sign of AMOUNT."
   (interactive)
-  (emms-player-mpd-get-status
-   amount
-   (lambda (amount info)
-     (let ((song (emms-player-mpd-get-current-song nil #'ignore info))
-	   (secs (emms-player-mpd-get-playing-time nil #'ignore info)))
-       (when (and song secs)
-	 (emms-player-mpd-send
-	  (concat "seek " song " " (number-to-string (round (+ secs amount))))
-	  nil #'ignore))))))
+  (emms-player-mpd-send
+   (concat "seekcur " (if (> amount 0) "+" "-") (number-to-string amount))
+   nil #'ignore))
 
 (defun emms-player-mpd-seek-to (pos)
   "Seek to POS seconds from the start of the current track."
   (interactive)
-  (emms-player-mpd-get-current-song
-   pos
-   (lambda (pos song)
-     (when (and song pos)
-       (emms-player-mpd-send
-	(concat "seek " song " " (number-to-string (round pos)))
-	nil #'ignore)))))
+  (emms-player-mpd-send
+   (concat "seekcur " (number-to-string (round pos)))
+   nil #'ignore))
 
 (defun emms-player-mpd-next ()
   "Move forward by one track in MusicPD's internal playlist."
