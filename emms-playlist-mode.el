@@ -412,6 +412,16 @@ With a prefix arg, open the `dired' buffer in OTHER-WINDOW."
    (yank-pop nil)
    (emms-playlist-mode-correct-previous-yank)))
 
+;; Don't assume that the first track is at the top of the buffer (the
+;; same goes for the `emms-playlist-mode-track-below-p'.)
+(defun emms-playlist-mode-track-above-p ()
+  "Return t if there is a track above this one in the buffer."
+  (previous-property-change (line-beginning-position)))
+
+(defun emms-playlist-mode-track-below-p ()
+  "Return t if there is a track below this one in the buffer."
+  (next-property-change (line-end-position)))
+
 
 ;;; --------------------------------------------------------
 ;;; Overlay
@@ -486,8 +496,6 @@ When NO-NEWLINE is non-nil, do not insert a newline after the track."
    (insert (emms-propertize (emms-track-force-description track)
                             'emms-track track
                             'face 'emms-playlist-track-face))
-   (when (emms-playlist-selected-track-at-p)
-     (emms-playlist-mode-overlay-selected))
    (unless no-newline
      (insert "\n"))))
 
