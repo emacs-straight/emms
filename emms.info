@@ -1,4 +1,4 @@
-This is docVA7MdE.info, produced by makeinfo version 6.8 from
+This is doc2suwKI.info, produced by makeinfo version 6.8 from
 emms.texinfo.
 
 (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016,
@@ -15,7 +15,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docVA7MdE.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
+File: doc2suwKI.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
 
 Emms Manual
 ***********
@@ -108,7 +108,7 @@ Extending Emms
 * More Complex Player::      Example of a complex player using 'mpg321'.
 
 
-File: docVA7MdE.info,  Node: Introduction,  Next: Quickstart Guide,  Up: Top
+File: doc2suwKI.info,  Node: Introduction,  Next: Quickstart Guide,  Up: Top
 
 1 Introduction
 **************
@@ -146,7 +146,7 @@ functionality beyond the core.
 using 'M-x customize' or by changing the variables directly.
 
 
-File: docVA7MdE.info,  Node: Quickstart Guide,  Next: Installation,  Prev: Introduction,  Up: Top
+File: doc2suwKI.info,  Node: Quickstart Guide,  Next: Installation,  Prev: Introduction,  Up: Top
 
 2 Quickstart Guide
 ******************
@@ -216,7 +216,7 @@ the basic commands (*note Basic Commands::), the interactive playlists
 irc (irc.libera.chat), and Emms has a mailing list at emms-help@gnu.org.
 
 
-File: docVA7MdE.info,  Node: Installation,  Next: Setup,  Prev: Quickstart Guide,  Up: Top
+File: doc2suwKI.info,  Node: Installation,  Next: Setup,  Prev: Quickstart Guide,  Up: Top
 
 3 Installation
 **************
@@ -236,7 +236,7 @@ add:
 * Compiling Emms::      Compiling Emms into Byte-Code.
 
 
-File: docVA7MdE.info,  Node: Compiling Emms,  Up: Installation
+File: doc2suwKI.info,  Node: Compiling Emms,  Up: Installation
 
 3.1 Compiling Emms
 ==================
@@ -263,7 +263,7 @@ have the appropriate permissions to do so on your system).
 run Emms just fine without byte compiling it.
 
 
-File: docVA7MdE.info,  Node: Setup,  Next: Configuration,  Prev: Installation,  Up: Top
+File: doc2suwKI.info,  Node: Setup,  Next: Configuration,  Prev: Installation,  Up: Top
 
 4 Setup
 *******
@@ -293,7 +293,7 @@ list of media players.
 by looking at the existing function definitions in 'emms-setup.el'.
 
 
-File: docVA7MdE.info,  Node: Configuration,  Next: Getting Help,  Prev: Setup,  Up: Top
+File: doc2suwKI.info,  Node: Configuration,  Next: Getting Help,  Prev: Setup,  Up: Top
 
 5 Configuration
 ***************
@@ -335,7 +335,7 @@ mechanism provided by Emacs.
 * Setup Examples::              Examples of ways to setup Emms.
 
 
-File: docVA7MdE.info,  Node: Finding files and speed,  Next: Setup Examples,  Up: Configuration
+File: doc2suwKI.info,  Node: Finding files and speed,  Next: Setup Examples,  Up: Configuration
 
 5.1 Finding files and speed
 ===========================
@@ -357,7 +357,7 @@ installed.
 EMMS-SOURCE-FILE-DIRECTORY-TREE-FUNCTION.
 
 
-File: docVA7MdE.info,  Node: Setup Examples,  Prev: Finding files and speed,  Up: Configuration
+File: doc2suwKI.info,  Node: Setup Examples,  Prev: Finding files and speed,  Up: Configuration
 
 5.2 Setup Examples
 ==================
@@ -408,7 +408,7 @@ special arguments to a specific player backend.
         emms-player-mpv-parameters '("--quiet" "--really-quiet" "--no-audio-display" "--force-window=no" "--vo=null"))
 
 
-File: docVA7MdE.info,  Node: Getting Help,  Next: Formats and Freedom,  Prev: Configuration,  Up: Top
+File: doc2suwKI.info,  Node: Getting Help,  Next: Formats and Freedom,  Prev: Configuration,  Up: Top
 
 6 Getting Help
 **************
@@ -424,7 +424,7 @@ newsgroup which mirrors this mailing address at gmane.emacs.emms.user.
    Emms also has a website at <http://www.gnu.org/software/emms/>.
 
 
-File: docVA7MdE.info,  Node: Formats and Freedom,  Next: Basic Commands,  Prev: Getting Help,  Up: Top
+File: doc2suwKI.info,  Node: Formats and Freedom,  Next: Basic Commands,  Prev: Getting Help,  Up: Top
 
 7 Formats and Freedom
 *********************
@@ -451,7 +451,7 @@ code for a reference implementation freely available.  For more
 information about FLAC, go to <http://flac.sourceforge.net/>.
 
 
-File: docVA7MdE.info,  Node: Basic Commands,  Next: The Core File,  Prev: Formats and Freedom,  Up: Top
+File: doc2suwKI.info,  Node: Basic Commands,  Next: The Core File,  Prev: Formats and Freedom,  Up: Top
 
 8 Basic Commands
 ****************
@@ -531,7 +531,7 @@ by 'emms-show-all.el', which is included in the 'emms-all' setup level.
 See *Note Setup::.
 
 
-File: docVA7MdE.info,  Node: The Core File,  Next: Sources,  Prev: Basic Commands,  Up: Top
+File: doc2suwKI.info,  Node: The Core File,  Next: Sources,  Prev: Basic Commands,  Up: Top
 
 9 The Core File
 ***************
@@ -546,7 +546,7 @@ music, generating playlists and defining players.
 * Core Functions::     Providing the basic functionality of Emms.
 
 
-File: docVA7MdE.info,  Node: User Variables,  Next: Hooks,  Up: The Core File
+File: doc2suwKI.info,  Node: User Variables,  Next: Hooks,  Up: The Core File
 
 9.1 User Variables
 ==================
@@ -571,7 +571,7 @@ The core file defines a number of user variables.
      first track should be sorted before the second (see also 'sort').
 
 
-File: docVA7MdE.info,  Node: Hooks,  Next: Core Functions,  Prev: User Variables,  Up: The Core File
+File: doc2suwKI.info,  Node: Hooks,  Next: Core Functions,  Prev: User Variables,  Up: The Core File
 
 9.2 Hooks
 =========
@@ -604,7 +604,7 @@ Emms.
      EMMS-PLAYER-PAUSED-P to find the current state.
 
 
-File: docVA7MdE.info,  Node: Core Functions,  Prev: Hooks,  Up: The Core File
+File: doc2suwKI.info,  Node: Core Functions,  Prev: Hooks,  Up: The Core File
 
 9.3 Core Functions
 ==================
@@ -695,7 +695,7 @@ of Emms.
 Commands::.
 
 
-File: docVA7MdE.info,  Node: Sources,  Next: Simple Players,  Prev: The Core File,  Up: Top
+File: doc2suwKI.info,  Node: Sources,  Next: Simple Players,  Prev: The Core File,  Up: Top
 
 10 Sources
 **********
@@ -755,7 +755,7 @@ be easy.
      Search for REGEXP and display the results in a locate buffer
 
 
-File: docVA7MdE.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  Up: Top
+File: doc2suwKI.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  Up: Top
 
 11 Simple Players
 *****************
@@ -780,7 +780,7 @@ File: docVA7MdE.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  
      and the sentinel string STR.
 
 
-File: docVA7MdE.info,  Node: Playlists,  Next: Track Information,  Prev: Simple Players,  Up: Top
+File: doc2suwKI.info,  Node: Playlists,  Next: Track Information,  Prev: Simple Players,  Up: Top
 
 12 Playlists
 ************
@@ -814,7 +814,7 @@ the tracks immediately.
 EMMS-PLAYLIST-BUFFER.
 
 
-File: docVA7MdE.info,  Node: Track Information,  Next: Interactive Playlists,  Prev: Playlists,  Up: Top
+File: doc2suwKI.info,  Node: Track Information,  Next: Interactive Playlists,  Prev: Playlists,  Up: Top
 
 13 Track Information
 ********************
@@ -930,7 +930,7 @@ called for each track.
 * Defining Info Methods::    How to define new info methods.
 
 
-File: docVA7MdE.info,  Node: Metadata Utilities,  Next: Defining Info Methods,  Up: Track Information
+File: doc2suwKI.info,  Node: Metadata Utilities,  Next: Defining Info Methods,  Up: Track Information
 
 13.1 Metadata Utilities
 =======================
@@ -1056,7 +1056,7 @@ initialization file:
      (add-to-list 'emms-info-functions 'emms-info-opusinfo)
 
 
-File: docVA7MdE.info,  Node: Defining Info Methods,  Prev: Metadata Utilities,  Up: Track Information
+File: doc2suwKI.info,  Node: Defining Info Methods,  Prev: Metadata Utilities,  Up: Track Information
 
 13.2 Defining Info Methods
 ==========================
@@ -1146,7 +1146,7 @@ the keys listed above; for example "album" and "artist" form info
 symbols 'info-album' and 'info-artist'.
 
 
-File: docVA7MdE.info,  Node: Interactive Playlists,  Next: Markable Playlists,  Prev: Track Information,  Up: Top
+File: doc2suwKI.info,  Node: Interactive Playlists,  Next: Markable Playlists,  Prev: Track Information,  Up: Top
 
 14 Interactive Playlists
 ************************
@@ -1272,7 +1272,7 @@ program and can therefore be used to include titles and annotations
 within the playlist.
 
 
-File: docVA7MdE.info,  Node: Markable Playlists,  Next: Extending Emms,  Prev: Interactive Playlists,  Up: Top
+File: doc2suwKI.info,  Node: Markable Playlists,  Next: Extending Emms,  Prev: Interactive Playlists,  Up: Top
 
 15 Markable Playlists
 *********************
@@ -1343,7 +1343,7 @@ are useful for the elisp programer to handle marked tracks.
      'mapcar').
 
 
-File: docVA7MdE.info,  Node: Extending Emms,  Next: The Browser,  Prev: Markable Playlists,  Up: Top
+File: doc2suwKI.info,  Node: Extending Emms,  Next: The Browser,  Prev: Markable Playlists,  Up: Top
 
 16 Extending Emms
 *****************
@@ -1358,7 +1358,7 @@ customise it to your needs.
 * More Complex Player::      Example of a complex player using 'mpg321'.
 
 
-File: docVA7MdE.info,  Node: New Player,  Next: Simple Player for `play',  Up: Extending Emms
+File: doc2suwKI.info,  Node: New Player,  Next: Simple Player for `play',  Up: Extending Emms
 
 16.1 New Player
 ===============
@@ -1369,7 +1369,7 @@ player.  We will start with an easy example that shows how we can use
 the 'play' command under Unix to play our WAV files.
 
 
-File: docVA7MdE.info,  Node: Simple Player for `play',  Next: More Complex Player,  Prev: New Player,  Up: Extending Emms
+File: doc2suwKI.info,  Node: Simple Player for `play',  Next: More Complex Player,  Prev: New Player,  Up: Extending Emms
 
 16.2 Simple Player for 'play'
 =============================
@@ -1410,7 +1410,7 @@ take one song as argument and stop after playing that particular song.
 For any other concept you will need to customise emms a bit more...
 
 
-File: docVA7MdE.info,  Node: More Complex Player,  Prev: Simple Player for `play',  Up: Extending Emms
+File: doc2suwKI.info,  Node: More Complex Player,  Prev: Simple Player for `play',  Up: Extending Emms
 
 16.3 More Complex Player
 ========================
@@ -1483,7 +1483,7 @@ test if there are other files to play and close the process otherwise.
 'emms-mpg321-remote-pause' for example.
 
 
-File: docVA7MdE.info,  Node: The Browser,  Next: Sorting Playlists,  Prev: Extending Emms,  Up: Top
+File: doc2suwKI.info,  Node: The Browser,  Next: Sorting Playlists,  Prev: Extending Emms,  Up: Top
 
 17 The Browser
 **************
@@ -1512,7 +1512,7 @@ populated.
 * Changing Looks::        Changing the tree structure, display format and faces.
 
 
-File: docVA7MdE.info,  Node: Browser Interface,  Next: Filtering Tracks,  Up: The Browser
+File: doc2suwKI.info,  Node: Browser Interface,  Next: Filtering Tracks,  Up: The Browser
 
 17.1 Browser Interface
 ======================
@@ -1633,7 +1633,7 @@ keybindings.
      Lookup the album using Wikipedia.
 
 
-File: docVA7MdE.info,  Node: Filtering Tracks,  Next: Displaying Covers,  Prev: Browser Interface,  Up: The Browser
+File: doc2suwKI.info,  Node: Filtering Tracks,  Next: Displaying Covers,  Prev: Browser Interface,  Up: The Browser
 
 17.2 Filtering Tracks
 =====================
@@ -1691,7 +1691,7 @@ functions to check the type of a file, etc.
                (emms-browser-filter-only-dir "~/Media/pending") track)))))
 
 
-File: docVA7MdE.info,  Node: Displaying Covers,  Next: Changing Looks,  Prev: Filtering Tracks,  Up: The Browser
+File: doc2suwKI.info,  Node: Displaying Covers,  Next: Changing Looks,  Prev: Filtering Tracks,  Up: The Browser
 
 17.3 Displaying Covers
 ======================
@@ -1740,7 +1740,7 @@ the following code to your .emacs:
 (http://repose.cx/cover_small.jpg).
 
 
-File: docVA7MdE.info,  Node: Changing Looks,  Prev: Displaying Covers,  Up: The Browser
+File: doc2suwKI.info,  Node: Changing Looks,  Prev: Displaying Covers,  Up: The Browser
 
 17.4 Changing Looks
 ===================
@@ -1830,7 +1830,7 @@ initial "info-" part.  For example, to change the artist face, type M-x
 'customize-face' 'emms-browser-artist-face'.
 
 
-File: docVA7MdE.info,  Node: Sorting Playlists,  Next: Persistent Playlists,  Prev: The Browser,  Up: Top
+File: doc2suwKI.info,  Node: Sorting Playlists,  Next: Persistent Playlists,  Prev: The Browser,  Up: Top
 
 18 Sorting Playlists
 ********************
@@ -1886,7 +1886,7 @@ preceded by a prefix.  'emms-playlist-sort' can be loaded by invoking:
      Alias for 'emms-playlist-sort-by-random' and 'emms-shuffle'.
 
 
-File: docVA7MdE.info,  Node: Persistent Playlists,  Next: Editing Tracks,  Prev: Sorting Playlists,  Up: Top
+File: doc2suwKI.info,  Node: Persistent Playlists,  Next: Editing Tracks,  Prev: Sorting Playlists,  Up: Top
 
 19 Persistent Playlists
 ***********************
@@ -1923,7 +1923,7 @@ start playback afterwards, you can tweak this variable.
      'emms-history-load' was invoked.  The default value is nil.
 
 
-File: docVA7MdE.info,  Node: Editing Tracks,  Next: Emms Mode Line,  Prev: Persistent Playlists,  Up: Top
+File: doc2suwKI.info,  Node: Editing Tracks,  Next: Emms Mode Line,  Prev: Persistent Playlists,  Up: Top
 
 20 Editing Tracks
 *****************
@@ -2016,7 +2016,7 @@ mark some tracks.  Then hit 'R' which calls this function:
      tracks according to the value of 'emms-tag-editor-rename-format'.
 
 
-File: docVA7MdE.info,  Node: Emms Mode Line,  Next: Limiting,  Prev: Editing Tracks,  Up: Top
+File: doc2suwKI.info,  Node: Emms Mode Line,  Next: Limiting,  Prev: Editing Tracks,  Up: Top
 
 21 Emms Mode Line
 *****************
@@ -2061,7 +2061,7 @@ call 'emms-playing-time-enable-display' and
      Remove playing time from mode line.
 
 
-File: docVA7MdE.info,  Node: Limiting,  Next: Music Player Daemon,  Prev: Emms Mode Line,  Up: Top
+File: doc2suwKI.info,  Node: Limiting,  Next: Music Player Daemon,  Prev: Emms Mode Line,  Up: Top
 
 22 Limiting
 ***********
@@ -2124,7 +2124,7 @@ then the derived playlist becomes current.
      Switch to the original playlist buffer (if it still exists).
 
 
-File: docVA7MdE.info,  Node: Music Player Daemon,  Next: Lyrics,  Prev: Limiting,  Up: Top
+File: doc2suwKI.info,  Node: Music Player Daemon,  Next: Lyrics,  Prev: Limiting,  Up: Top
 
 23 Music Player Daemon
 **********************
@@ -2237,7 +2237,7 @@ To activate this, add the following to your .emacs.
      (setq emms-volume-change-function 'emms-volume-mpd-change)
 
 
-File: docVA7MdE.info,  Node: Lyrics,  Next: Volume,  Prev: Music Player Daemon,  Up: Top
+File: doc2suwKI.info,  Node: Lyrics,  Next: Volume,  Prev: Music Player Daemon,  Up: Top
 
 24 Lyrics
 *********
@@ -2306,7 +2306,7 @@ functions:
      Toggle displaying Emms lyrics.
 
 
-File: docVA7MdE.info,  Node: Volume,  Next: Streaming Audio,  Prev: Lyrics,  Up: Top
+File: doc2suwKI.info,  Node: Volume,  Next: Streaming Audio,  Prev: Lyrics,  Up: Top
 
 25 Volume
 *********
@@ -2359,7 +2359,7 @@ instead of pressing 'C-c +' six times to increase volume by six steps of
 of the box, see EMMS-VOLUME-CHANGE-FUNCTION.
 
 
-File: docVA7MdE.info,  Node: Streaming Audio,  Next: APE / FLAC Commands,  Prev: Volume,  Up: Top
+File: doc2suwKI.info,  Node: Streaming Audio,  Next: APE / FLAC Commands,  Prev: Volume,  Up: Top
 
 26 Streaming Audio
 ******************
@@ -2389,7 +2389,7 @@ project over the years by people who enjoy Emms.  We hope you will enjoy
 them too, and invite you to send in your suggestions to add to the list.
 
 
-File: docVA7MdE.info,  Node: APE / FLAC Commands,  Next: Bookmarks,  Prev: Streaming Audio,  Up: Top
+File: doc2suwKI.info,  Node: APE / FLAC Commands,  Next: Bookmarks,  Prev: Streaming Audio,  Up: Top
 
 27 APE / FLAC Commands
 **********************
@@ -2411,7 +2411,7 @@ information for APE / FLAC itself.
      Play previous track from .cue file
 
 
-File: docVA7MdE.info,  Node: Bookmarks,  Next: Managing Playlists,  Prev: APE / FLAC Commands,  Up: Top
+File: doc2suwKI.info,  Node: Bookmarks,  Next: Managing Playlists,  Prev: APE / FLAC Commands,  Up: Top
 
 28 Bookmarks
 ************
@@ -2431,7 +2431,7 @@ respectively.
 emms-bookmarks-clear'.
 
 
-File: docVA7MdE.info,  Node: Managing Playlists,  Next: GNU FM,  Prev: Bookmarks,  Up: Top
+File: doc2suwKI.info,  Node: Managing Playlists,  Next: GNU FM,  Prev: Bookmarks,  Up: Top
 
 29 Managing Playlists
 *********************
@@ -2473,7 +2473,7 @@ following commands are available:
      Kill the playlist manager.
 
 
-File: docVA7MdE.info,  Node: GNU FM,  Next: Listenbrainz,  Prev: Managing Playlists,  Up: Top
+File: doc2suwKI.info,  Node: GNU FM,  Next: Listenbrainz,  Prev: Managing Playlists,  Up: Top
 
 30 GNU FM
 *********
@@ -2509,7 +2509,7 @@ init-file by setting these variables:
 * GNU FM Streaming:: Streaming music from a GNU FM server.
 
 
-File: docVA7MdE.info,  Node: Uploading Track Information,  Next: GNU FM Streaming,  Up: GNU FM
+File: doc2suwKI.info,  Node: Uploading Track Information,  Next: GNU FM Streaming,  Up: GNU FM
 
 30.1 Uploading Track Information
 ================================
@@ -2532,7 +2532,7 @@ be uploaded to the server when the track's playback ends.  You can
 disable this behavior with 'emms-librefm-scrobbler-disable'.
 
 
-File: docVA7MdE.info,  Node: GNU FM Streaming,  Prev: Uploading Track Information,  Up: GNU FM
+File: doc2suwKI.info,  Node: GNU FM Streaming,  Prev: Uploading Track Information,  Up: GNU FM
 
 30.2 GNU FM Streaming
 =====================
@@ -2549,7 +2549,7 @@ setup level.
 you wish to listen to, for example "librefm://globaltags/Classical".
 
 
-File: docVA7MdE.info,  Node: Listenbrainz,  Next: D-Bus,  Prev: GNU FM,  Up: Top
+File: doc2suwKI.info,  Node: Listenbrainz,  Next: D-Bus,  Prev: GNU FM,  Up: Top
 
 31 Listenbrainz
 ***************
@@ -2580,7 +2580,7 @@ ends.  You can disable this behavior with
 'emms-listenbrainz-scrobbler-disable'.
 
 
-File: docVA7MdE.info,  Node: D-Bus,  Next: Copying,  Prev: Listenbrainz,  Up: Top
+File: doc2suwKI.info,  Node: D-Bus,  Next: Copying,  Prev: Listenbrainz,  Up: Top
 
 32 D-Bus
 ********
@@ -2600,7 +2600,7 @@ with 'emms-mpris-disable'.
 not complete: changing the volume is not currently supported.
 
 
-File: docVA7MdE.info,  Node: Copying,  Next: The GNU FDL,  Prev: Extending Emms,  Up: Top
+File: doc2suwKI.info,  Node: Copying,  Next: The GNU FDL,  Prev: Extending Emms,  Up: Top
 
 GNU General Public License
 **************************
@@ -3312,7 +3312,7 @@ GNU Lesser General Public License instead of this License.  But first,
 please read <http://www.gnu.org/philosophy/why-not-lgpl.html>.
 
 
-File: docVA7MdE.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying,  Up: Top
+File: doc2suwKI.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying,  Up: Top
 
 33 GNU Free Documentation License
 *********************************
@@ -3741,7 +3741,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docVA7MdE.info,  Node: Concept Index,  Next: Function Index,  Prev: The GNU FDL,  Up: Top
+File: doc2suwKI.info,  Node: Concept Index,  Next: Function Index,  Prev: The GNU FDL,  Up: Top
 
 Concept Index
 *************
@@ -3818,7 +3818,7 @@ Concept Index
 * website:                               Getting Help.          (line 6)
 
 
-File: docVA7MdE.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
+File: doc2suwKI.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
 
 Function Index
 **************
@@ -4055,7 +4055,7 @@ Function Index
                                                               (line  68)
 
 
-File: docVA7MdE.info,  Node: Variable Index,  Next: Keybinding Index,  Prev: Function Index,  Up: Top
+File: doc2suwKI.info,  Node: Variable Index,  Next: Keybinding Index,  Prev: Function Index,  Up: Top
 
 Variable Index
 **************
@@ -4097,7 +4097,7 @@ Variable Index
 * emms-volume-mode-timeout:              Volume.              (line  42)
 
 
-File: docVA7MdE.info,  Node: Keybinding Index,  Prev: Variable Index,  Up: Top
+File: doc2suwKI.info,  Node: Keybinding Index,  Prev: Variable Index,  Up: Top
 
 Keybinding Index
 ****************
