@@ -4,7 +4,7 @@
 
 ;; Author: Jorgen Schäfer <forcer@forcix.cx>, the Emms developers (see AUTHORS file)
 ;; Maintainer: Yoni Rabkin <yrk@gnu.org>
-;; Version: 20.1
+;; Version: 20.2
 ;; Keywords: emms, mp3, ogg, flac, music, mpeg, video, multimedia
 ;; Package-Type: multi
 ;; Package-Requires: ((cl-lib "0.5") (nadvice "0.3") (seq))
@@ -46,7 +46,7 @@
 (require 'emms-compat)
 (require 'seq)
 
-(defvar emms-version "20.1"
+(defvar emms-version "20.2"
   "EMMS version string.")
 
 ;;; User Customization
@@ -1637,7 +1637,10 @@ This should only be done by the current player itself."
       (run-hooks 'emms-player-stopped-hook)
     (sleep-for emms-player-delay)
     (run-hooks 'emms-player-finished-hook)
-    (funcall emms-player-next-function)))
+    ;; switch to the current playlist to pick up the values of
+    ;; buffer-local variables
+    (with-current-emms-playlist
+      (funcall emms-player-next-function))))
 
 (defun emms-player-pause ()
   "Pause the current EMMS player."
