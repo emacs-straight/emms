@@ -1,4 +1,4 @@
-This is docDjnM1h.info, produced by makeinfo version 6.8 from
+This is doc1Ff7Ln.info, produced by makeinfo version 6.8 from
 emms.texinfo.
 
 (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016,
@@ -15,7 +15,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docDjnM1h.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
+File: doc1Ff7Ln.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
 
 Emms Manual
 ***********
@@ -108,7 +108,7 @@ Extending Emms
 * More Complex Player::      Example of a complex player using 'mpg321'.
 
 
-File: docDjnM1h.info,  Node: Introduction,  Next: Quickstart Guide,  Up: Top
+File: doc1Ff7Ln.info,  Node: Introduction,  Next: Quickstart Guide,  Up: Top
 
 1 Introduction
 **************
@@ -146,7 +146,7 @@ functionality beyond the core.
 using 'M-x customize' or by changing the variables directly.
 
 
-File: docDjnM1h.info,  Node: Quickstart Guide,  Next: Installation,  Prev: Introduction,  Up: Top
+File: doc1Ff7Ln.info,  Node: Quickstart Guide,  Next: Installation,  Prev: Introduction,  Up: Top
 
 2 Quickstart Guide
 ******************
@@ -216,7 +216,7 @@ the basic commands (*note Basic Commands::), the interactive playlists
 irc (irc.libera.chat), and Emms has a mailing list at emms-help@gnu.org.
 
 
-File: docDjnM1h.info,  Node: Installation,  Next: Setup,  Prev: Quickstart Guide,  Up: Top
+File: doc1Ff7Ln.info,  Node: Installation,  Next: Setup,  Prev: Quickstart Guide,  Up: Top
 
 3 Installation
 **************
@@ -236,7 +236,7 @@ add:
 * Compiling Emms::      Compiling Emms into Byte-Code.
 
 
-File: docDjnM1h.info,  Node: Compiling Emms,  Up: Installation
+File: doc1Ff7Ln.info,  Node: Compiling Emms,  Up: Installation
 
 3.1 Compiling Emms
 ==================
@@ -263,7 +263,7 @@ have the appropriate permissions to do so on your system).
 run Emms just fine without byte compiling it.
 
 
-File: docDjnM1h.info,  Node: Setup,  Next: Configuration,  Prev: Installation,  Up: Top
+File: doc1Ff7Ln.info,  Node: Setup,  Next: Configuration,  Prev: Installation,  Up: Top
 
 4 Setup
 *******
@@ -293,7 +293,7 @@ list of media players.
 by looking at the existing function definitions in 'emms-setup.el'.
 
 
-File: docDjnM1h.info,  Node: Configuration,  Next: Getting Help,  Prev: Setup,  Up: Top
+File: doc1Ff7Ln.info,  Node: Configuration,  Next: Getting Help,  Prev: Setup,  Up: Top
 
 5 Configuration
 ***************
@@ -335,7 +335,7 @@ mechanism provided by Emacs.
 * Setup Examples::              Examples of ways to setup Emms.
 
 
-File: docDjnM1h.info,  Node: Finding files and speed,  Next: Setup Examples,  Up: Configuration
+File: doc1Ff7Ln.info,  Node: Finding files and speed,  Next: Setup Examples,  Up: Configuration
 
 5.1 Finding files and speed
 ===========================
@@ -357,7 +357,7 @@ installed.
 EMMS-SOURCE-FILE-DIRECTORY-TREE-FUNCTION.
 
 
-File: docDjnM1h.info,  Node: Setup Examples,  Prev: Finding files and speed,  Up: Configuration
+File: doc1Ff7Ln.info,  Node: Setup Examples,  Prev: Finding files and speed,  Up: Configuration
 
 5.2 Setup Examples
 ==================
@@ -408,7 +408,7 @@ special arguments to a specific player backend.
         emms-player-mpv-parameters '("--quiet" "--really-quiet" "--no-audio-display" "--force-window=no" "--vo=null"))
 
 
-File: docDjnM1h.info,  Node: Getting Help,  Next: Formats and Freedom,  Prev: Configuration,  Up: Top
+File: doc1Ff7Ln.info,  Node: Getting Help,  Next: Formats and Freedom,  Prev: Configuration,  Up: Top
 
 6 Getting Help
 **************
@@ -424,7 +424,7 @@ newsgroup which mirrors this mailing address at gmane.emacs.emms.user.
    Emms also has a website at <http://www.gnu.org/software/emms/>.
 
 
-File: docDjnM1h.info,  Node: Formats and Freedom,  Next: Basic Commands,  Prev: Getting Help,  Up: Top
+File: doc1Ff7Ln.info,  Node: Formats and Freedom,  Next: Basic Commands,  Prev: Getting Help,  Up: Top
 
 7 Formats and Freedom
 *********************
@@ -451,7 +451,7 @@ code for a reference implementation freely available.  For more
 information about FLAC, go to <http://flac.sourceforge.net/>.
 
 
-File: docDjnM1h.info,  Node: Basic Commands,  Next: The Core File,  Prev: Formats and Freedom,  Up: Top
+File: doc1Ff7Ln.info,  Node: Basic Commands,  Next: The Core File,  Prev: Formats and Freedom,  Up: Top
 
 8 Basic Commands
 ****************
@@ -520,18 +520,23 @@ basic user commands (which you might want to bind to keystrokes):
      EMMS-PLAYLIST-SHUFFLE-FUNCTION.
  -- Function: emms-sort
      Sort the current playlist.  This uses EMMS-PLAYLIST-SORT-FUNCTION.
+ -- Function: emms-lock-queue
+     Lock the current active playlist to its playlist.
+     EMMS-PLAYLIST-SORT-FUNCTION.
+ -- Function: emms-unlock-queue
+     Unlock the current active playlist from its playlist.
+     EMMS-PLAYLIST-SORT-FUNCTION.
  -- Function: emms-show &optional insertp
      Describe the current Emms track in the minibuffer.  If INSERTP is
      non-nil, insert the description into the current buffer instead.
      This function uses EMMS-SHOW-FORMAT to format the current track.
-
    The command 'emms-show-all' will pop up a window with the complete
 information about the track being played.  'emms-show-all' is provided
 by 'emms-show-all.el', which is included in the 'emms-all' setup level.
 See *Note Setup::.
 
 
-File: docDjnM1h.info,  Node: The Core File,  Next: Sources,  Prev: Basic Commands,  Up: Top
+File: doc1Ff7Ln.info,  Node: The Core File,  Next: Sources,  Prev: Basic Commands,  Up: Top
 
 9 The Core File
 ***************
@@ -546,7 +551,7 @@ music, generating playlists and defining players.
 * Core Functions::     Providing the basic functionality of Emms.
 
 
-File: docDjnM1h.info,  Node: User Variables,  Next: Hooks,  Up: The Core File
+File: doc1Ff7Ln.info,  Node: User Variables,  Next: Hooks,  Up: The Core File
 
 9.1 User Variables
 ==================
@@ -571,7 +576,7 @@ The core file defines a number of user variables.
      first track should be sorted before the second (see also 'sort').
 
 
-File: docDjnM1h.info,  Node: Hooks,  Next: Core Functions,  Prev: User Variables,  Up: The Core File
+File: doc1Ff7Ln.info,  Node: Hooks,  Next: Core Functions,  Prev: User Variables,  Up: The Core File
 
 9.2 Hooks
 =========
@@ -604,7 +609,7 @@ Emms.
      EMMS-PLAYER-PAUSED-P to find the current state.
 
 
-File: docDjnM1h.info,  Node: Core Functions,  Prev: Hooks,  Up: The Core File
+File: doc1Ff7Ln.info,  Node: Core Functions,  Prev: Hooks,  Up: The Core File
 
 9.3 Core Functions
 ==================
@@ -695,7 +700,7 @@ of Emms.
 Commands::.
 
 
-File: docDjnM1h.info,  Node: Sources,  Next: Simple Players,  Prev: The Core File,  Up: Top
+File: doc1Ff7Ln.info,  Node: Sources,  Next: Simple Players,  Prev: The Core File,  Up: Top
 
 10 Sources
 **********
@@ -755,7 +760,7 @@ be easy.
      Search for REGEXP and display the results in a locate buffer
 
 
-File: docDjnM1h.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  Up: Top
+File: doc1Ff7Ln.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  Up: Top
 
 11 Simple Players
 *****************
@@ -780,7 +785,7 @@ File: docDjnM1h.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  
      and the sentinel string STR.
 
 
-File: docDjnM1h.info,  Node: Playlists,  Next: Track Information,  Prev: Simple Players,  Up: Top
+File: doc1Ff7Ln.info,  Node: Playlists,  Next: Track Information,  Prev: Simple Players,  Up: Top
 
 12 Playlists
 ************
@@ -814,7 +819,7 @@ the tracks immediately.
 EMMS-PLAYLIST-BUFFER.
 
 
-File: docDjnM1h.info,  Node: Track Information,  Next: Interactive Playlists,  Prev: Playlists,  Up: Top
+File: doc1Ff7Ln.info,  Node: Track Information,  Next: Interactive Playlists,  Prev: Playlists,  Up: Top
 
 13 Track Information
 ********************
@@ -930,7 +935,7 @@ called for each track.
 * Defining Info Methods::    How to define new info methods.
 
 
-File: docDjnM1h.info,  Node: Metadata Utilities,  Next: Defining Info Methods,  Up: Track Information
+File: doc1Ff7Ln.info,  Node: Metadata Utilities,  Next: Defining Info Methods,  Up: Track Information
 
 13.1 Metadata Utilities
 =======================
@@ -1056,7 +1061,7 @@ initialization file:
      (add-to-list 'emms-info-functions 'emms-info-opusinfo)
 
 
-File: docDjnM1h.info,  Node: Defining Info Methods,  Prev: Metadata Utilities,  Up: Track Information
+File: doc1Ff7Ln.info,  Node: Defining Info Methods,  Prev: Metadata Utilities,  Up: Track Information
 
 13.2 Defining Info Methods
 ==========================
@@ -1146,7 +1151,7 @@ the keys listed above; for example "album" and "artist" form info
 symbols 'info-album' and 'info-artist'.
 
 
-File: docDjnM1h.info,  Node: Interactive Playlists,  Next: Markable Playlists,  Prev: Track Information,  Up: Top
+File: doc1Ff7Ln.info,  Node: Interactive Playlists,  Next: Markable Playlists,  Prev: Track Information,  Up: Top
 
 14 Interactive Playlists
 ************************
@@ -1180,6 +1185,9 @@ actions on the current playlist.
      Add files in the playlist at point to the current playlist buffer.
      If we are in the current playlist, make a new playlist buffer and
      set it as current.
+
+'i'
+     Insert track at point into active playlist.
 
 'b'
      Set the current playlist buffer.
@@ -1272,7 +1280,7 @@ program and can therefore be used to include titles and annotations
 within the playlist.
 
 
-File: docDjnM1h.info,  Node: Markable Playlists,  Next: Extending Emms,  Prev: Interactive Playlists,  Up: Top
+File: doc1Ff7Ln.info,  Node: Markable Playlists,  Next: Extending Emms,  Prev: Interactive Playlists,  Up: Top
 
 15 Markable Playlists
 *********************
@@ -1343,7 +1351,7 @@ are useful for the elisp programer to handle marked tracks.
      'mapcar').
 
 
-File: docDjnM1h.info,  Node: Extending Emms,  Next: The Browser,  Prev: Markable Playlists,  Up: Top
+File: doc1Ff7Ln.info,  Node: Extending Emms,  Next: The Browser,  Prev: Markable Playlists,  Up: Top
 
 16 Extending Emms
 *****************
@@ -1358,7 +1366,7 @@ customise it to your needs.
 * More Complex Player::      Example of a complex player using 'mpg321'.
 
 
-File: docDjnM1h.info,  Node: New Player,  Next: Simple Player for `play',  Up: Extending Emms
+File: doc1Ff7Ln.info,  Node: New Player,  Next: Simple Player for `play',  Up: Extending Emms
 
 16.1 New Player
 ===============
@@ -1369,7 +1377,7 @@ player.  We will start with an easy example that shows how we can use
 the 'play' command under Unix to play our WAV files.
 
 
-File: docDjnM1h.info,  Node: Simple Player for `play',  Next: More Complex Player,  Prev: New Player,  Up: Extending Emms
+File: doc1Ff7Ln.info,  Node: Simple Player for `play',  Next: More Complex Player,  Prev: New Player,  Up: Extending Emms
 
 16.2 Simple Player for 'play'
 =============================
@@ -1410,7 +1418,7 @@ take one song as argument and stop after playing that particular song.
 For any other concept you will need to customise emms a bit more...
 
 
-File: docDjnM1h.info,  Node: More Complex Player,  Prev: Simple Player for `play',  Up: Extending Emms
+File: doc1Ff7Ln.info,  Node: More Complex Player,  Prev: Simple Player for `play',  Up: Extending Emms
 
 16.3 More Complex Player
 ========================
@@ -1483,7 +1491,7 @@ test if there are other files to play and close the process otherwise.
 'emms-mpg321-remote-pause' for example.
 
 
-File: docDjnM1h.info,  Node: The Browser,  Next: Sorting Playlists,  Prev: Extending Emms,  Up: Top
+File: doc1Ff7Ln.info,  Node: The Browser,  Next: Sorting Playlists,  Prev: Extending Emms,  Up: Top
 
 17 The Browser
 **************
@@ -1512,7 +1520,7 @@ populated.
 * Changing Looks::        Changing the tree structure, display format and faces.
 
 
-File: docDjnM1h.info,  Node: Browser Interface,  Next: Filtering Tracks,  Up: The Browser
+File: doc1Ff7Ln.info,  Node: Browser Interface,  Next: Filtering Tracks,  Up: The Browser
 
 17.1 Browser Interface
 ======================
@@ -1633,7 +1641,7 @@ keybindings.
      Lookup the album using Wikipedia.
 
 
-File: docDjnM1h.info,  Node: Filtering Tracks,  Next: Displaying Covers,  Prev: Browser Interface,  Up: The Browser
+File: doc1Ff7Ln.info,  Node: Filtering Tracks,  Next: Displaying Covers,  Prev: Browser Interface,  Up: The Browser
 
 17.2 Filtering Tracks
 =====================
@@ -1691,7 +1699,7 @@ functions to check the type of a file, etc.
                (emms-browser-filter-only-dir "~/Media/pending") track)))))
 
 
-File: docDjnM1h.info,  Node: Displaying Covers,  Next: Changing Looks,  Prev: Filtering Tracks,  Up: The Browser
+File: doc1Ff7Ln.info,  Node: Displaying Covers,  Next: Changing Looks,  Prev: Filtering Tracks,  Up: The Browser
 
 17.3 Displaying Covers
 ======================
@@ -1740,7 +1748,7 @@ the following code to your .emacs:
 (http://repose.cx/cover_small.jpg).
 
 
-File: docDjnM1h.info,  Node: Changing Looks,  Prev: Displaying Covers,  Up: The Browser
+File: doc1Ff7Ln.info,  Node: Changing Looks,  Prev: Displaying Covers,  Up: The Browser
 
 17.4 Changing Looks
 ===================
@@ -1830,7 +1838,7 @@ initial "info-" part.  For example, to change the artist face, type M-x
 'customize-face' 'emms-browser-artist-face'.
 
 
-File: docDjnM1h.info,  Node: Sorting Playlists,  Next: Persistent Playlists,  Prev: The Browser,  Up: Top
+File: doc1Ff7Ln.info,  Node: Sorting Playlists,  Next: Persistent Playlists,  Prev: The Browser,  Up: Top
 
 18 Sorting Playlists
 ********************
@@ -1845,6 +1853,9 @@ preceded by a prefix.  'emms-playlist-sort' can be loaded by invoking:
 
  -- Function: emms-playlist-sort-by-info-artist
      Sort by artist name.
+
+ -- Function: emms-playlist-sort-by-info-albumartist
+     Sort by albumartist name.
 
  -- Function: emms-playlist-sort-by-play-count
      Sort by number of times the track has been played.
@@ -1886,7 +1897,7 @@ preceded by a prefix.  'emms-playlist-sort' can be loaded by invoking:
      Alias for 'emms-playlist-sort-by-random' and 'emms-shuffle'.
 
 
-File: docDjnM1h.info,  Node: Persistent Playlists,  Next: Editing Tracks,  Prev: Sorting Playlists,  Up: Top
+File: doc1Ff7Ln.info,  Node: Persistent Playlists,  Next: Editing Tracks,  Prev: Sorting Playlists,  Up: Top
 
 19 Persistent Playlists
 ***********************
@@ -1923,7 +1934,7 @@ start playback afterwards, you can tweak this variable.
      'emms-history-load' was invoked.  The default value is nil.
 
 
-File: docDjnM1h.info,  Node: Editing Tracks,  Next: Emms Mode Line,  Prev: Persistent Playlists,  Up: Top
+File: doc1Ff7Ln.info,  Node: Editing Tracks,  Next: Emms Mode Line,  Prev: Persistent Playlists,  Up: Top
 
 20 Editing Tracks
 *****************
@@ -2016,7 +2027,7 @@ mark some tracks.  Then hit 'R' which calls this function:
      tracks according to the value of 'emms-tag-editor-rename-format'.
 
 
-File: docDjnM1h.info,  Node: Emms Mode Line,  Next: Limiting,  Prev: Editing Tracks,  Up: Top
+File: doc1Ff7Ln.info,  Node: Emms Mode Line,  Next: Limiting,  Prev: Editing Tracks,  Up: Top
 
 21 Emms Mode Line
 *****************
@@ -2061,7 +2072,7 @@ call 'emms-playing-time-enable-display' and
      Remove playing time from mode line.
 
 
-File: docDjnM1h.info,  Node: Limiting,  Next: Music Player Daemon,  Prev: Emms Mode Line,  Up: Top
+File: doc1Ff7Ln.info,  Node: Limiting,  Next: Music Player Daemon,  Prev: Emms Mode Line,  Up: Top
 
 22 Limiting
 ***********
@@ -2079,6 +2090,11 @@ then the derived playlist becomes current.
      Create a new playlist buffer and populate it with tracks whose
      artist info field matches the given regular expression (default:
      the artist info field of the track at point).
+
+'/ A'
+     Create a new playlist buffer and populate it with tracks whose
+     album artist info field matches the given regular expression
+     (default: the album artist info field of the track at point).
 
 '/ b'
      Create a new playlist buffer and populate it with tracks whose
@@ -2124,7 +2140,7 @@ then the derived playlist becomes current.
      Switch to the original playlist buffer (if it still exists).
 
 
-File: docDjnM1h.info,  Node: Music Player Daemon,  Next: Lyrics,  Prev: Limiting,  Up: Top
+File: doc1Ff7Ln.info,  Node: Music Player Daemon,  Next: Lyrics,  Prev: Limiting,  Up: Top
 
 23 Music Player Daemon
 **********************
@@ -2237,7 +2253,7 @@ To activate this, add the following to your .emacs.
      (setq emms-volume-change-function 'emms-volume-mpd-change)
 
 
-File: docDjnM1h.info,  Node: Lyrics,  Next: Volume,  Prev: Music Player Daemon,  Up: Top
+File: doc1Ff7Ln.info,  Node: Lyrics,  Next: Volume,  Prev: Music Player Daemon,  Up: Top
 
 24 Lyrics
 *********
@@ -2324,7 +2340,7 @@ functions:
      Toggle displaying Emms lyrics.
 
 
-File: docDjnM1h.info,  Node: Volume,  Next: Streaming Audio,  Prev: Lyrics,  Up: Top
+File: doc1Ff7Ln.info,  Node: Volume,  Next: Streaming Audio,  Prev: Lyrics,  Up: Top
 
 25 Volume
 *********
@@ -2377,7 +2393,7 @@ instead of pressing 'C-c +' six times to increase volume by six steps of
 of the box, see EMMS-VOLUME-CHANGE-FUNCTION.
 
 
-File: docDjnM1h.info,  Node: Streaming Audio,  Next: APE / FLAC Commands,  Prev: Volume,  Up: Top
+File: doc1Ff7Ln.info,  Node: Streaming Audio,  Next: APE / FLAC Commands,  Prev: Volume,  Up: Top
 
 26 Streaming Audio
 ******************
@@ -2407,7 +2423,7 @@ project over the years by people who enjoy Emms.  We hope you will enjoy
 them too, and invite you to send in your suggestions to add to the list.
 
 
-File: docDjnM1h.info,  Node: APE / FLAC Commands,  Next: Bookmarks,  Prev: Streaming Audio,  Up: Top
+File: doc1Ff7Ln.info,  Node: APE / FLAC Commands,  Next: Bookmarks,  Prev: Streaming Audio,  Up: Top
 
 27 APE / FLAC Commands
 **********************
@@ -2429,7 +2445,7 @@ information for APE / FLAC itself.
      Play previous track from .cue file
 
 
-File: docDjnM1h.info,  Node: Bookmarks,  Next: Managing Playlists,  Prev: APE / FLAC Commands,  Up: Top
+File: doc1Ff7Ln.info,  Node: Bookmarks,  Next: Managing Playlists,  Prev: APE / FLAC Commands,  Up: Top
 
 28 Bookmarks
 ************
@@ -2449,7 +2465,7 @@ respectively.
 emms-bookmarks-clear'.
 
 
-File: docDjnM1h.info,  Node: Managing Playlists,  Next: GNU FM,  Prev: Bookmarks,  Up: Top
+File: doc1Ff7Ln.info,  Node: Managing Playlists,  Next: GNU FM,  Prev: Bookmarks,  Up: Top
 
 29 Managing Playlists
 *********************
@@ -2464,6 +2480,10 @@ following commands are available:
 
 'RET'
      Make the buffer at point the Emms playlist buffer and switch to it.
+
+     +
+'V'
+     Visit the playlist at point.
 
 'SPC'
      Make the buffer at point the Emms playlist buffer (but do not
@@ -2491,7 +2511,7 @@ following commands are available:
      Kill the playlist manager.
 
 
-File: docDjnM1h.info,  Node: GNU FM,  Next: Listenbrainz,  Prev: Managing Playlists,  Up: Top
+File: doc1Ff7Ln.info,  Node: GNU FM,  Next: Listenbrainz,  Prev: Managing Playlists,  Up: Top
 
 30 GNU FM
 *********
@@ -2527,7 +2547,7 @@ init-file by setting these variables:
 * GNU FM Streaming:: Streaming music from a GNU FM server.
 
 
-File: docDjnM1h.info,  Node: Uploading Track Information,  Next: GNU FM Streaming,  Up: GNU FM
+File: doc1Ff7Ln.info,  Node: Uploading Track Information,  Next: GNU FM Streaming,  Up: GNU FM
 
 30.1 Uploading Track Information
 ================================
@@ -2550,7 +2570,7 @@ be uploaded to the server when the track's playback ends.  You can
 disable this behavior with 'emms-librefm-scrobbler-disable'.
 
 
-File: docDjnM1h.info,  Node: GNU FM Streaming,  Prev: Uploading Track Information,  Up: GNU FM
+File: doc1Ff7Ln.info,  Node: GNU FM Streaming,  Prev: Uploading Track Information,  Up: GNU FM
 
 30.2 GNU FM Streaming
 =====================
@@ -2567,7 +2587,7 @@ setup level.
 you wish to listen to, for example "librefm://globaltags/Classical".
 
 
-File: docDjnM1h.info,  Node: Listenbrainz,  Next: D-Bus,  Prev: GNU FM,  Up: Top
+File: doc1Ff7Ln.info,  Node: Listenbrainz,  Next: D-Bus,  Prev: GNU FM,  Up: Top
 
 31 Listenbrainz
 ***************
@@ -2598,7 +2618,7 @@ ends.  You can disable this behavior with
 'emms-listenbrainz-scrobbler-disable'.
 
 
-File: docDjnM1h.info,  Node: D-Bus,  Next: Copying,  Prev: Listenbrainz,  Up: Top
+File: doc1Ff7Ln.info,  Node: D-Bus,  Next: Copying,  Prev: Listenbrainz,  Up: Top
 
 32 D-Bus
 ********
@@ -2618,7 +2638,7 @@ with 'emms-mpris-disable'.
 not complete: changing the volume is not currently supported.
 
 
-File: docDjnM1h.info,  Node: Copying,  Next: The GNU FDL,  Prev: Extending Emms,  Up: Top
+File: doc1Ff7Ln.info,  Node: Copying,  Next: The GNU FDL,  Prev: Extending Emms,  Up: Top
 
 GNU General Public License
 **************************
@@ -3330,7 +3350,7 @@ GNU Lesser General Public License instead of this License.  But first,
 please read <http://www.gnu.org/philosophy/why-not-lgpl.html>.
 
 
-File: docDjnM1h.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying,  Up: Top
+File: doc1Ff7Ln.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying,  Up: Top
 
 33 GNU Free Documentation License
 *********************************
@@ -3759,7 +3779,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docDjnM1h.info,  Node: Concept Index,  Next: Function Index,  Prev: The GNU FDL,  Up: Top
+File: doc1Ff7Ln.info,  Node: Concept Index,  Next: Function Index,  Prev: The GNU FDL,  Up: Top
 
 Concept Index
 *************
@@ -3836,7 +3856,7 @@ Concept Index
 * website:                               Getting Help.          (line 6)
 
 
-File: docDjnM1h.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
+File: doc1Ff7Ln.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
 
 Function Index
 **************
@@ -3845,10 +3865,10 @@ Function Index
 * Menu:
 
 * bury-buffer:                           Interactive Playlists.
-                                                              (line  80)
+                                                              (line  83)
 * define-emms-simple-player:             Simple Players.      (line   6)
 * describe-mode:                         Interactive Playlists.
-                                                              (line  90)
+                                                              (line  93)
 * describe-mode <1>:                     Browser Interface.   (line  77)
 * emms-add-directory:                    Basic Commands.      (line  26)
 * emms-add-directory-tree:               Basic Commands.      (line  32)
@@ -3898,6 +3918,7 @@ Function Index
                                                               (line  21)
 * emms-isearch-buffer:                   Browser Interface.   (line  68)
 * emms-locate:                           Sources.             (line  57)
+* emms-lock-queue:                       Basic Commands.      (line  70)
 * emms-lyrics-disable:                   Lyrics.              (line  81)
 * emms-lyrics-enable:                    Lyrics.              (line  78)
 * emms-lyrics-lrclib-get:                Lyrics.              (line  22)
@@ -3916,21 +3937,22 @@ Function Index
 * emms-mark-toggle:                      Markable Playlists.  (line  33)
 * emms-mark-unmark-all:                  Markable Playlists.  (line  30)
 * emms-mark-unmark-forward:              Markable Playlists.  (line  36)
-* emms-metaplaylist-mode-center-current: Managing Playlists.  (line  37)
+* emms-metaplaylist-mode-center-current: Managing Playlists.  (line  41)
+* emms-metaplaylist-mode-goto:           Managing Playlists.  (line  19)
 * emms-metaplaylist-mode-goto-current:   Managing Playlists.  (line  15)
-* emms-metaplaylist-mode-kill-buffer:    Managing Playlists.  (line  34)
-* emms-metaplaylist-mode-new-buffer:     Managing Playlists.  (line  31)
-* emms-metaplaylist-mode-set-active:     Managing Playlists.  (line  18)
-* emms-metaplaylist-mode-update:         Managing Playlists.  (line  28)
+* emms-metaplaylist-mode-kill-buffer:    Managing Playlists.  (line  38)
+* emms-metaplaylist-mode-new-buffer:     Managing Playlists.  (line  35)
+* emms-metaplaylist-mode-set-active:     Managing Playlists.  (line  22)
+* emms-metaplaylist-mode-update:         Managing Playlists.  (line  32)
 * emms-minimalistic:                     Setup.               (line  13)
 * emms-next:                             Basic Commands.      (line  61)
 * emms-next <1>:                         Interactive Playlists.
-                                                              (line  40)
-* emms-next <2>:                         Interactive Playlists.
                                                               (line  43)
+* emms-next <2>:                         Interactive Playlists.
+                                                              (line  46)
 * emms-next-noerror:                     Core Functions.      (line  11)
 * emms-pause:                            Interactive Playlists.
-                                                              (line  49)
+                                                              (line  52)
 * emms-play-directory:                   Basic Commands.      (line  23)
 * emms-play-directory-tree:              Basic Commands.      (line  29)
 * emms-play-dired:                       Sources.             (line  50)
@@ -3954,82 +3976,86 @@ Function Index
 * emms-playing-time-disable-display:     Emms Mode Line.      (line  42)
 * emms-playing-time-enable-display:      Emms Mode Line.      (line  39)
 * emms-playlist-current-selected-track:  Core Functions.      (line  53)
-* emms-playlist-limit-to-all:            Limiting.            (line  61)
-* emms-playlist-limit-to-description:    Limiting.            (line  31)
-* emms-playlist-limit-to-info-album:     Limiting.            (line  21)
+* emms-playlist-limit-to-all:            Limiting.            (line  66)
+* emms-playlist-limit-to-description:    Limiting.            (line  36)
+* emms-playlist-limit-to-info-album:     Limiting.            (line  26)
+* emms-playlist-limit-to-info-albumartist: Limiting.          (line  21)
 * emms-playlist-limit-to-info-artist:    Limiting.            (line  16)
-* emms-playlist-limit-to-info-composer:  Limiting.            (line  26)
-* emms-playlist-limit-to-info-genre:     Limiting.            (line  36)
-* emms-playlist-limit-to-info-performer: Limiting.            (line  46)
-* emms-playlist-limit-to-info-title:     Limiting.            (line  51)
-* emms-playlist-limit-to-info-year:      Limiting.            (line  56)
-* emms-playlist-limit-to-name:           Limiting.            (line  41)
+* emms-playlist-limit-to-info-composer:  Limiting.            (line  31)
+* emms-playlist-limit-to-info-genre:     Limiting.            (line  41)
+* emms-playlist-limit-to-info-performer: Limiting.            (line  51)
+* emms-playlist-limit-to-info-title:     Limiting.            (line  56)
+* emms-playlist-limit-to-info-year:      Limiting.            (line  61)
+* emms-playlist-limit-to-name:           Limiting.            (line  46)
 * emms-playlist-mode-add-contents:       Interactive Playlists.
                                                               (line  32)
 * emms-playlist-mode-center-current:     Interactive Playlists.
-                                                              (line  61)
+                                                              (line  64)
 * emms-playlist-mode-first:              Interactive Playlists.
-                                                              (line  71)
+                                                              (line  74)
 * emms-playlist-mode-go:                 Interactive Playlists.
                                                               (line  15)
 * emms-playlist-mode-insert-newline:     Interactive Playlists.
-                                                              (line 117)
+                                                              (line 120)
 * emms-playlist-mode-kill-track:         Interactive Playlists.
-                                                              (line 107)
+                                                              (line 110)
 * emms-playlist-mode-last:               Interactive Playlists.
-                                                              (line  74)
+                                                              (line  77)
 * emms-playlist-mode-next:               Interactive Playlists.
-                                                              (line  99)
-* emms-playlist-mode-play-current-track: Interactive Playlists.
-                                                              (line  64)
-* emms-playlist-mode-previous:           Interactive Playlists.
                                                               (line 102)
+* emms-playlist-mode-play-current-track: Interactive Playlists.
+                                                              (line  67)
+* emms-playlist-mode-previous:           Interactive Playlists.
+                                                              (line 105)
 * emms-playlist-mode-shift-track-down:   Interactive Playlists.
-                                                              (line  96)
+                                                              (line  99)
 * emms-playlist-mode-shift-track-up:     Interactive Playlists.
-                                                              (line  93)
+                                                              (line  96)
 * emms-playlist-mode-undo:               Browser Interface.   (line  80)
 * emms-playlist-mode-yank:               Interactive Playlists.
-                                                              (line 111)
-* emms-playlist-mode-yank-pop:           Interactive Playlists.
                                                               (line 114)
+* emms-playlist-mode-yank-pop:           Interactive Playlists.
+                                                              (line 117)
 * emms-playlist-new:                     Playlists.           (line  22)
 * emms-playlist-next:                    Core Functions.      (line  17)
+* emms-playlist-playlist-insert-track:   Interactive Playlists.
+                                                              (line  37)
 * emms-playlist-previous:                Core Functions.      (line  19)
 * emms-playlist-save:                    Playlists.           (line  27)
 * emms-playlist-save <1>:                Interactive Playlists.
-                                                              (line  84)
+                                                              (line  87)
 * emms-playlist-set-playlist-buffer:     Interactive Playlists.
-                                                              (line  37)
-* emms-playlist-shuffle:                 Sorting Playlists.   (line  53)
-* emms-playlist-sort-by-file-extension:  Sorting Playlists.   (line  29)
-* emms-playlist-sort-by-file-mtime:      Sorting Playlists.   (line  47)
-* emms-playlist-sort-by-info-album:      Sorting Playlists.   (line  20)
+                                                              (line  40)
+* emms-playlist-shuffle:                 Sorting Playlists.   (line  56)
+* emms-playlist-sort-by-file-extension:  Sorting Playlists.   (line  32)
+* emms-playlist-sort-by-file-mtime:      Sorting Playlists.   (line  50)
+* emms-playlist-sort-by-info-album:      Sorting Playlists.   (line  23)
+* emms-playlist-sort-by-info-albumartist: Sorting Playlists.  (line  17)
 * emms-playlist-sort-by-info-artist:     Sorting Playlists.   (line  14)
-* emms-playlist-sort-by-info-composer:   Sorting Playlists.   (line  41)
-* emms-playlist-sort-by-info-note:       Sorting Playlists.   (line  38)
-* emms-playlist-sort-by-info-performer:  Sorting Playlists.   (line  32)
-* emms-playlist-sort-by-info-title:      Sorting Playlists.   (line  26)
-* emms-playlist-sort-by-info-year:       Sorting Playlists.   (line  35)
-* emms-playlist-sort-by-last-played:     Sorting Playlists.   (line  23)
-* emms-playlist-sort-by-name:            Sorting Playlists.   (line  44)
-* emms-playlist-sort-by-play-count:      Sorting Playlists.   (line  17)
-* emms-playlist-sort-by-random:          Sorting Playlists.   (line  50)
+* emms-playlist-sort-by-info-composer:   Sorting Playlists.   (line  44)
+* emms-playlist-sort-by-info-note:       Sorting Playlists.   (line  41)
+* emms-playlist-sort-by-info-performer:  Sorting Playlists.   (line  35)
+* emms-playlist-sort-by-info-title:      Sorting Playlists.   (line  29)
+* emms-playlist-sort-by-info-year:       Sorting Playlists.   (line  38)
+* emms-playlist-sort-by-last-played:     Sorting Playlists.   (line  26)
+* emms-playlist-sort-by-name:            Sorting Playlists.   (line  47)
+* emms-playlist-sort-by-play-count:      Sorting Playlists.   (line  20)
+* emms-playlist-sort-by-random:          Sorting Playlists.   (line  53)
 * emms-previous:                         Basic Commands.      (line  63)
 * emms-random:                           Core Functions.      (line  21)
 * emms-random <1>:                       Interactive Playlists.
-                                                              (line  77)
+                                                              (line  80)
 * emms-seek:                             Core Functions.      (line  66)
 * emms-seek-backward:                    Core Functions.      (line  85)
 * emms-seek-backward <1>:                Interactive Playlists.
-                                                              (line  55)
+                                                              (line  58)
 * emms-seek-forward:                     Core Functions.      (line  83)
 * emms-seek-forward <1>:                 Interactive Playlists.
-                                                              (line  52)
+                                                              (line  55)
 * emms-seek-to:                          Core Functions.      (line  78)
-* emms-show:                             Basic Commands.      (line  70)
+* emms-show:                             Basic Commands.      (line  76)
 * emms-show <1>:                         Interactive Playlists.
-                                                              (line  58)
+                                                              (line  61)
 * emms-shuffle:                          Basic Commands.      (line  65)
 * emms-smart-browse:                     Browser Interface.   (line  10)
 * emms-sort:                             Basic Commands.      (line  68)
@@ -4048,7 +4074,7 @@ Function Index
 * emms-start:                            Basic Commands.      (line  57)
 * emms-stop:                             Basic Commands.      (line  59)
 * emms-stop <1>:                         Interactive Playlists.
-                                                              (line  46)
+                                                              (line  49)
 * emms-tag-editor-rename:                Editing Tracks.      (line  89)
 * emms-tag-editor-replace-in-tag:        Editing Tracks.      (line  32)
 * emms-tag-editor-set-all:               Editing Tracks.      (line  23)
@@ -4063,18 +4089,19 @@ Function Index
 * emms-track-name:                       Core Functions.      (line  39)
 * emms-track-set:                        Core Functions.      (line  44)
 * emms-track-type:                       Core Functions.      (line  37)
+* emms-unlock-queue:                     Basic Commands.      (line  73)
 * emms-volume-lower:                     Volume.              (line  18)
 * emms-volume-mode-minus:                Volume.              (line  29)
 * emms-volume-mode-plus:                 Volume.              (line  25)
 * emms-volume-raise:                     Volume.              (line  15)
-* kill-this-buffer:                      Managing Playlists.  (line  40)
-* next-line:                             Managing Playlists.  (line  22)
-* previous-line:                         Managing Playlists.  (line  25)
+* kill-this-buffer:                      Managing Playlists.  (line  44)
+* next-line:                             Managing Playlists.  (line  26)
+* previous-line:                         Managing Playlists.  (line  29)
 * scroll-up:                             Interactive Playlists.
-                                                              (line  68)
+                                                              (line  71)
 
 
-File: docDjnM1h.info,  Node: Variable Index,  Next: Keybinding Index,  Prev: Function Index,  Up: Top
+File: doc1Ff7Ln.info,  Node: Variable Index,  Next: Keybinding Index,  Prev: Function Index,  Up: Top
 
 Variable Index
 **************
@@ -4117,7 +4144,7 @@ Variable Index
 * emms-volume-mode-timeout:              Volume.              (line  42)
 
 
-File: docDjnM1h.info,  Node: Keybinding Index,  Prev: Variable Index,  Up: Top
+File: doc1Ff7Ln.info,  Node: Keybinding Index,  Prev: Variable Index,  Up: Top
 
 Keybinding Index
 ****************
@@ -4126,16 +4153,17 @@ Keybinding Index
 * Menu:
 
 * / (emms-browser):                      Browser Interface.   (line  68)
-* / /:                                   Limiting.            (line  61)
+* / /:                                   Limiting.            (line  66)
 * / a:                                   Limiting.            (line  16)
-* / b:                                   Limiting.            (line  21)
-* / c:                                   Limiting.            (line  26)
-* / d:                                   Limiting.            (line  31)
-* / g:                                   Limiting.            (line  36)
-* / n:                                   Limiting.            (line  41)
-* / p:                                   Limiting.            (line  46)
-* / t:                                   Limiting.            (line  51)
-* / y:                                   Limiting.            (line  56)
+* / A:                                   Limiting.            (line  21)
+* / b:                                   Limiting.            (line  26)
+* / c:                                   Limiting.            (line  31)
+* / d:                                   Limiting.            (line  36)
+* / g:                                   Limiting.            (line  41)
+* / n:                                   Limiting.            (line  46)
+* / p:                                   Limiting.            (line  51)
+* / t:                                   Limiting.            (line  56)
+* / y:                                   Limiting.            (line  61)
 * 1 (emms-browser):                      Browser Interface.   (line  41)
 * 2 (emms-browser):                      Browser Interface.   (line  44)
 * 3 (emms-browser):                      Browser Interface.   (line  47)
@@ -4150,18 +4178,18 @@ Keybinding Index
 * b 2 (emms-browser):                    Browser Interface.   (line 107)
 * b 3 (emms-browser):                    Browser Interface.   (line 110)
 * b 4 (emms-browser):                    Browser Interface.   (line 113)
-* C:                                     Managing Playlists.  (line  31)
-* c:                                     Managing Playlists.  (line  37)
+* C:                                     Managing Playlists.  (line  35)
+* c:                                     Managing Playlists.  (line  41)
 * C (emms-browser):                      Browser Interface.   (line  53)
 * C-/ (emms-browser):                    Browser Interface.   (line  80)
 * C-j (emms-browser):                    Browser Interface.   (line  32)
-* C-k:                                   Managing Playlists.  (line  34)
+* C-k:                                   Managing Playlists.  (line  38)
 * d (emms-browser):                      Browser Interface.   (line  59)
 * E (emms-browser):                      Browser Interface.   (line  56)
-* g:                                     Managing Playlists.  (line  28)
-* n:                                     Managing Playlists.  (line  22)
-* p:                                     Managing Playlists.  (line  25)
-* q:                                     Managing Playlists.  (line  40)
+* g:                                     Managing Playlists.  (line  32)
+* n:                                     Managing Playlists.  (line  26)
+* p:                                     Managing Playlists.  (line  29)
+* q:                                     Managing Playlists.  (line  44)
 * q (emms-browser):                      Browser Interface.   (line  62)
 * r (emms-browser):                      Browser Interface.   (line  65)
 * RET:                                   Managing Playlists.  (line  15)
@@ -4170,8 +4198,9 @@ Keybinding Index
 * s a (emms-browser):                    Browser Interface.   (line  95)
 * s s (emms-browser):                    Browser Interface.   (line  98)
 * s t (emms-browser):                    Browser Interface.   (line 101)
-* SPC:                                   Managing Playlists.  (line  18)
+* SPC:                                   Managing Playlists.  (line  22)
 * SPC (emms-browser):                    Browser Interface.   (line  38)
+* v:                                     Managing Playlists.  (line  19)
 * W a p (emms-browser):                  Browser Interface.   (line 116)
 * W a w (emms-browser):                  Browser Interface.   (line 119)
 
@@ -4190,51 +4219,51 @@ Node: Setup Examples13518
 Node: Getting Help15456
 Node: Formats and Freedom16039
 Node: Basic Commands17249
-Node: The Core File20807
-Node: User Variables21246
-Node: Hooks22227
-Node: Core Functions23658
-Node: Sources27095
-Node: Simple Players29744
-Node: Playlists30806
-Node: Track Information32250
-Node: Metadata Utilities36965
-Node: Defining Info Methods41644
-Node: Interactive Playlists43793
-Node: Markable Playlists47021
-Node: Extending Emms49503
-Node: New Player49944
-Node: Simple Player for `play'50338
-Node: More Complex Player52071
-Node: The Browser55074
-Node: Browser Interface56055
-Node: Filtering Tracks58474
-Node: Displaying Covers60257
-Node: Changing Looks62276
-Node: Sorting Playlists65268
-Node: Persistent Playlists66936
-Node: Editing Tracks68100
-Node: Emms Mode Line71779
-Node: Limiting73227
-Node: Music Player Daemon75571
-Node: Lyrics79341
-Node: Volume82340
-Node: Streaming Audio84133
-Ref: Streaming Audio-Footnote-184984
-Node: APE / FLAC Commands85335
-Node: Bookmarks86047
-Node: Managing Playlists86763
-Node: GNU FM87791
-Node: Uploading Track Information89155
-Node: GNU FM Streaming90042
-Node: Listenbrainz90547
-Node: D-Bus91677
-Node: Copying92235
-Node: The GNU FDL129757
-Node: Concept Index152150
-Node: Function Index157159
-Node: Variable Index173705
-Node: Keybinding Index176252
+Node: The Core File21050
+Node: User Variables21489
+Node: Hooks22470
+Node: Core Functions23901
+Node: Sources27338
+Node: Simple Players29987
+Node: Playlists31049
+Node: Track Information32493
+Node: Metadata Utilities37208
+Node: Defining Info Methods41887
+Node: Interactive Playlists44036
+Node: Markable Playlists47318
+Node: Extending Emms49800
+Node: New Player50241
+Node: Simple Player for `play'50635
+Node: More Complex Player52368
+Node: The Browser55371
+Node: Browser Interface56352
+Node: Filtering Tracks58771
+Node: Displaying Covers60554
+Node: Changing Looks62573
+Node: Sorting Playlists65565
+Node: Persistent Playlists67318
+Node: Editing Tracks68482
+Node: Emms Mode Line72161
+Node: Limiting73609
+Node: Music Player Daemon76161
+Node: Lyrics79931
+Node: Volume82930
+Node: Streaming Audio84723
+Ref: Streaming Audio-Footnote-185574
+Node: APE / FLAC Commands85925
+Node: Bookmarks86637
+Node: Managing Playlists87353
+Node: GNU FM88427
+Node: Uploading Track Information89791
+Node: GNU FM Streaming90678
+Node: Listenbrainz91183
+Node: D-Bus92313
+Node: Copying92871
+Node: The GNU FDL130393
+Node: Concept Index152786
+Node: Function Index157795
+Node: Variable Index174843
+Node: Keybinding Index177390
 
 End Tag Table
 
