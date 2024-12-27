@@ -1,4 +1,4 @@
-This is doc1Ff7Ln.info, produced by makeinfo version 6.8 from
+This is docGo6H4A.info, produced by makeinfo version 6.8 from
 emms.texinfo.
 
 (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016,
@@ -15,7 +15,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: doc1Ff7Ln.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
+File: docGo6H4A.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
 
 Emms Manual
 ***********
@@ -108,7 +108,7 @@ Extending Emms
 * More Complex Player::      Example of a complex player using 'mpg321'.
 
 
-File: doc1Ff7Ln.info,  Node: Introduction,  Next: Quickstart Guide,  Up: Top
+File: docGo6H4A.info,  Node: Introduction,  Next: Quickstart Guide,  Up: Top
 
 1 Introduction
 **************
@@ -146,7 +146,7 @@ functionality beyond the core.
 using 'M-x customize' or by changing the variables directly.
 
 
-File: doc1Ff7Ln.info,  Node: Quickstart Guide,  Next: Installation,  Prev: Introduction,  Up: Top
+File: docGo6H4A.info,  Node: Quickstart Guide,  Next: Installation,  Prev: Introduction,  Up: Top
 
 2 Quickstart Guide
 ******************
@@ -216,7 +216,7 @@ the basic commands (*note Basic Commands::), the interactive playlists
 irc (irc.libera.chat), and Emms has a mailing list at emms-help@gnu.org.
 
 
-File: doc1Ff7Ln.info,  Node: Installation,  Next: Setup,  Prev: Quickstart Guide,  Up: Top
+File: docGo6H4A.info,  Node: Installation,  Next: Setup,  Prev: Quickstart Guide,  Up: Top
 
 3 Installation
 **************
@@ -236,7 +236,7 @@ add:
 * Compiling Emms::      Compiling Emms into Byte-Code.
 
 
-File: doc1Ff7Ln.info,  Node: Compiling Emms,  Up: Installation
+File: docGo6H4A.info,  Node: Compiling Emms,  Up: Installation
 
 3.1 Compiling Emms
 ==================
@@ -263,7 +263,7 @@ have the appropriate permissions to do so on your system).
 run Emms just fine without byte compiling it.
 
 
-File: doc1Ff7Ln.info,  Node: Setup,  Next: Configuration,  Prev: Installation,  Up: Top
+File: docGo6H4A.info,  Node: Setup,  Next: Configuration,  Prev: Installation,  Up: Top
 
 4 Setup
 *******
@@ -293,7 +293,7 @@ list of media players.
 by looking at the existing function definitions in 'emms-setup.el'.
 
 
-File: doc1Ff7Ln.info,  Node: Configuration,  Next: Getting Help,  Prev: Setup,  Up: Top
+File: docGo6H4A.info,  Node: Configuration,  Next: Getting Help,  Prev: Setup,  Up: Top
 
 5 Configuration
 ***************
@@ -335,7 +335,7 @@ mechanism provided by Emacs.
 * Setup Examples::              Examples of ways to setup Emms.
 
 
-File: doc1Ff7Ln.info,  Node: Finding files and speed,  Next: Setup Examples,  Up: Configuration
+File: docGo6H4A.info,  Node: Finding files and speed,  Next: Setup Examples,  Up: Configuration
 
 5.1 Finding files and speed
 ===========================
@@ -357,7 +357,7 @@ installed.
 EMMS-SOURCE-FILE-DIRECTORY-TREE-FUNCTION.
 
 
-File: doc1Ff7Ln.info,  Node: Setup Examples,  Prev: Finding files and speed,  Up: Configuration
+File: docGo6H4A.info,  Node: Setup Examples,  Prev: Finding files and speed,  Up: Configuration
 
 5.2 Setup Examples
 ==================
@@ -408,7 +408,7 @@ special arguments to a specific player backend.
         emms-player-mpv-parameters '("--quiet" "--really-quiet" "--no-audio-display" "--force-window=no" "--vo=null"))
 
 
-File: doc1Ff7Ln.info,  Node: Getting Help,  Next: Formats and Freedom,  Prev: Configuration,  Up: Top
+File: docGo6H4A.info,  Node: Getting Help,  Next: Formats and Freedom,  Prev: Configuration,  Up: Top
 
 6 Getting Help
 **************
@@ -424,7 +424,7 @@ newsgroup which mirrors this mailing address at gmane.emacs.emms.user.
    Emms also has a website at <http://www.gnu.org/software/emms/>.
 
 
-File: doc1Ff7Ln.info,  Node: Formats and Freedom,  Next: Basic Commands,  Prev: Getting Help,  Up: Top
+File: docGo6H4A.info,  Node: Formats and Freedom,  Next: Basic Commands,  Prev: Getting Help,  Up: Top
 
 7 Formats and Freedom
 *********************
@@ -451,7 +451,7 @@ code for a reference implementation freely available.  For more
 information about FLAC, go to <http://flac.sourceforge.net/>.
 
 
-File: doc1Ff7Ln.info,  Node: Basic Commands,  Next: The Core File,  Prev: Formats and Freedom,  Up: Top
+File: docGo6H4A.info,  Node: Basic Commands,  Next: The Core File,  Prev: Formats and Freedom,  Up: Top
 
 8 Basic Commands
 ****************
@@ -536,7 +536,7 @@ by 'emms-show-all.el', which is included in the 'emms-all' setup level.
 See *Note Setup::.
 
 
-File: doc1Ff7Ln.info,  Node: The Core File,  Next: Sources,  Prev: Basic Commands,  Up: Top
+File: docGo6H4A.info,  Node: The Core File,  Next: Sources,  Prev: Basic Commands,  Up: Top
 
 9 The Core File
 ***************
@@ -551,7 +551,7 @@ music, generating playlists and defining players.
 * Core Functions::     Providing the basic functionality of Emms.
 
 
-File: doc1Ff7Ln.info,  Node: User Variables,  Next: Hooks,  Up: The Core File
+File: docGo6H4A.info,  Node: User Variables,  Next: Hooks,  Up: The Core File
 
 9.1 User Variables
 ==================
@@ -576,7 +576,7 @@ The core file defines a number of user variables.
      first track should be sorted before the second (see also 'sort').
 
 
-File: doc1Ff7Ln.info,  Node: Hooks,  Next: Core Functions,  Prev: User Variables,  Up: The Core File
+File: docGo6H4A.info,  Node: Hooks,  Next: Core Functions,  Prev: User Variables,  Up: The Core File
 
 9.2 Hooks
 =========
@@ -609,7 +609,7 @@ Emms.
      EMMS-PLAYER-PAUSED-P to find the current state.
 
 
-File: doc1Ff7Ln.info,  Node: Core Functions,  Prev: Hooks,  Up: The Core File
+File: docGo6H4A.info,  Node: Core Functions,  Prev: Hooks,  Up: The Core File
 
 9.3 Core Functions
 ==================
@@ -700,7 +700,7 @@ of Emms.
 Commands::.
 
 
-File: doc1Ff7Ln.info,  Node: Sources,  Next: Simple Players,  Prev: The Core File,  Up: Top
+File: docGo6H4A.info,  Node: Sources,  Next: Simple Players,  Prev: The Core File,  Up: Top
 
 10 Sources
 **********
@@ -760,7 +760,7 @@ be easy.
      Search for REGEXP and display the results in a locate buffer
 
 
-File: doc1Ff7Ln.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  Up: Top
+File: docGo6H4A.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  Up: Top
 
 11 Simple Players
 *****************
@@ -785,7 +785,7 @@ File: doc1Ff7Ln.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  
      and the sentinel string STR.
 
 
-File: doc1Ff7Ln.info,  Node: Playlists,  Next: Track Information,  Prev: Simple Players,  Up: Top
+File: docGo6H4A.info,  Node: Playlists,  Next: Track Information,  Prev: Simple Players,  Up: Top
 
 12 Playlists
 ************
@@ -819,7 +819,7 @@ the tracks immediately.
 EMMS-PLAYLIST-BUFFER.
 
 
-File: doc1Ff7Ln.info,  Node: Track Information,  Next: Interactive Playlists,  Prev: Playlists,  Up: Top
+File: docGo6H4A.info,  Node: Track Information,  Next: Interactive Playlists,  Prev: Playlists,  Up: Top
 
 13 Track Information
 ********************
@@ -935,7 +935,7 @@ called for each track.
 * Defining Info Methods::    How to define new info methods.
 
 
-File: doc1Ff7Ln.info,  Node: Metadata Utilities,  Next: Defining Info Methods,  Up: Track Information
+File: docGo6H4A.info,  Node: Metadata Utilities,  Next: Defining Info Methods,  Up: Track Information
 
 13.1 Metadata Utilities
 =======================
@@ -1061,7 +1061,7 @@ initialization file:
      (add-to-list 'emms-info-functions 'emms-info-opusinfo)
 
 
-File: doc1Ff7Ln.info,  Node: Defining Info Methods,  Prev: Metadata Utilities,  Up: Track Information
+File: docGo6H4A.info,  Node: Defining Info Methods,  Prev: Metadata Utilities,  Up: Track Information
 
 13.2 Defining Info Methods
 ==========================
@@ -1151,7 +1151,7 @@ the keys listed above; for example "album" and "artist" form info
 symbols 'info-album' and 'info-artist'.
 
 
-File: doc1Ff7Ln.info,  Node: Interactive Playlists,  Next: Markable Playlists,  Prev: Track Information,  Up: Top
+File: docGo6H4A.info,  Node: Interactive Playlists,  Next: Markable Playlists,  Prev: Track Information,  Up: Top
 
 14 Interactive Playlists
 ************************
@@ -1280,7 +1280,7 @@ program and can therefore be used to include titles and annotations
 within the playlist.
 
 
-File: doc1Ff7Ln.info,  Node: Markable Playlists,  Next: Extending Emms,  Prev: Interactive Playlists,  Up: Top
+File: docGo6H4A.info,  Node: Markable Playlists,  Next: Extending Emms,  Prev: Interactive Playlists,  Up: Top
 
 15 Markable Playlists
 *********************
@@ -1351,7 +1351,7 @@ are useful for the elisp programer to handle marked tracks.
      'mapcar').
 
 
-File: doc1Ff7Ln.info,  Node: Extending Emms,  Next: The Browser,  Prev: Markable Playlists,  Up: Top
+File: docGo6H4A.info,  Node: Extending Emms,  Next: The Browser,  Prev: Markable Playlists,  Up: Top
 
 16 Extending Emms
 *****************
@@ -1366,7 +1366,7 @@ customise it to your needs.
 * More Complex Player::      Example of a complex player using 'mpg321'.
 
 
-File: doc1Ff7Ln.info,  Node: New Player,  Next: Simple Player for `play',  Up: Extending Emms
+File: docGo6H4A.info,  Node: New Player,  Next: Simple Player for `play',  Up: Extending Emms
 
 16.1 New Player
 ===============
@@ -1377,7 +1377,7 @@ player.  We will start with an easy example that shows how we can use
 the 'play' command under Unix to play our WAV files.
 
 
-File: doc1Ff7Ln.info,  Node: Simple Player for `play',  Next: More Complex Player,  Prev: New Player,  Up: Extending Emms
+File: docGo6H4A.info,  Node: Simple Player for `play',  Next: More Complex Player,  Prev: New Player,  Up: Extending Emms
 
 16.2 Simple Player for 'play'
 =============================
@@ -1418,7 +1418,7 @@ take one song as argument and stop after playing that particular song.
 For any other concept you will need to customise emms a bit more...
 
 
-File: doc1Ff7Ln.info,  Node: More Complex Player,  Prev: Simple Player for `play',  Up: Extending Emms
+File: docGo6H4A.info,  Node: More Complex Player,  Prev: Simple Player for `play',  Up: Extending Emms
 
 16.3 More Complex Player
 ========================
@@ -1491,7 +1491,7 @@ test if there are other files to play and close the process otherwise.
 'emms-mpg321-remote-pause' for example.
 
 
-File: doc1Ff7Ln.info,  Node: The Browser,  Next: Sorting Playlists,  Prev: Extending Emms,  Up: Top
+File: docGo6H4A.info,  Node: The Browser,  Next: Sorting Playlists,  Prev: Extending Emms,  Up: Top
 
 17 The Browser
 **************
@@ -1520,7 +1520,7 @@ populated.
 * Changing Looks::        Changing the tree structure, display format and faces.
 
 
-File: doc1Ff7Ln.info,  Node: Browser Interface,  Next: Filtering Tracks,  Up: The Browser
+File: docGo6H4A.info,  Node: Browser Interface,  Next: Filtering Tracks,  Up: The Browser
 
 17.1 Browser Interface
 ======================
@@ -1641,7 +1641,7 @@ keybindings.
      Lookup the album using Wikipedia.
 
 
-File: doc1Ff7Ln.info,  Node: Filtering Tracks,  Next: Displaying Covers,  Prev: Browser Interface,  Up: The Browser
+File: docGo6H4A.info,  Node: Filtering Tracks,  Next: Displaying Covers,  Prev: Browser Interface,  Up: The Browser
 
 17.2 Filtering Tracks
 =====================
@@ -1699,7 +1699,7 @@ functions to check the type of a file, etc.
                (emms-browser-filter-only-dir "~/Media/pending") track)))))
 
 
-File: doc1Ff7Ln.info,  Node: Displaying Covers,  Next: Changing Looks,  Prev: Filtering Tracks,  Up: The Browser
+File: docGo6H4A.info,  Node: Displaying Covers,  Next: Changing Looks,  Prev: Filtering Tracks,  Up: The Browser
 
 17.3 Displaying Covers
 ======================
@@ -1748,7 +1748,7 @@ the following code to your .emacs:
 (http://repose.cx/cover_small.jpg).
 
 
-File: doc1Ff7Ln.info,  Node: Changing Looks,  Prev: Displaying Covers,  Up: The Browser
+File: docGo6H4A.info,  Node: Changing Looks,  Prev: Displaying Covers,  Up: The Browser
 
 17.4 Changing Looks
 ===================
@@ -1838,7 +1838,7 @@ initial "info-" part.  For example, to change the artist face, type M-x
 'customize-face' 'emms-browser-artist-face'.
 
 
-File: doc1Ff7Ln.info,  Node: Sorting Playlists,  Next: Persistent Playlists,  Prev: The Browser,  Up: Top
+File: docGo6H4A.info,  Node: Sorting Playlists,  Next: Persistent Playlists,  Prev: The Browser,  Up: Top
 
 18 Sorting Playlists
 ********************
@@ -1897,7 +1897,7 @@ preceded by a prefix.  'emms-playlist-sort' can be loaded by invoking:
      Alias for 'emms-playlist-sort-by-random' and 'emms-shuffle'.
 
 
-File: doc1Ff7Ln.info,  Node: Persistent Playlists,  Next: Editing Tracks,  Prev: Sorting Playlists,  Up: Top
+File: docGo6H4A.info,  Node: Persistent Playlists,  Next: Editing Tracks,  Prev: Sorting Playlists,  Up: Top
 
 19 Persistent Playlists
 ***********************
@@ -1934,7 +1934,7 @@ start playback afterwards, you can tweak this variable.
      'emms-history-load' was invoked.  The default value is nil.
 
 
-File: doc1Ff7Ln.info,  Node: Editing Tracks,  Next: Emms Mode Line,  Prev: Persistent Playlists,  Up: Top
+File: docGo6H4A.info,  Node: Editing Tracks,  Next: Emms Mode Line,  Prev: Persistent Playlists,  Up: Top
 
 20 Editing Tracks
 *****************
@@ -2027,7 +2027,7 @@ mark some tracks.  Then hit 'R' which calls this function:
      tracks according to the value of 'emms-tag-editor-rename-format'.
 
 
-File: doc1Ff7Ln.info,  Node: Emms Mode Line,  Next: Limiting,  Prev: Editing Tracks,  Up: Top
+File: docGo6H4A.info,  Node: Emms Mode Line,  Next: Limiting,  Prev: Editing Tracks,  Up: Top
 
 21 Emms Mode Line
 *****************
@@ -2072,7 +2072,7 @@ call 'emms-playing-time-enable-display' and
      Remove playing time from mode line.
 
 
-File: doc1Ff7Ln.info,  Node: Limiting,  Next: Music Player Daemon,  Prev: Emms Mode Line,  Up: Top
+File: docGo6H4A.info,  Node: Limiting,  Next: Music Player Daemon,  Prev: Emms Mode Line,  Up: Top
 
 22 Limiting
 ***********
@@ -2140,7 +2140,7 @@ then the derived playlist becomes current.
      Switch to the original playlist buffer (if it still exists).
 
 
-File: doc1Ff7Ln.info,  Node: Music Player Daemon,  Next: Lyrics,  Prev: Limiting,  Up: Top
+File: docGo6H4A.info,  Node: Music Player Daemon,  Next: Lyrics,  Prev: Limiting,  Up: Top
 
 23 Music Player Daemon
 **********************
@@ -2253,7 +2253,7 @@ To activate this, add the following to your .emacs.
      (setq emms-volume-change-function 'emms-volume-mpd-change)
 
 
-File: doc1Ff7Ln.info,  Node: Lyrics,  Next: Volume,  Prev: Music Player Daemon,  Up: Top
+File: docGo6H4A.info,  Node: Lyrics,  Next: Volume,  Prev: Music Player Daemon,  Up: Top
 
 24 Lyrics
 *********
@@ -2340,7 +2340,7 @@ functions:
      Toggle displaying Emms lyrics.
 
 
-File: doc1Ff7Ln.info,  Node: Volume,  Next: Streaming Audio,  Prev: Lyrics,  Up: Top
+File: docGo6H4A.info,  Node: Volume,  Next: Streaming Audio,  Prev: Lyrics,  Up: Top
 
 25 Volume
 *********
@@ -2393,7 +2393,7 @@ instead of pressing 'C-c +' six times to increase volume by six steps of
 of the box, see EMMS-VOLUME-CHANGE-FUNCTION.
 
 
-File: doc1Ff7Ln.info,  Node: Streaming Audio,  Next: APE / FLAC Commands,  Prev: Volume,  Up: Top
+File: docGo6H4A.info,  Node: Streaming Audio,  Next: APE / FLAC Commands,  Prev: Volume,  Up: Top
 
 26 Streaming Audio
 ******************
@@ -2423,7 +2423,7 @@ project over the years by people who enjoy Emms.  We hope you will enjoy
 them too, and invite you to send in your suggestions to add to the list.
 
 
-File: doc1Ff7Ln.info,  Node: APE / FLAC Commands,  Next: Bookmarks,  Prev: Streaming Audio,  Up: Top
+File: docGo6H4A.info,  Node: APE / FLAC Commands,  Next: Bookmarks,  Prev: Streaming Audio,  Up: Top
 
 27 APE / FLAC Commands
 **********************
@@ -2445,7 +2445,7 @@ information for APE / FLAC itself.
      Play previous track from .cue file
 
 
-File: doc1Ff7Ln.info,  Node: Bookmarks,  Next: Managing Playlists,  Prev: APE / FLAC Commands,  Up: Top
+File: docGo6H4A.info,  Node: Bookmarks,  Next: Managing Playlists,  Prev: APE / FLAC Commands,  Up: Top
 
 28 Bookmarks
 ************
@@ -2465,7 +2465,7 @@ respectively.
 emms-bookmarks-clear'.
 
 
-File: doc1Ff7Ln.info,  Node: Managing Playlists,  Next: GNU FM,  Prev: Bookmarks,  Up: Top
+File: docGo6H4A.info,  Node: Managing Playlists,  Next: GNU FM,  Prev: Bookmarks,  Up: Top
 
 29 Managing Playlists
 *********************
@@ -2511,7 +2511,7 @@ following commands are available:
      Kill the playlist manager.
 
 
-File: doc1Ff7Ln.info,  Node: GNU FM,  Next: Listenbrainz,  Prev: Managing Playlists,  Up: Top
+File: docGo6H4A.info,  Node: GNU FM,  Next: Listenbrainz,  Prev: Managing Playlists,  Up: Top
 
 30 GNU FM
 *********
@@ -2547,7 +2547,7 @@ init-file by setting these variables:
 * GNU FM Streaming:: Streaming music from a GNU FM server.
 
 
-File: doc1Ff7Ln.info,  Node: Uploading Track Information,  Next: GNU FM Streaming,  Up: GNU FM
+File: docGo6H4A.info,  Node: Uploading Track Information,  Next: GNU FM Streaming,  Up: GNU FM
 
 30.1 Uploading Track Information
 ================================
@@ -2570,7 +2570,7 @@ be uploaded to the server when the track's playback ends.  You can
 disable this behavior with 'emms-librefm-scrobbler-disable'.
 
 
-File: doc1Ff7Ln.info,  Node: GNU FM Streaming,  Prev: Uploading Track Information,  Up: GNU FM
+File: docGo6H4A.info,  Node: GNU FM Streaming,  Prev: Uploading Track Information,  Up: GNU FM
 
 30.2 GNU FM Streaming
 =====================
@@ -2587,7 +2587,7 @@ setup level.
 you wish to listen to, for example "librefm://globaltags/Classical".
 
 
-File: doc1Ff7Ln.info,  Node: Listenbrainz,  Next: D-Bus,  Prev: GNU FM,  Up: Top
+File: docGo6H4A.info,  Node: Listenbrainz,  Next: D-Bus,  Prev: GNU FM,  Up: Top
 
 31 Listenbrainz
 ***************
@@ -2618,7 +2618,7 @@ ends.  You can disable this behavior with
 'emms-listenbrainz-scrobbler-disable'.
 
 
-File: doc1Ff7Ln.info,  Node: D-Bus,  Next: Copying,  Prev: Listenbrainz,  Up: Top
+File: docGo6H4A.info,  Node: D-Bus,  Next: Copying,  Prev: Listenbrainz,  Up: Top
 
 32 D-Bus
 ********
@@ -2638,7 +2638,7 @@ with 'emms-mpris-disable'.
 not complete: changing the volume is not currently supported.
 
 
-File: doc1Ff7Ln.info,  Node: Copying,  Next: The GNU FDL,  Prev: Extending Emms,  Up: Top
+File: docGo6H4A.info,  Node: Copying,  Next: The GNU FDL,  Prev: Extending Emms,  Up: Top
 
 GNU General Public License
 **************************
@@ -3350,7 +3350,7 @@ GNU Lesser General Public License instead of this License.  But first,
 please read <http://www.gnu.org/philosophy/why-not-lgpl.html>.
 
 
-File: doc1Ff7Ln.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying,  Up: Top
+File: docGo6H4A.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying,  Up: Top
 
 33 GNU Free Documentation License
 *********************************
@@ -3779,7 +3779,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: doc1Ff7Ln.info,  Node: Concept Index,  Next: Function Index,  Prev: The GNU FDL,  Up: Top
+File: docGo6H4A.info,  Node: Concept Index,  Next: Function Index,  Prev: The GNU FDL,  Up: Top
 
 Concept Index
 *************
@@ -3856,7 +3856,7 @@ Concept Index
 * website:                               Getting Help.          (line 6)
 
 
-File: doc1Ff7Ln.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
+File: docGo6H4A.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
 
 Function Index
 **************
@@ -4101,7 +4101,7 @@ Function Index
                                                               (line  71)
 
 
-File: doc1Ff7Ln.info,  Node: Variable Index,  Next: Keybinding Index,  Prev: Function Index,  Up: Top
+File: docGo6H4A.info,  Node: Variable Index,  Next: Keybinding Index,  Prev: Function Index,  Up: Top
 
 Variable Index
 **************
@@ -4144,7 +4144,7 @@ Variable Index
 * emms-volume-mode-timeout:              Volume.              (line  42)
 
 
-File: doc1Ff7Ln.info,  Node: Keybinding Index,  Prev: Variable Index,  Up: Top
+File: docGo6H4A.info,  Node: Keybinding Index,  Prev: Variable Index,  Up: Top
 
 Keybinding Index
 ****************
