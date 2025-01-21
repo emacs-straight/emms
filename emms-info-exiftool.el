@@ -90,7 +90,12 @@
 			emms-field
 			(cond ((eq emms-field 'info-playing-time)
 			       (emms-info-exiftool-time))
-			      ((memq emms-field '(info-tracknumber
+			      ((memq emms-field '(info-album
+						  info-artist
+						  info-albumartist
+						  info-composer
+						  info-note
+						  info-tracknumber
 						  info-title
 						  info-year
 						  info-discnumber))
