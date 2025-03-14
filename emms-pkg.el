@@ -1,2 +1,2 @@
-;; Generated package description from emms.el  -*- no-byte-compile: t -*-
-(define-package "emms" "21.0.20250204.152247" "The Emacs Multimedia System" '((cl-lib "0.5") (nadvice "0.3") (seq "0")) :commit "5e9922f2a45fc4b869bd4947540903ea15acfeb2" :authors '(("Jorgen Schäfer" . "forcer@forcix.cx")) :maintainer '("Yoni Rabkin" . "yrk@gnu.org") :keywords '("emms" "mp3" "ogg" "flac" "music" "mpeg" "video" "multimedia") :url "https://www.gnu.org/software/emms/")
+;; Generated package description from emms.el  -*- mode: lisp-data; no-byte-compile: t -*-
+(define-package "emms" "21.0.20250313.94213" "The Emacs Multimedia System" '((cl-lib "0.5") (nadvice "0.3") (seq "0")) :commit "3286ac88bf2c306bd66431205eb80ca3bff3e7ef" :authors '(("Jorgen Schäfer" . "forcer@forcix.cx")) :maintainer '("Yoni Rabkin" . "yrk@gnu.org") :keywords '("emms" "mp3" "ogg" "flac" "music" "mpeg" "video" "multimedia") :url "https://www.gnu.org/software/emms/")
