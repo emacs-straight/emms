@@ -1,6 +1,6 @@
 ;;; emms-volume.el --- Volume functions and a minor mode to adjust volume easily  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2006-2023  Free Software Foundation, Inc.
+;; Copyright (C) 2006-2023, 2025  Free Software Foundation, Inc.
 
 ;; Author: Martin Schoenmakers <aiviru@diamond-age.net>
 ;;         Bruno Félix Rezende Ribeiro <oitofelix@gnu.org>
@@ -53,6 +53,7 @@
 (require 'emms-volume-pulse)
 (require 'emms-volume-mixerctl)
 (require 'emms-volume-sndioctl)
+(require 'emms-volume-mpv)
 
 ;; Customize group
 (defgroup emms-volume nil
@@ -72,8 +73,9 @@
 If you have your own functions for changing volume, set this."
   :type '(choice (const :tag "Amixer" emms-volume-amixer-change)
                  (const :tag "MPD" emms-volume-mpd-change)
-		 (const :tag "PulseAudio" emms-volume-pulse-change)
-		 (const :tag "Mixerctl" emms-volume-mixerctl-change)
+                 (const :tag "mpv" emms-volume-mpv-change)
+                 (const :tag "PulseAudio" emms-volume-pulse-change)
+                 (const :tag "Mixerctl" emms-volume-mixerctl-change)
                  (const :tag "Sndioctl" emms-volume-sndioctl-change)
                  (function :tag "Lisp function")))
 
