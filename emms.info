@@ -1,4 +1,4 @@
-This is docOEZXai.info, produced by makeinfo version 6.8 from
+This is doch35ouD.info, produced by makeinfo version 6.8 from
 emms.texinfo.
 
 (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016,
@@ -15,7 +15,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docOEZXai.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
+File: doch35ouD.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
 
 Emms Manual
 ***********
@@ -66,6 +66,7 @@ Modules and Extensions
 * Lyrics::               Displaying lyrics synchronously.
 * Volume::               Changing the volume.
 * Streaming Audio::      Interface to streaming audio.
+* Radio Browser::        Search for internet radio stations
 * APE / FLAC Commands::  How to play next or previous track in these files.
 * Bookmarks::            Saving a place in a media file.
 * Managing Playlists::   Managing multiple playlists.
@@ -108,7 +109,7 @@ Extending Emms
 * More Complex Player::      Example of a complex player using 'mpg321'.
 
 
-File: docOEZXai.info,  Node: Introduction,  Next: Quickstart Guide,  Up: Top
+File: doch35ouD.info,  Node: Introduction,  Next: Quickstart Guide,  Up: Top
 
 1 Introduction
 **************
@@ -146,7 +147,7 @@ functionality beyond the core.
 using 'M-x customize' or by changing the variables directly.
 
 
-File: docOEZXai.info,  Node: Quickstart Guide,  Next: Installation,  Prev: Introduction,  Up: Top
+File: doch35ouD.info,  Node: Quickstart Guide,  Next: Installation,  Prev: Introduction,  Up: Top
 
 2 Quickstart Guide
 ******************
@@ -216,7 +217,7 @@ the basic commands (*note Basic Commands::), the interactive playlists
 irc (irc.libera.chat), and Emms has a mailing list at emms-help@gnu.org.
 
 
-File: docOEZXai.info,  Node: Installation,  Next: Setup,  Prev: Quickstart Guide,  Up: Top
+File: doch35ouD.info,  Node: Installation,  Next: Setup,  Prev: Quickstart Guide,  Up: Top
 
 3 Installation
 **************
@@ -236,7 +237,7 @@ add:
 * Compiling Emms::      Compiling Emms into Byte-Code.
 
 
-File: docOEZXai.info,  Node: Compiling Emms,  Up: Installation
+File: doch35ouD.info,  Node: Compiling Emms,  Up: Installation
 
 3.1 Compiling Emms
 ==================
@@ -263,7 +264,7 @@ have the appropriate permissions to do so on your system).
 run Emms just fine without byte compiling it.
 
 
-File: docOEZXai.info,  Node: Setup,  Next: Configuration,  Prev: Installation,  Up: Top
+File: doch35ouD.info,  Node: Setup,  Next: Configuration,  Prev: Installation,  Up: Top
 
 4 Setup
 *******
@@ -293,7 +294,7 @@ list of media players.
 by looking at the existing function definitions in 'emms-setup.el'.
 
 
-File: docOEZXai.info,  Node: Configuration,  Next: Getting Help,  Prev: Setup,  Up: Top
+File: doch35ouD.info,  Node: Configuration,  Next: Getting Help,  Prev: Setup,  Up: Top
 
 5 Configuration
 ***************
@@ -335,7 +336,7 @@ mechanism provided by Emacs.
 * Setup Examples::              Examples of ways to setup Emms.
 
 
-File: docOEZXai.info,  Node: Finding files and speed,  Next: Setup Examples,  Up: Configuration
+File: doch35ouD.info,  Node: Finding files and speed,  Next: Setup Examples,  Up: Configuration
 
 5.1 Finding files and speed
 ===========================
@@ -357,7 +358,7 @@ installed.
 EMMS-SOURCE-FILE-DIRECTORY-TREE-FUNCTION.
 
 
-File: docOEZXai.info,  Node: Setup Examples,  Prev: Finding files and speed,  Up: Configuration
+File: doch35ouD.info,  Node: Setup Examples,  Prev: Finding files and speed,  Up: Configuration
 
 5.2 Setup Examples
 ==================
@@ -412,7 +413,7 @@ volume control options enabled via 'emms-volume.el'.
         emms-volume-mpv-method 'smart)
 
 
-File: docOEZXai.info,  Node: Getting Help,  Next: Formats and Freedom,  Prev: Configuration,  Up: Top
+File: doch35ouD.info,  Node: Getting Help,  Next: Formats and Freedom,  Prev: Configuration,  Up: Top
 
 6 Getting Help
 **************
@@ -428,7 +429,7 @@ newsgroup which mirrors this mailing address at gmane.emacs.emms.user.
    Emms also has a website at <http://www.gnu.org/software/emms/>.
 
 
-File: docOEZXai.info,  Node: Formats and Freedom,  Next: Basic Commands,  Prev: Getting Help,  Up: Top
+File: doch35ouD.info,  Node: Formats and Freedom,  Next: Basic Commands,  Prev: Getting Help,  Up: Top
 
 7 Formats and Freedom
 *********************
@@ -455,7 +456,7 @@ code for a reference implementation freely available.  For more
 information about FLAC, go to <http://flac.sourceforge.net/>.
 
 
-File: docOEZXai.info,  Node: Basic Commands,  Next: The Core File,  Prev: Formats and Freedom,  Up: Top
+File: doch35ouD.info,  Node: Basic Commands,  Next: The Core File,  Prev: Formats and Freedom,  Up: Top
 
 8 Basic Commands
 ****************
@@ -553,7 +554,7 @@ by 'emms-show-all.el', which is included in the 'emms-all' setup level.
 See *Note Setup::.
 
 
-File: docOEZXai.info,  Node: The Core File,  Next: Sources,  Prev: Basic Commands,  Up: Top
+File: doch35ouD.info,  Node: The Core File,  Next: Sources,  Prev: Basic Commands,  Up: Top
 
 9 The Core File
 ***************
@@ -568,7 +569,7 @@ music, generating playlists and defining players.
 * Core Functions::     Providing the basic functionality of Emms.
 
 
-File: docOEZXai.info,  Node: User Variables,  Next: Hooks,  Up: The Core File
+File: doch35ouD.info,  Node: User Variables,  Next: Hooks,  Up: The Core File
 
 9.1 User Variables
 ==================
@@ -593,7 +594,7 @@ The core file defines a number of user variables.
      first track should be sorted before the second (see also 'sort').
 
 
-File: docOEZXai.info,  Node: Hooks,  Next: Core Functions,  Prev: User Variables,  Up: The Core File
+File: doch35ouD.info,  Node: Hooks,  Next: Core Functions,  Prev: User Variables,  Up: The Core File
 
 9.2 Hooks
 =========
@@ -626,7 +627,7 @@ Emms.
      EMMS-PLAYER-PAUSED-P to find the current state.
 
 
-File: docOEZXai.info,  Node: Core Functions,  Prev: Hooks,  Up: The Core File
+File: doch35ouD.info,  Node: Core Functions,  Prev: Hooks,  Up: The Core File
 
 9.3 Core Functions
 ==================
@@ -717,7 +718,7 @@ of Emms.
 Commands::.
 
 
-File: docOEZXai.info,  Node: Sources,  Next: Simple Players,  Prev: The Core File,  Up: Top
+File: doch35ouD.info,  Node: Sources,  Next: Simple Players,  Prev: The Core File,  Up: Top
 
 10 Sources
 **********
@@ -777,7 +778,7 @@ be easy.
      Search for REGEXP and display the results in a locate buffer
 
 
-File: docOEZXai.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  Up: Top
+File: doch35ouD.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  Up: Top
 
 11 Simple Players
 *****************
@@ -802,7 +803,7 @@ File: docOEZXai.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  
      and the sentinel string STR.
 
 
-File: docOEZXai.info,  Node: Playlists,  Next: Track Information,  Prev: Simple Players,  Up: Top
+File: doch35ouD.info,  Node: Playlists,  Next: Track Information,  Prev: Simple Players,  Up: Top
 
 12 Playlists
 ************
@@ -852,7 +853,7 @@ EMMS-PLAYLIST-BUFFER.
      Alias for 'emms-playlist-length'.
 
 
-File: docOEZXai.info,  Node: Track Information,  Next: Interactive Playlists,  Prev: Playlists,  Up: Top
+File: doch35ouD.info,  Node: Track Information,  Next: Interactive Playlists,  Prev: Playlists,  Up: Top
 
 13 Track Information
 ********************
@@ -968,7 +969,7 @@ called for each track.
 * Defining Info Methods::    How to define new info methods.
 
 
-File: docOEZXai.info,  Node: Metadata Utilities,  Next: Defining Info Methods,  Up: Track Information
+File: doch35ouD.info,  Node: Metadata Utilities,  Next: Defining Info Methods,  Up: Track Information
 
 13.1 Metadata Utilities
 =======================
@@ -1094,7 +1095,7 @@ initialization file:
      (add-to-list 'emms-info-functions 'emms-info-opusinfo)
 
 
-File: docOEZXai.info,  Node: Defining Info Methods,  Prev: Metadata Utilities,  Up: Track Information
+File: doch35ouD.info,  Node: Defining Info Methods,  Prev: Metadata Utilities,  Up: Track Information
 
 13.2 Defining Info Methods
 ==========================
@@ -1184,7 +1185,7 @@ the keys listed above; for example "album" and "artist" form info
 symbols 'info-album' and 'info-artist'.
 
 
-File: docOEZXai.info,  Node: Interactive Playlists,  Next: Markable Playlists,  Prev: Track Information,  Up: Top
+File: doch35ouD.info,  Node: Interactive Playlists,  Next: Markable Playlists,  Prev: Track Information,  Up: Top
 
 14 Interactive Playlists
 ************************
@@ -1313,7 +1314,7 @@ program and can therefore be used to include titles and annotations
 within the playlist.
 
 
-File: docOEZXai.info,  Node: Markable Playlists,  Next: Extending Emms,  Prev: Interactive Playlists,  Up: Top
+File: doch35ouD.info,  Node: Markable Playlists,  Next: Extending Emms,  Prev: Interactive Playlists,  Up: Top
 
 15 Markable Playlists
 *********************
@@ -1384,7 +1385,7 @@ are useful for the elisp programer to handle marked tracks.
      'mapcar').
 
 
-File: docOEZXai.info,  Node: Extending Emms,  Next: The Browser,  Prev: Markable Playlists,  Up: Top
+File: doch35ouD.info,  Node: Extending Emms,  Next: The Browser,  Prev: Markable Playlists,  Up: Top
 
 16 Extending Emms
 *****************
@@ -1399,7 +1400,7 @@ customise it to your needs.
 * More Complex Player::      Example of a complex player using 'mpg321'.
 
 
-File: docOEZXai.info,  Node: New Player,  Next: Simple Player for `play',  Up: Extending Emms
+File: doch35ouD.info,  Node: New Player,  Next: Simple Player for `play',  Up: Extending Emms
 
 16.1 New Player
 ===============
@@ -1410,7 +1411,7 @@ player.  We will start with an easy example that shows how we can use
 the 'play' command under Unix to play our WAV files.
 
 
-File: docOEZXai.info,  Node: Simple Player for `play',  Next: More Complex Player,  Prev: New Player,  Up: Extending Emms
+File: doch35ouD.info,  Node: Simple Player for `play',  Next: More Complex Player,  Prev: New Player,  Up: Extending Emms
 
 16.2 Simple Player for 'play'
 =============================
@@ -1451,7 +1452,7 @@ take one song as argument and stop after playing that particular song.
 For any other concept you will need to customise emms a bit more...
 
 
-File: docOEZXai.info,  Node: More Complex Player,  Prev: Simple Player for `play',  Up: Extending Emms
+File: doch35ouD.info,  Node: More Complex Player,  Prev: Simple Player for `play',  Up: Extending Emms
 
 16.3 More Complex Player
 ========================
@@ -1524,7 +1525,7 @@ test if there are other files to play and close the process otherwise.
 'emms-mpg321-remote-pause' for example.
 
 
-File: docOEZXai.info,  Node: The Browser,  Next: Sorting Playlists,  Prev: Extending Emms,  Up: Top
+File: doch35ouD.info,  Node: The Browser,  Next: Sorting Playlists,  Prev: Extending Emms,  Up: Top
 
 17 The Browser
 **************
@@ -1553,7 +1554,7 @@ populated.
 * Changing Looks::        Changing the tree structure, display format and faces.
 
 
-File: docOEZXai.info,  Node: Browser Interface,  Next: Filtering Tracks,  Up: The Browser
+File: doch35ouD.info,  Node: Browser Interface,  Next: Filtering Tracks,  Up: The Browser
 
 17.1 Browser Interface
 ======================
@@ -1674,7 +1675,7 @@ keybindings.
      Lookup the album using Wikipedia.
 
 
-File: docOEZXai.info,  Node: Filtering Tracks,  Next: Displaying Covers,  Prev: Browser Interface,  Up: The Browser
+File: doch35ouD.info,  Node: Filtering Tracks,  Next: Displaying Covers,  Prev: Browser Interface,  Up: The Browser
 
 17.2 Filtering Tracks
 =====================
@@ -1732,7 +1733,7 @@ functions to check the type of a file, etc.
                (emms-browser-filter-only-dir "~/Media/pending") track)))))
 
 
-File: docOEZXai.info,  Node: Displaying Covers,  Next: Changing Looks,  Prev: Filtering Tracks,  Up: The Browser
+File: doch35ouD.info,  Node: Displaying Covers,  Next: Changing Looks,  Prev: Filtering Tracks,  Up: The Browser
 
 17.3 Displaying Covers
 ======================
@@ -1781,7 +1782,7 @@ the following code to your .emacs:
 (http://repose.cx/cover_small.jpg).
 
 
-File: docOEZXai.info,  Node: Changing Looks,  Prev: Displaying Covers,  Up: The Browser
+File: doch35ouD.info,  Node: Changing Looks,  Prev: Displaying Covers,  Up: The Browser
 
 17.4 Changing Looks
 ===================
@@ -1871,7 +1872,7 @@ initial "info-" part.  For example, to change the artist face, type M-x
 'customize-face' 'emms-browser-artist-face'.
 
 
-File: docOEZXai.info,  Node: Sorting Playlists,  Next: Persistent Playlists,  Prev: The Browser,  Up: Top
+File: doch35ouD.info,  Node: Sorting Playlists,  Next: Persistent Playlists,  Prev: The Browser,  Up: Top
 
 18 Sorting Playlists
 ********************
@@ -1930,7 +1931,7 @@ preceded by a prefix.  'emms-playlist-sort' can be loaded by invoking:
      Alias for 'emms-playlist-sort-by-random' and 'emms-shuffle'.
 
 
-File: docOEZXai.info,  Node: Persistent Playlists,  Next: Editing Tracks,  Prev: Sorting Playlists,  Up: Top
+File: doch35ouD.info,  Node: Persistent Playlists,  Next: Editing Tracks,  Prev: Sorting Playlists,  Up: Top
 
 19 Persistent Playlists
 ***********************
@@ -1967,7 +1968,7 @@ start playback afterwards, you can tweak this variable.
      'emms-history-load' was invoked.  The default value is nil.
 
 
-File: docOEZXai.info,  Node: Editing Tracks,  Next: Emms Mode Line,  Prev: Persistent Playlists,  Up: Top
+File: doch35ouD.info,  Node: Editing Tracks,  Next: Emms Mode Line,  Prev: Persistent Playlists,  Up: Top
 
 20 Editing Tracks
 *****************
@@ -2060,7 +2061,7 @@ mark some tracks.  Then hit 'R' which calls this function:
      tracks according to the value of 'emms-tag-editor-rename-format'.
 
 
-File: docOEZXai.info,  Node: Emms Mode Line,  Next: Limiting,  Prev: Editing Tracks,  Up: Top
+File: doch35ouD.info,  Node: Emms Mode Line,  Next: Limiting,  Prev: Editing Tracks,  Up: Top
 
 21 Emms Mode Line
 *****************
@@ -2105,7 +2106,7 @@ call 'emms-playing-time-enable-display' and
      Remove playing time from mode line.
 
 
-File: docOEZXai.info,  Node: Limiting,  Next: Music Player Daemon,  Prev: Emms Mode Line,  Up: Top
+File: doch35ouD.info,  Node: Limiting,  Next: Music Player Daemon,  Prev: Emms Mode Line,  Up: Top
 
 22 Limiting
 ***********
@@ -2173,7 +2174,7 @@ then the derived playlist becomes current.
      Switch to the original playlist buffer (if it still exists).
 
 
-File: docOEZXai.info,  Node: Music Player Daemon,  Next: Lyrics,  Prev: Limiting,  Up: Top
+File: doch35ouD.info,  Node: Music Player Daemon,  Next: Lyrics,  Prev: Limiting,  Up: Top
 
 23 Music Player Daemon
 **********************
@@ -2286,7 +2287,7 @@ To activate this, add the following to your .emacs.
      (setq emms-volume-change-function 'emms-volume-mpd-change)
 
 
-File: docOEZXai.info,  Node: Lyrics,  Next: Volume,  Prev: Music Player Daemon,  Up: Top
+File: doch35ouD.info,  Node: Lyrics,  Next: Volume,  Prev: Music Player Daemon,  Up: Top
 
 24 Lyrics
 *********
@@ -2373,7 +2374,7 @@ functions:
      Toggle displaying Emms lyrics.
 
 
-File: docOEZXai.info,  Node: Volume,  Next: Streaming Audio,  Prev: Lyrics,  Up: Top
+File: doch35ouD.info,  Node: Volume,  Next: Streaming Audio,  Prev: Lyrics,  Up: Top
 
 25 Volume
 *********
@@ -2426,7 +2427,7 @@ instead of pressing 'C-c +' six times to increase volume by six steps of
 out of the box, see EMMS-VOLUME-CHANGE-FUNCTION.
 
 
-File: docOEZXai.info,  Node: Streaming Audio,  Next: APE / FLAC Commands,  Prev: Volume,  Up: Top
+File: doch35ouD.info,  Node: Streaming Audio,  Next: Radio Browser,  Prev: Volume,  Up: Top
 
 26 Streaming Audio
 ******************
@@ -2456,9 +2457,39 @@ project over the years by people who enjoy Emms.  We hope you will enjoy
 them too, and invite you to send in your suggestions to add to the list.
 
 
-File: docOEZXai.info,  Node: APE / FLAC Commands,  Next: Bookmarks,  Prev: Streaming Audio,  Up: Top
+File: doch35ouD.info,  Node: Radio Browser,  Next: APE / FLAC Commands,  Prev: Streaming Audio,  Up: Top
 
-27 APE / FLAC Commands
+27 Radio Browser
+****************
+
+We can find new internet radio stations to stream by searching the
+database at <https://www.radio-browser.info>.  The
+'emms-radio-browser.el' package provides the following commands to do
+this:
+
+ -- Function: emms-radio-browser-search-by-name
+     Prompts for a station NAME and returns a playlist of matching
+     streams.
+
+ -- Function: emms-radio-browser-search-by-url
+     Prompts for a station URL and returns a playlist of matching
+     streams.
+
+ -- Function: emms-radio-browser-full-search
+     Pops up a form to search by name, tags, country or language.
+     Returns a playlist of matching streams.
+
+   To activate 'emms-radio-browser.el', do
+
+     (require 'emms-radio-browser)
+
+   You will need the 'transient.el' package to be installed (this is
+built-in since emacs v28.1).
+
+
+File: doch35ouD.info,  Node: APE / FLAC Commands,  Next: Bookmarks,  Prev: Radio Browser,  Up: Top
+
+28 APE / FLAC Commands
 **********************
 
 Often, a single APE or FLAC file contains a complete album.  We can
@@ -2478,9 +2509,9 @@ information for APE / FLAC itself.
      Play previous track from .cue file
 
 
-File: docOEZXai.info,  Node: Bookmarks,  Next: Managing Playlists,  Prev: APE / FLAC Commands,  Up: Top
+File: doch35ouD.info,  Node: Bookmarks,  Next: Managing Playlists,  Prev: APE / FLAC Commands,  Up: Top
 
-28 Bookmarks
+29 Bookmarks
 ************
 
 Emms can save a "temporal bookmark" in a media file via emms-bookmarks.
@@ -2498,9 +2529,9 @@ respectively.
 emms-bookmarks-clear'.
 
 
-File: docOEZXai.info,  Node: Managing Playlists,  Next: GNU FM,  Prev: Bookmarks,  Up: Top
+File: doch35ouD.info,  Node: Managing Playlists,  Next: GNU FM,  Prev: Bookmarks,  Up: Top
 
-29 Managing Playlists
+30 Managing Playlists
 *********************
 
 Emms can have multiple playlists, since a playlist is just another
@@ -2544,9 +2575,9 @@ following commands are available:
      Kill the playlist manager.
 
 
-File: docOEZXai.info,  Node: GNU FM,  Next: Listenbrainz,  Prev: Managing Playlists,  Up: Top
+File: doch35ouD.info,  Node: GNU FM,  Next: Listenbrainz,  Prev: Managing Playlists,  Up: Top
 
-30 GNU FM
+31 GNU FM
 *********
 
 GNU FM (https://www.gnu.org/software/gnufm/) is free software for
@@ -2580,9 +2611,9 @@ init-file by setting these variables:
 * GNU FM Streaming:: Streaming music from a GNU FM server.
 
 
-File: docOEZXai.info,  Node: Uploading Track Information,  Next: GNU FM Streaming,  Up: GNU FM
+File: doch35ouD.info,  Node: Uploading Track Information,  Next: GNU FM Streaming,  Up: GNU FM
 
-30.1 Uploading Track Information
+31.1 Uploading Track Information
 ================================
 
 GNU FM servers, such as Libre.fm can optionally store a user's listening
@@ -2603,9 +2634,9 @@ be uploaded to the server when the track's playback ends.  You can
 disable this behavior with 'emms-librefm-scrobbler-disable'.
 
 
-File: docOEZXai.info,  Node: GNU FM Streaming,  Prev: Uploading Track Information,  Up: GNU FM
+File: doch35ouD.info,  Node: GNU FM Streaming,  Prev: Uploading Track Information,  Up: GNU FM
 
-30.2 GNU FM Streaming
+31.2 GNU FM Streaming
 =====================
 
 If the GNU FM server provides a streaming music service you can take
@@ -2620,9 +2651,9 @@ setup level.
 you wish to listen to, for example "librefm://globaltags/Classical".
 
 
-File: docOEZXai.info,  Node: Listenbrainz,  Next: D-Bus,  Prev: GNU FM,  Up: Top
+File: doch35ouD.info,  Node: Listenbrainz,  Next: D-Bus,  Prev: GNU FM,  Up: Top
 
-31 Listenbrainz
+32 Listenbrainz
 ***************
 
 Listenbrainz offers an alternative store of listening habits using
@@ -2651,9 +2682,9 @@ ends.  You can disable this behavior with
 'emms-listenbrainz-scrobbler-disable'.
 
 
-File: docOEZXai.info,  Node: D-Bus,  Next: Copying,  Prev: Listenbrainz,  Up: Top
+File: doch35ouD.info,  Node: D-Bus,  Next: Copying,  Prev: Listenbrainz,  Up: Top
 
-32 D-Bus
+33 D-Bus
 ********
 
 Emms can provide an MPRIS interface which allows it to be controlled
@@ -2671,7 +2702,7 @@ with 'emms-mpris-disable'.
 not complete: changing the volume is not currently supported.
 
 
-File: docOEZXai.info,  Node: Copying,  Next: The GNU FDL,  Prev: Extending Emms,  Up: Top
+File: doch35ouD.info,  Node: Copying,  Next: The GNU FDL,  Prev: Extending Emms,  Up: Top
 
 GNU General Public License
 **************************
@@ -3383,9 +3414,9 @@ GNU Lesser General Public License instead of this License.  But first,
 please read <http://www.gnu.org/philosophy/why-not-lgpl.html>.
 
 
-File: docOEZXai.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying,  Up: Top
+File: doch35ouD.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying,  Up: Top
 
-33 GNU Free Documentation License
+34 GNU Free Documentation License
 *********************************
 
                       Version 1.2, November 2002
@@ -3780,7 +3811,7 @@ File: docOEZXai.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying, 
      choose any version ever published (not as a draft) by the Free
      Software Foundation.
 
-33.1 ADDENDUM: How to use this License for your documents
+34.1 ADDENDUM: How to use this License for your documents
 =========================================================
 
 To use this License in a document you have written, include a copy of
@@ -3812,7 +3843,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docOEZXai.info,  Node: Concept Index,  Next: Function Index,  Prev: The GNU FDL,  Up: Top
+File: doch35ouD.info,  Node: Concept Index,  Next: Function Index,  Prev: The GNU FDL,  Up: Top
 
 Concept Index
 *************
@@ -3851,6 +3882,7 @@ Concept Index
 * installation:                          Installation.          (line 6)
 * Interactive Playlists:                 Interactive Playlists. (line 6)
 * internet radio:                        Streaming Audio.       (line 6)
+* internet radio <1>:                    Radio Browser.         (line 6)
 * introduction:                          Introduction.          (line 6)
 * limiting:                              Limiting.              (line 6)
 * Listenbrainz:                          Listenbrainz.          (line 6)
@@ -3881,6 +3913,7 @@ Concept Index
 * speed:                                 Finding files and speed.
                                                                 (line 6)
 * streaming audio:                       Streaming Audio.       (line 6)
+* streaming audio <1>:                   Radio Browser.         (line 6)
 * track editor:                          Editing Tracks.        (line 6)
 * track information:                     Track Information.     (line 6)
 * track order:                           Sorting Playlists.     (line 6)
@@ -3889,7 +3922,7 @@ Concept Index
 * website:                               Getting Help.          (line 6)
 
 
-File: docOEZXai.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
+File: doch35ouD.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
 
 Function Index
 **************
@@ -4080,6 +4113,9 @@ Function Index
 * emms-playlist-sort-by-random:          Sorting Playlists.   (line  53)
 * emms-playlist-total-playing-time:      Playlists.           (line  47)
 * emms-previous:                         Basic Commands.      (line  76)
+* emms-radio-browser-full-search:        Radio Browser.       (line  19)
+* emms-radio-browser-search-by-name:     Radio Browser.       (line  11)
+* emms-radio-browser-search-by-url:      Radio Browser.       (line  15)
 * emms-random:                           Core Functions.      (line  21)
 * emms-random <1>:                       Interactive Playlists.
                                                               (line  80)
@@ -4139,7 +4175,7 @@ Function Index
                                                               (line  71)
 
 
-File: docOEZXai.info,  Node: Variable Index,  Next: Keybinding Index,  Prev: Function Index,  Up: Top
+File: doch35ouD.info,  Node: Variable Index,  Next: Keybinding Index,  Prev: Function Index,  Up: Top
 
 Variable Index
 **************
@@ -4182,7 +4218,7 @@ Variable Index
 * emms-volume-mode-timeout:              Volume.              (line  42)
 
 
-File: docOEZXai.info,  Node: Keybinding Index,  Prev: Variable Index,  Up: Top
+File: doch35ouD.info,  Node: Keybinding Index,  Prev: Variable Index,  Up: Top
 
 Keybinding Index
 ****************
@@ -4246,62 +4282,63 @@ Keybinding Index
 
 Tag Table:
 Node: Top730
-Node: Introduction4507
-Node: Quickstart Guide5980
-Node: Installation8938
-Node: Compiling Emms9492
-Node: Setup10185
-Node: Configuration11176
-Node: Finding files and speed12656
-Node: Setup Examples13530
-Node: Getting Help15640
-Node: Formats and Freedom16223
-Node: Basic Commands17433
-Node: The Core File21799
-Node: User Variables22238
-Node: Hooks23219
-Node: Core Functions24650
-Node: Sources28087
-Node: Simple Players30736
-Node: Playlists31798
-Node: Track Information33744
-Node: Metadata Utilities38459
-Node: Defining Info Methods43138
-Node: Interactive Playlists45287
-Node: Markable Playlists48569
-Node: Extending Emms51051
-Node: New Player51492
-Node: Simple Player for `play'51886
-Node: More Complex Player53619
-Node: The Browser56622
-Node: Browser Interface57603
-Node: Filtering Tracks60022
-Node: Displaying Covers61805
-Node: Changing Looks63824
-Node: Sorting Playlists66816
-Node: Persistent Playlists68569
-Node: Editing Tracks69733
-Node: Emms Mode Line73412
-Node: Limiting74860
-Node: Music Player Daemon77412
-Node: Lyrics81182
-Node: Volume84181
-Node: Streaming Audio85979
-Ref: Streaming Audio-Footnote-186830
-Node: APE / FLAC Commands87181
-Node: Bookmarks87893
-Node: Managing Playlists88609
-Node: GNU FM89683
-Node: Uploading Track Information91047
-Node: GNU FM Streaming91934
-Node: Listenbrainz92439
-Node: D-Bus93569
-Node: Copying94127
-Node: The GNU FDL131649
-Node: Concept Index154042
-Node: Function Index159051
-Node: Variable Index176464
-Node: Keybinding Index179011
+Node: Introduction4567
+Node: Quickstart Guide6040
+Node: Installation8998
+Node: Compiling Emms9552
+Node: Setup10245
+Node: Configuration11236
+Node: Finding files and speed12716
+Node: Setup Examples13590
+Node: Getting Help15700
+Node: Formats and Freedom16283
+Node: Basic Commands17493
+Node: The Core File21859
+Node: User Variables22298
+Node: Hooks23279
+Node: Core Functions24710
+Node: Sources28147
+Node: Simple Players30796
+Node: Playlists31858
+Node: Track Information33804
+Node: Metadata Utilities38519
+Node: Defining Info Methods43198
+Node: Interactive Playlists45347
+Node: Markable Playlists48629
+Node: Extending Emms51111
+Node: New Player51552
+Node: Simple Player for `play'51946
+Node: More Complex Player53679
+Node: The Browser56682
+Node: Browser Interface57663
+Node: Filtering Tracks60082
+Node: Displaying Covers61865
+Node: Changing Looks63884
+Node: Sorting Playlists66876
+Node: Persistent Playlists68629
+Node: Editing Tracks69793
+Node: Emms Mode Line73472
+Node: Limiting74920
+Node: Music Player Daemon77472
+Node: Lyrics81242
+Node: Volume84241
+Node: Streaming Audio86039
+Ref: Streaming Audio-Footnote-186884
+Node: Radio Browser87235
+Node: APE / FLAC Commands88167
+Node: Bookmarks88877
+Node: Managing Playlists89593
+Node: GNU FM90667
+Node: Uploading Track Information92031
+Node: GNU FM Streaming92918
+Node: Listenbrainz93423
+Node: D-Bus94553
+Node: Copying95111
+Node: The GNU FDL132633
+Node: Concept Index155026
+Node: Function Index160181
+Node: Variable Index177813
+Node: Keybinding Index180360
 
 End Tag Table
 
