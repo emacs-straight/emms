@@ -1,4 +1,4 @@
-This is docQmkYVF.info, produced by makeinfo version 6.8 from
+This is docrNsAbE.info, produced by makeinfo version 6.8 from
 emms.texinfo.
 
 (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016,
@@ -15,7 +15,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docQmkYVF.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
+File: docrNsAbE.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
 
 Emms Manual
 ***********
@@ -110,7 +110,7 @@ Extending Emms
 * More Complex Player::      Example of a complex player using 'mpg321'.
 
 
-File: docQmkYVF.info,  Node: Introduction,  Next: Quickstart Guide,  Up: Top
+File: docrNsAbE.info,  Node: Introduction,  Next: Quickstart Guide,  Up: Top
 
 1 Introduction
 **************
@@ -148,7 +148,7 @@ functionality beyond the core.
 using 'M-x customize' or by changing the variables directly.
 
 
-File: docQmkYVF.info,  Node: Quickstart Guide,  Next: Installation,  Prev: Introduction,  Up: Top
+File: docrNsAbE.info,  Node: Quickstart Guide,  Next: Installation,  Prev: Introduction,  Up: Top
 
 2 Quickstart Guide
 ******************
@@ -218,7 +218,7 @@ the basic commands (*note Basic Commands::), the interactive playlists
 irc (irc.libera.chat), and Emms has a mailing list at emms-help@gnu.org.
 
 
-File: docQmkYVF.info,  Node: Installation,  Next: Setup,  Prev: Quickstart Guide,  Up: Top
+File: docrNsAbE.info,  Node: Installation,  Next: Setup,  Prev: Quickstart Guide,  Up: Top
 
 3 Installation
 **************
@@ -238,7 +238,7 @@ add:
 * Compiling Emms::      Compiling Emms into Byte-Code.
 
 
-File: docQmkYVF.info,  Node: Compiling Emms,  Up: Installation
+File: docrNsAbE.info,  Node: Compiling Emms,  Up: Installation
 
 3.1 Compiling Emms
 ==================
@@ -265,7 +265,7 @@ have the appropriate permissions to do so on your system).
 run Emms just fine without byte compiling it.
 
 
-File: docQmkYVF.info,  Node: Setup,  Next: Configuration,  Prev: Installation,  Up: Top
+File: docrNsAbE.info,  Node: Setup,  Next: Configuration,  Prev: Installation,  Up: Top
 
 4 Setup
 *******
@@ -295,7 +295,7 @@ list of media players.
 by looking at the existing function definitions in 'emms-setup.el'.
 
 
-File: docQmkYVF.info,  Node: Configuration,  Next: Getting Help,  Prev: Setup,  Up: Top
+File: docrNsAbE.info,  Node: Configuration,  Next: Getting Help,  Prev: Setup,  Up: Top
 
 5 Configuration
 ***************
@@ -337,7 +337,7 @@ mechanism provided by Emacs.
 * Setup Examples::              Examples of ways to setup Emms.
 
 
-File: docQmkYVF.info,  Node: Finding files and speed,  Next: Setup Examples,  Up: Configuration
+File: docrNsAbE.info,  Node: Finding files and speed,  Next: Setup Examples,  Up: Configuration
 
 5.1 Finding files and speed
 ===========================
@@ -359,7 +359,7 @@ installed.
 EMMS-SOURCE-FILE-DIRECTORY-TREE-FUNCTION.
 
 
-File: docQmkYVF.info,  Node: Setup Examples,  Prev: Finding files and speed,  Up: Configuration
+File: docrNsAbE.info,  Node: Setup Examples,  Prev: Finding files and speed,  Up: Configuration
 
 5.2 Setup Examples
 ==================
@@ -414,7 +414,7 @@ volume control options enabled via 'emms-volume.el'.
         emms-volume-mpv-method 'smart)
 
 
-File: docQmkYVF.info,  Node: Getting Help,  Next: Formats and Freedom,  Prev: Configuration,  Up: Top
+File: docrNsAbE.info,  Node: Getting Help,  Next: Formats and Freedom,  Prev: Configuration,  Up: Top
 
 6 Getting Help
 **************
@@ -430,7 +430,7 @@ newsgroup which mirrors this mailing address at gmane.emacs.emms.user.
    Emms also has a website at <http://www.gnu.org/software/emms/>.
 
 
-File: docQmkYVF.info,  Node: Formats and Freedom,  Next: Basic Commands,  Prev: Getting Help,  Up: Top
+File: docrNsAbE.info,  Node: Formats and Freedom,  Next: Basic Commands,  Prev: Getting Help,  Up: Top
 
 7 Formats and Freedom
 *********************
@@ -457,7 +457,7 @@ code for a reference implementation freely available.  For more
 information about FLAC, go to <http://flac.sourceforge.net/>.
 
 
-File: docQmkYVF.info,  Node: Basic Commands,  Next: The Core File,  Prev: Formats and Freedom,  Up: Top
+File: docrNsAbE.info,  Node: Basic Commands,  Next: The Core File,  Prev: Formats and Freedom,  Up: Top
 
 8 Basic Commands
 ****************
@@ -555,7 +555,7 @@ by 'emms-show-all.el', which is included in the 'emms-all' setup level.
 See *Note Setup::.
 
 
-File: docQmkYVF.info,  Node: The Core File,  Next: Sources,  Prev: Basic Commands,  Up: Top
+File: docrNsAbE.info,  Node: The Core File,  Next: Sources,  Prev: Basic Commands,  Up: Top
 
 9 The Core File
 ***************
@@ -570,7 +570,7 @@ music, generating playlists and defining players.
 * Core Functions::     Providing the basic functionality of Emms.
 
 
-File: docQmkYVF.info,  Node: User Variables,  Next: Hooks,  Up: The Core File
+File: docrNsAbE.info,  Node: User Variables,  Next: Hooks,  Up: The Core File
 
 9.1 User Variables
 ==================
@@ -595,7 +595,7 @@ The core file defines a number of user variables.
      first track should be sorted before the second (see also 'sort').
 
 
-File: docQmkYVF.info,  Node: Hooks,  Next: Core Functions,  Prev: User Variables,  Up: The Core File
+File: docrNsAbE.info,  Node: Hooks,  Next: Core Functions,  Prev: User Variables,  Up: The Core File
 
 9.2 Hooks
 =========
@@ -628,7 +628,7 @@ Emms.
      EMMS-PLAYER-PAUSED-P to find the current state.
 
 
-File: docQmkYVF.info,  Node: Core Functions,  Prev: Hooks,  Up: The Core File
+File: docrNsAbE.info,  Node: Core Functions,  Prev: Hooks,  Up: The Core File
 
 9.3 Core Functions
 ==================
@@ -719,7 +719,7 @@ of Emms.
 Commands::.
 
 
-File: docQmkYVF.info,  Node: Sources,  Next: Simple Players,  Prev: The Core File,  Up: Top
+File: docrNsAbE.info,  Node: Sources,  Next: Simple Players,  Prev: The Core File,  Up: Top
 
 10 Sources
 **********
@@ -779,7 +779,7 @@ be easy.
      Search for REGEXP and display the results in a locate buffer
 
 
-File: docQmkYVF.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  Up: Top
+File: docrNsAbE.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  Up: Top
 
 11 Simple Players
 *****************
@@ -804,7 +804,7 @@ File: docQmkYVF.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  
      and the sentinel string STR.
 
 
-File: docQmkYVF.info,  Node: Playlists,  Next: Track Information,  Prev: Simple Players,  Up: Top
+File: docrNsAbE.info,  Node: Playlists,  Next: Track Information,  Prev: Simple Players,  Up: Top
 
 12 Playlists
 ************
@@ -854,7 +854,7 @@ EMMS-PLAYLIST-BUFFER.
      Alias for 'emms-playlist-length'.
 
 
-File: docQmkYVF.info,  Node: Track Information,  Next: Interactive Playlists,  Prev: Playlists,  Up: Top
+File: docrNsAbE.info,  Node: Track Information,  Next: Interactive Playlists,  Prev: Playlists,  Up: Top
 
 13 Track Information
 ********************
@@ -970,7 +970,7 @@ called for each track.
 * Defining Info Methods::    How to define new info methods.
 
 
-File: docQmkYVF.info,  Node: Metadata Utilities,  Next: Defining Info Methods,  Up: Track Information
+File: docrNsAbE.info,  Node: Metadata Utilities,  Next: Defining Info Methods,  Up: Track Information
 
 13.1 Metadata Utilities
 =======================
@@ -1096,7 +1096,7 @@ initialization file:
      (add-to-list 'emms-info-functions 'emms-info-opusinfo)
 
 
-File: docQmkYVF.info,  Node: Defining Info Methods,  Prev: Metadata Utilities,  Up: Track Information
+File: docrNsAbE.info,  Node: Defining Info Methods,  Prev: Metadata Utilities,  Up: Track Information
 
 13.2 Defining Info Methods
 ==========================
@@ -1186,7 +1186,7 @@ the keys listed above; for example "album" and "artist" form info
 symbols 'info-album' and 'info-artist'.
 
 
-File: docQmkYVF.info,  Node: Interactive Playlists,  Next: Markable Playlists,  Prev: Track Information,  Up: Top
+File: docrNsAbE.info,  Node: Interactive Playlists,  Next: Markable Playlists,  Prev: Track Information,  Up: Top
 
 14 Interactive Playlists
 ************************
@@ -1315,7 +1315,7 @@ program and can therefore be used to include titles and annotations
 within the playlist.
 
 
-File: docQmkYVF.info,  Node: Markable Playlists,  Next: Extending Emms,  Prev: Interactive Playlists,  Up: Top
+File: docrNsAbE.info,  Node: Markable Playlists,  Next: Extending Emms,  Prev: Interactive Playlists,  Up: Top
 
 15 Markable Playlists
 *********************
@@ -1386,7 +1386,7 @@ are useful for the elisp programer to handle marked tracks.
      'mapcar').
 
 
-File: docQmkYVF.info,  Node: Extending Emms,  Next: The Browser,  Prev: Markable Playlists,  Up: Top
+File: docrNsAbE.info,  Node: Extending Emms,  Next: The Browser,  Prev: Markable Playlists,  Up: Top
 
 16 Extending Emms
 *****************
@@ -1401,7 +1401,7 @@ customise it to your needs.
 * More Complex Player::      Example of a complex player using 'mpg321'.
 
 
-File: docQmkYVF.info,  Node: New Player,  Next: Simple Player for `play',  Up: Extending Emms
+File: docrNsAbE.info,  Node: New Player,  Next: Simple Player for `play',  Up: Extending Emms
 
 16.1 New Player
 ===============
@@ -1412,7 +1412,7 @@ player.  We will start with an easy example that shows how we can use
 the 'play' command under Unix to play our WAV files.
 
 
-File: docQmkYVF.info,  Node: Simple Player for `play',  Next: More Complex Player,  Prev: New Player,  Up: Extending Emms
+File: docrNsAbE.info,  Node: Simple Player for `play',  Next: More Complex Player,  Prev: New Player,  Up: Extending Emms
 
 16.2 Simple Player for 'play'
 =============================
@@ -1453,7 +1453,7 @@ take one song as argument and stop after playing that particular song.
 For any other concept you will need to customise emms a bit more...
 
 
-File: docQmkYVF.info,  Node: More Complex Player,  Prev: Simple Player for `play',  Up: Extending Emms
+File: docrNsAbE.info,  Node: More Complex Player,  Prev: Simple Player for `play',  Up: Extending Emms
 
 16.3 More Complex Player
 ========================
@@ -1526,7 +1526,7 @@ test if there are other files to play and close the process otherwise.
 'emms-mpg321-remote-pause' for example.
 
 
-File: docQmkYVF.info,  Node: The Browser,  Next: The Filter System,  Prev: Extending Emms,  Up: Top
+File: docrNsAbE.info,  Node: The Browser,  Next: The Filter System,  Prev: Extending Emms,  Up: Top
 
 17 The Browser
 **************
@@ -1555,7 +1555,7 @@ populated.
 * Filtering Tracks - deprecated::  Displaying a subset of the tracks.
 
 
-File: docQmkYVF.info,  Node: Browser Interface,  Next: Displaying Covers,  Up: The Browser
+File: docrNsAbE.info,  Node: Browser Interface,  Next: Displaying Covers,  Up: The Browser
 
 17.1 Browser Interface
 ======================
@@ -1860,7 +1860,7 @@ keybindings.
      the cache stack.
 
 
-File: docQmkYVF.info,  Node: Displaying Covers,  Next: Changing Looks,  Prev: Browser Interface,  Up: The Browser
+File: docrNsAbE.info,  Node: Displaying Covers,  Next: Changing Looks,  Prev: Browser Interface,  Up: The Browser
 
 17.2 Displaying Covers
 ======================
@@ -1909,7 +1909,7 @@ the following code to your .emacs:
 (http://repose.cx/cover_small.jpg).
 
 
-File: docQmkYVF.info,  Node: Changing Looks,  Next: Filtering Tracks - deprecated,  Prev: Displaying Covers,  Up: The Browser
+File: docrNsAbE.info,  Node: Changing Looks,  Next: Filtering Tracks - deprecated,  Prev: Displaying Covers,  Up: The Browser
 
 17.3 Changing Looks
 ===================
@@ -2021,7 +2021,7 @@ initial "info-" part.  For example, to change the artist face, type M-x
 'customize-face' 'emms-browser-artist-face'.
 
 
-File: docQmkYVF.info,  Node: Filtering Tracks - deprecated,  Prev: Changing Looks,  Up: The Browser
+File: docrNsAbE.info,  Node: Filtering Tracks - deprecated,  Prev: Changing Looks,  Up: The Browser
 
 17.4 Filtering Tracks - deprecated
 ==================================
@@ -2089,7 +2089,7 @@ functions to check the type of a file, etc.
                (emms-browser-filter-only-dir "~/Media/pending") track)))))
 
 
-File: docQmkYVF.info,  Node: The Filter System,  Next: Sorting Playlists,  Prev: The Browser,  Up: Top
+File: docrNsAbE.info,  Node: The Filter System,  Next: Sorting Playlists,  Prev: The Browser,  Up: Top
 
 18 The Filter System
 ********************
@@ -2119,7 +2119,7 @@ This manages the search and filter functionalities of emms-browser.
 * Showing State::          Showing the current state of the filter system.
 
 
-File: docQmkYVF.info,  Node: Filters and Searches,  Next: Backward Compatibility,  Up: The Filter System
+File: docrNsAbE.info,  Node: Filters and Searches,  Next: Backward Compatibility,  Up: The Filter System
 
 18.1 Filters and Searches
 =========================
@@ -2160,7 +2160,7 @@ and is selectable with < and >.  The active filter on the ring combines
 with the filter stack to show the rendered results.
 
 
-File: docQmkYVF.info,  Node: Backward Compatibility,  Next: Filter Components,  Prev: Filters and Searches,  Up: The Filter System
+File: docrNsAbE.info,  Node: Backward Compatibility,  Next: Filter Components,  Prev: Filters and Searches,  Up: The Filter System
 
 18.2 Backward Compatibility
 ===========================
@@ -2270,7 +2270,7 @@ interactively while searching your tracks.
      for the session.
 
 
-File: docQmkYVF.info,  Node: Filter Components,  Next: Filter Factories,  Prev: Backward Compatibility,  Up: The Filter System
+File: docrNsAbE.info,  Node: Filter Components,  Next: Filter Factories,  Prev: Backward Compatibility,  Up: The Filter System
 
 18.3 Filter Components
 ======================
@@ -2299,7 +2299,7 @@ render results.
    * The filter ring - A subset of convenient to use filters.
 
 
-File: docQmkYVF.info,  Node: Filter Factories,  Next: Factory Registration,  Prev: Filter Components,  Up: The Filter System
+File: docrNsAbE.info,  Node: Filter Factories,  Next: Factory Registration,  Prev: Filter Components,  Up: The Filter System
 
 18.4 Filter Factories
 =====================
@@ -2340,7 +2340,7 @@ comparison function we would like.
                 (funcall local-operator local-compare-val track-val))))))
 
 
-File: docQmkYVF.info,  Node: Factory Registration,  Next: Defined Factories,  Prev: Filter Factories,  Up: The Filter System
+File: docrNsAbE.info,  Node: Factory Registration,  Next: Defined Factories,  Prev: Filter Factories,  Up: The Filter System
 
 18.5 Factory Registration
 =========================
@@ -2396,7 +2396,7 @@ to compare must be a number and will be coerced as needed.
                                      (:number . nil))))
 
 
-File: docQmkYVF.info,  Node: Defined Factories,  Next: Defining Filters,  Prev: Factory Registration,  Up: The Filter System
+File: docrNsAbE.info,  Node: Defined Factories,  Next: Defining Filters,  Prev: Factory Registration,  Up: The Filter System
 
 18.6 Defined Factories
 ======================
@@ -2443,7 +2443,7 @@ are all just specialized field compare or the fields search factories.
    * Year range
 
 
-File: docQmkYVF.info,  Node: Defining Filters,  Next: The Filter Stack,  Prev: Defined Factories,  Up: The Filter System
+File: docrNsAbE.info,  Node: Defining Filters,  Next: The Filter Stack,  Prev: Defined Factories,  Up: The Filter System
 
 18.7 Defining Filters
 =====================
@@ -2542,7 +2542,7 @@ filter by name to an existing filter folder/factory.
 'emms-filters-show-filter-menu'
 
 
-File: docQmkYVF.info,  Node: The Filter Stack,  Next: The Cache Stack,  Prev: Defining Filters,  Up: The Filter System
+File: docrNsAbE.info,  Node: The Filter Stack,  Next: The Cache Stack,  Prev: Defining Filters,  Up: The Filter System
 
 18.8 The Filter Stack
 =====================
@@ -2597,7 +2597,7 @@ filter.  Smash is a clear followed by a push.
 'emms-filters-or', 'emms-filters-and-not',
 
 
-File: docQmkYVF.info,  Node: The Cache Stack,  Next: Showing State,  Prev: The Filter Stack,  Up: The Filter System
+File: docrNsAbE.info,  Node: The Cache Stack,  Next: Showing State,  Prev: The Filter Stack,  Up: The Filter System
 
 18.9 The Cache Stack
 ====================
@@ -2668,7 +2668,7 @@ be stashed at anytime.  The stashed caches will be a selection ring for
 'emms-filters-push-cache'.
 
 
-File: docQmkYVF.info,  Node: Showing State,  Prev: The Cache Stack,  Up: The Filter System
+File: docrNsAbE.info,  Node: Showing State,  Prev: The Cache Stack,  Up: The Filter System
 
 18.10 Showing State
 ===================
@@ -2709,7 +2709,7 @@ of the filter system.
    * 'emms-filters-format-cache-stack'
 
 
-File: docQmkYVF.info,  Node: Sorting Playlists,  Next: Persistent Playlists,  Prev: The Filter System,  Up: Top
+File: docrNsAbE.info,  Node: Sorting Playlists,  Next: Persistent Playlists,  Prev: The Filter System,  Up: Top
 
 19 Sorting Playlists
 ********************
@@ -2768,7 +2768,7 @@ preceded by a prefix.  'emms-playlist-sort' can be loaded by invoking:
      Alias for 'emms-playlist-sort-by-random' and 'emms-shuffle'.
 
 
-File: docQmkYVF.info,  Node: Persistent Playlists,  Next: Editing Tracks,  Prev: Sorting Playlists,  Up: Top
+File: docrNsAbE.info,  Node: Persistent Playlists,  Next: Editing Tracks,  Prev: Sorting Playlists,  Up: Top
 
 20 Persistent Playlists
 ***********************
@@ -2805,7 +2805,7 @@ start playback afterwards, you can tweak this variable.
      'emms-history-load' was invoked.  The default value is nil.
 
 
-File: docQmkYVF.info,  Node: Editing Tracks,  Next: Emms Mode Line,  Prev: Persistent Playlists,  Up: Top
+File: docrNsAbE.info,  Node: Editing Tracks,  Next: Emms Mode Line,  Prev: Persistent Playlists,  Up: Top
 
 21 Editing Tracks
 *****************
@@ -2904,7 +2904,7 @@ mark some tracks.  Then hit 'R' which calls this function:
      tracks according to the value of 'emms-tag-editor-rename-format'.
 
 
-File: docQmkYVF.info,  Node: Emms Mode Line,  Next: Limiting,  Prev: Editing Tracks,  Up: Top
+File: docrNsAbE.info,  Node: Emms Mode Line,  Next: Limiting,  Prev: Editing Tracks,  Up: Top
 
 22 Emms Mode Line
 *****************
@@ -2949,7 +2949,7 @@ call 'emms-playing-time-enable-display' and
      Remove playing time from mode line.
 
 
-File: docQmkYVF.info,  Node: Limiting,  Next: Music Player Daemon,  Prev: Emms Mode Line,  Up: Top
+File: docrNsAbE.info,  Node: Limiting,  Next: Music Player Daemon,  Prev: Emms Mode Line,  Up: Top
 
 23 Limiting
 ***********
@@ -3017,7 +3017,7 @@ then the derived playlist becomes current.
      Switch to the original playlist buffer (if it still exists).
 
 
-File: docQmkYVF.info,  Node: Music Player Daemon,  Next: Lyrics,  Prev: Limiting,  Up: Top
+File: docrNsAbE.info,  Node: Music Player Daemon,  Next: Lyrics,  Prev: Limiting,  Up: Top
 
 24 Music Player Daemon
 **********************
@@ -3130,7 +3130,7 @@ To activate this, add the following to your .emacs.
      (setq emms-volume-change-function 'emms-volume-mpd-change)
 
 
-File: docQmkYVF.info,  Node: Lyrics,  Next: Volume,  Prev: Music Player Daemon,  Up: Top
+File: docrNsAbE.info,  Node: Lyrics,  Next: Volume,  Prev: Music Player Daemon,  Up: Top
 
 25 Lyrics
 *********
@@ -3217,7 +3217,7 @@ functions:
      Toggle displaying Emms lyrics.
 
 
-File: docQmkYVF.info,  Node: Volume,  Next: Streaming Audio,  Prev: Lyrics,  Up: Top
+File: docrNsAbE.info,  Node: Volume,  Next: Streaming Audio,  Prev: Lyrics,  Up: Top
 
 26 Volume
 *********
@@ -3270,7 +3270,7 @@ instead of pressing 'C-c +' six times to increase volume by six steps of
 of the box, see EMMS-VOLUME-CHANGE-FUNCTION.
 
 
-File: docQmkYVF.info,  Node: Streaming Audio,  Next: Radio Browser,  Prev: Volume,  Up: Top
+File: docrNsAbE.info,  Node: Streaming Audio,  Next: Radio Browser,  Prev: Volume,  Up: Top
 
 27 Streaming Audio
 ******************
@@ -3300,7 +3300,7 @@ project over the years by people who enjoy Emms.  We hope you will enjoy
 them too, and invite you to send in your suggestions to add to the list.
 
 
-File: docQmkYVF.info,  Node: Radio Browser,  Next: APE / FLAC Commands,  Prev: Streaming Audio,  Up: Top
+File: docrNsAbE.info,  Node: Radio Browser,  Next: APE / FLAC Commands,  Prev: Streaming Audio,  Up: Top
 
 28 Radio Browser
 ****************
@@ -3330,7 +3330,7 @@ this:
 built-in since emacs v28.1).
 
 
-File: docQmkYVF.info,  Node: APE / FLAC Commands,  Next: Bookmarks,  Prev: Radio Browser,  Up: Top
+File: docrNsAbE.info,  Node: APE / FLAC Commands,  Next: Bookmarks,  Prev: Radio Browser,  Up: Top
 
 29 APE / FLAC Commands
 **********************
@@ -3352,7 +3352,7 @@ information for APE / FLAC itself.
      Play previous track from .cue file
 
 
-File: docQmkYVF.info,  Node: Bookmarks,  Next: Managing Playlists,  Prev: APE / FLAC Commands,  Up: Top
+File: docrNsAbE.info,  Node: Bookmarks,  Next: Managing Playlists,  Prev: APE / FLAC Commands,  Up: Top
 
 30 Bookmarks
 ************
@@ -3372,7 +3372,7 @@ respectively.
 emms-bookmarks-clear'.
 
 
-File: docQmkYVF.info,  Node: Managing Playlists,  Next: GNU FM,  Prev: Bookmarks,  Up: Top
+File: docrNsAbE.info,  Node: Managing Playlists,  Next: GNU FM,  Prev: Bookmarks,  Up: Top
 
 31 Managing Playlists
 *********************
@@ -3418,7 +3418,7 @@ following commands are available:
      Kill the playlist manager.
 
 
-File: docQmkYVF.info,  Node: GNU FM,  Next: Listenbrainz,  Prev: Managing Playlists,  Up: Top
+File: docrNsAbE.info,  Node: GNU FM,  Next: Listenbrainz,  Prev: Managing Playlists,  Up: Top
 
 32 GNU FM
 *********
@@ -3454,7 +3454,7 @@ init-file by setting these variables:
 * GNU FM Streaming:: Streaming music from a GNU FM server.
 
 
-File: docQmkYVF.info,  Node: Uploading Track Information,  Next: GNU FM Streaming,  Up: GNU FM
+File: docrNsAbE.info,  Node: Uploading Track Information,  Next: GNU FM Streaming,  Up: GNU FM
 
 32.1 Uploading Track Information
 ================================
@@ -3477,7 +3477,7 @@ be uploaded to the server when the track's playback ends.  You can
 disable this behavior with 'emms-librefm-scrobbler-disable'.
 
 
-File: docQmkYVF.info,  Node: GNU FM Streaming,  Prev: Uploading Track Information,  Up: GNU FM
+File: docrNsAbE.info,  Node: GNU FM Streaming,  Prev: Uploading Track Information,  Up: GNU FM
 
 32.2 GNU FM Streaming
 =====================
@@ -3494,7 +3494,7 @@ setup level.
 you wish to listen to, for example "librefm://globaltags/Classical".
 
 
-File: docQmkYVF.info,  Node: Listenbrainz,  Next: D-Bus,  Prev: GNU FM,  Up: Top
+File: docrNsAbE.info,  Node: Listenbrainz,  Next: D-Bus,  Prev: GNU FM,  Up: Top
 
 33 Listenbrainz
 ***************
@@ -3525,7 +3525,7 @@ ends.  You can disable this behavior with
 'emms-listenbrainz-scrobbler-disable'.
 
 
-File: docQmkYVF.info,  Node: D-Bus,  Next: Copying,  Prev: Listenbrainz,  Up: Top
+File: docrNsAbE.info,  Node: D-Bus,  Next: Copying,  Prev: Listenbrainz,  Up: Top
 
 34 D-Bus
 ********
@@ -3545,7 +3545,7 @@ with 'emms-mpris-disable'.
 not complete: changing the volume is not currently supported.
 
 
-File: docQmkYVF.info,  Node: Copying,  Next: The GNU FDL,  Prev: Extending Emms,  Up: Top
+File: docrNsAbE.info,  Node: Copying,  Next: The GNU FDL,  Prev: Extending Emms,  Up: Top
 
 GNU General Public License
 **************************
@@ -4257,7 +4257,7 @@ GNU Lesser General Public License instead of this License.  But first,
 please read <http://www.gnu.org/philosophy/why-not-lgpl.html>.
 
 
-File: docQmkYVF.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying,  Up: Top
+File: docrNsAbE.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying,  Up: Top
 
 35 GNU Free Documentation License
 *********************************
@@ -4686,7 +4686,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docQmkYVF.info,  Node: Concept Index,  Next: Function Index,  Prev: The GNU FDL,  Up: Top
+File: docrNsAbE.info,  Node: Concept Index,  Next: Function Index,  Prev: The GNU FDL,  Up: Top
 
 Concept Index
 *************
@@ -4765,7 +4765,7 @@ Concept Index
 * website:                               Getting Help.          (line 6)
 
 
-File: docQmkYVF.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
+File: docrNsAbE.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
 
 Function Index
 **************
@@ -5078,7 +5078,7 @@ Function Index
                                                               (line  71)
 
 
-File: docQmkYVF.info,  Node: Variable Index,  Next: Keybinding Index,  Prev: Function Index,  Up: Top
+File: docrNsAbE.info,  Node: Variable Index,  Next: Keybinding Index,  Prev: Function Index,  Up: Top
 
 Variable Index
 **************
@@ -5122,7 +5122,7 @@ Variable Index
 * emms-volume-mode-timeout:              Volume.              (line  42)
 
 
-File: docQmkYVF.info,  Node: Keybinding Index,  Prev: Variable Index,  Up: Top
+File: docrNsAbE.info,  Node: Keybinding Index,  Prev: Variable Index,  Up: Top
 
 Keybinding Index
 ****************
