@@ -1,7 +1,7 @@
-This is docrNsAbE.info, produced by makeinfo version 6.8 from
+This is dociw1WWj.info, produced by makeinfo version 7.1.1 from
 emms.texinfo.
 
-(C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016,
+© 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016,
 2020, 2021, 2022, 2023, 2024, 2025 Free Software Foundation, Inc.
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -15,14 +15,14 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docrNsAbE.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
+File: dociw1WWj.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
 
 Emms Manual
 ***********
 
 This is the Manual for the Emacs Multimedia System.
 
-   (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016,
+   © 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016,
 2020, 2021, 2022, 2023, 2024, 2025 Free Software Foundation, Inc.
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -106,11 +106,11 @@ Track Information
 
 Extending Emms
 * New Player::               How to define a new player.
-* Simple Player for `play':: Example player using 'play'.
-* More Complex Player::      Example of a complex player using 'mpg321'.
+* Simple Player for `play':: Example player using ‘play’.
+* More Complex Player::      Example of a complex player using ‘mpg321’.
 
 
-File: docrNsAbE.info,  Node: Introduction,  Next: Quickstart Guide,  Up: Top
+File: dociw1WWj.info,  Node: Introduction,  Next: Quickstart Guide,  Up: Top
 
 1 Introduction
 **************
@@ -126,7 +126,7 @@ Emms, an online version of the manual is available at:
    The basic functionality of Emms consists of three parts: The core,
 the sources, and the players.
 
-   The core resides in 'emms.el', provides a simple playlist, and the
+   The core resides in ‘emms.el’, provides a simple playlist, and the
 basic functionality to use all the other features of Emms.  It provides
 the common user commands and interfaces for other parts.  It thinks in
 tracks, where a track is the combination of a type and a name - e.g.
@@ -134,11 +134,11 @@ the track type 'file has a name that is the file name.  Other track
 types are possible.
 
    To get to tracks, the core needs sources.  The file
-'emms-source-file.el' provides simple sources to interact with the file
+‘emms-source-file.el’ provides simple sources to interact with the file
 system.
 
    When Emms finally has the sources in the playlist, it needs a player
-to play them.  'emms-player-simple.el' defines a few useful players and
+to play them.  ‘emms-player-simple.el’ defines a few useful players and
 provides a straightforward way of providing your own.
 
    The Emms comes with many additional features to extend the
@@ -148,7 +148,7 @@ functionality beyond the core.
 using 'M-x customize' or by changing the variables directly.
 
 
-File: docrNsAbE.info,  Node: Quickstart Guide,  Next: Installation,  Prev: Introduction,  Up: Top
+File: dociw1WWj.info,  Node: Quickstart Guide,  Next: Installation,  Prev: Introduction,  Up: Top
 
 2 Quickstart Guide
 ******************
@@ -157,12 +157,12 @@ This chapter demonstrates how to setup Emms so that you can start
 listening to your music without having to read all of the documentation
 first.  This is the tl;dr version of the manual.
 
-   The first thing to do is to load Emms via GNU ELPA. Invoke 'M-x
-list-packages' and choose to install Emms.
+   The first thing to do is to load Emms via GNU ELPA. Invoke ‘M-x
+list-packages’ and choose to install Emms.
 
    If you are installing Emms manually, then start by telling Emacs
 where your copy of Emms is located.  Let's say you have it in
-'~/elisp/emms/'.  So add this line to your '.emacs':
+‘~/elisp/emms/’.  So add this line to your ‘.emacs’:
 
      (add-to-list 'load-path "~/elisp/emms/lisp/")
      (require 'emms-setup)
@@ -177,35 +177,35 @@ can be as simple as three lines.  For example:
      (setq emms-player-list '(emms-player-vlc)
            emms-info-functions '(emms-info-native))
 
-   The function 'emms-all' loads all of the stable features in Emms.
+   The function ‘emms-all’ loads all of the stable features in Emms.
 
    Emms can automatically generate that 'setq' statement for you based
 on which players and metadata readers you have installed on your system.
-Just invoke 'emms-setup-discover' and answer a few questions.
+Just invoke ‘emms-setup-discover’ and answer a few questions.
 
    The variable EMMS-PLAYER-LIST is a list of players that Emms should
 call to play your media.  In this example we assume that you have VLC
 installed on your system.  But if you use mpv or mplayer instead, just
-change 'emms-player-vlc' to 'emms-player-mpv' or 'emms-player-mplayer';
+change ‘emms-player-vlc’ to ‘emms-player-mpv’ or ‘emms-player-mplayer’;
 you get the idea.
 
    The variable EMMS-INFO-FUNCTIONS is a list of ways for Emms to read
 the metadata in your media files, so that Emms can display the song
-title, artist name, etc.  'emms-info-native' is a metadata reader
+title, artist name, etc.  ‘emms-info-native’ is a metadata reader
 written entirely in Emacs Lisp, but there are also other backends which
 call external programs such as TinyTag, Taglib, Exiftool, and etc.
 
    Reload your Emacs initialization file, or restart Emacs to let the
 changes have an effect.
 
-   Add all your music to a playlist by invoking 'M-x
-emms-add-directory-tree RET ~/my_music_directory/ RET'.  When you do
+   Add all your music to a playlist by invoking ‘M-x
+emms-add-directory-tree RET ~/my_music_directory/ RET’.  When you do
 this Emms will start reading metadata from the files and populating the
 cache.  This may take a while.
 
-   When you are done, you can load the browser with 'M-x emms-browser',
-or view your playlist directly with 'M-x emms-playlist-mode-go' (when in
-the playlist you can hit 'RET' on a track to start playing it.)
+   When you are done, you can load the browser with ‘M-x emms-browser’,
+or view your playlist directly with ‘M-x emms-playlist-mode-go’ (when in
+the playlist you can hit ‘RET’ on a track to start playing it.)
 
    Now you can start exploring Emms.  It's probably best to begin with
 the basic commands (*note Basic Commands::), the interactive playlists
@@ -218,7 +218,7 @@ the basic commands (*note Basic Commands::), the interactive playlists
 irc (irc.libera.chat), and Emms has a mailing list at emms-help@gnu.org.
 
 
-File: docrNsAbE.info,  Node: Installation,  Next: Setup,  Prev: Quickstart Guide,  Up: Top
+File: dociw1WWj.info,  Node: Installation,  Next: Setup,  Prev: Quickstart Guide,  Up: Top
 
 3 Installation
 **************
@@ -238,12 +238,12 @@ add:
 * Compiling Emms::      Compiling Emms into Byte-Code.
 
 
-File: docrNsAbE.info,  Node: Compiling Emms,  Up: Installation
+File: dociw1WWj.info,  Node: Compiling Emms,  Up: Installation
 
 3.1 Compiling Emms
 ==================
 
-If you are using XEmacs, you will need to edit 'Makefile' as follows
+If you are using XEmacs, you will need to edit ‘Makefile’ as follows
 before continuing.
 
      EMACS=xemacs
@@ -252,11 +252,11 @@ before continuing.
    You can byte-compile Emms by first entering the directory containing
 the Emms source code, followed by invoking:
 
-   'make'
+   ‘make’
 
    Which will byte compile Emms.  You can then invoke:
 
-   'make install'
+   ‘make install’
 
    Which will install Emms into your Emacs directories (provided you
 have the appropriate permissions to do so on your system).
@@ -265,12 +265,12 @@ have the appropriate permissions to do so on your system).
 run Emms just fine without byte compiling it.
 
 
-File: docrNsAbE.info,  Node: Setup,  Next: Configuration,  Prev: Installation,  Up: Top
+File: dociw1WWj.info,  Node: Setup,  Next: Configuration,  Prev: Installation,  Up: Top
 
 4 Setup
 *******
 
-The 'emms-setup' feature is provided by the file 'emms-setup.el'.  It is
+The 'emms-setup' feature is provided by the file ‘emms-setup.el’.  It is
 essentially a collection of shortcuts for loading different Emms
 features quickly, but everything you can do with 'emms-setup' can also
 be done manually.
@@ -292,10 +292,10 @@ list of media players.
      Set EMMS-PLAYER-LIST to EMMS-SETUP-DEFAULT-PLAYER-LIST.
 
    You can of course write your own Emms setup functions like the above
-by looking at the existing function definitions in 'emms-setup.el'.
+by looking at the existing function definitions in ‘emms-setup.el’.
 
 
-File: docrNsAbE.info,  Node: Configuration,  Next: Getting Help,  Prev: Setup,  Up: Top
+File: dociw1WWj.info,  Node: Configuration,  Next: Getting Help,  Prev: Setup,  Up: Top
 
 5 Configuration
 ***************
@@ -325,10 +325,10 @@ For example:
      (setq emms-info-asynchronously nil)
      (setq emms-playlist-buffer-name "*Music*")
 
-   The first 'setq' turns off the asynchronous updating of info tags.
+   The first ‘setq’ turns off the asynchronous updating of info tags.
 The second sets the default name of the Emms playlist buffer.
 
-   Another way to change Emms variables is to use the M-x 'customize'
+   Another way to change Emms variables is to use the M-x ‘customize’
 mechanism provided by Emacs.
 
 * Menu:
@@ -337,21 +337,21 @@ mechanism provided by Emacs.
 * Setup Examples::              Examples of ways to setup Emms.
 
 
-File: docrNsAbE.info,  Node: Finding files and speed,  Next: Setup Examples,  Up: Configuration
+File: dociw1WWj.info,  Node: Finding files and speed,  Next: Setup Examples,  Up: Configuration
 
 5.1 Finding files and speed
 ===========================
 
 Emms needs to traverse directories in order to find playable media.  The
 default method Emms uses to achive this is
-'emms-source-file-directory-tree-internal' as defined in
-'emms-source-file.el'.  The above method is written portably and will
+‘emms-source-file-directory-tree-internal’ as defined in
+‘emms-source-file.el’.  The above method is written portably and will
 always work, but might be too slow if we want to load several hundred
 tracks (or more).
 
-   'emms-source-file.el' defines another method for finding files,
-'emms-source-file-directory-tree-find' which uses GNU/find.
-'emms-source-file-directory-tree-find' is usually an order of magnitude
+   ‘emms-source-file.el’ defines another method for finding files,
+‘emms-source-file-directory-tree-find’ which uses GNU/find.
+‘emms-source-file-directory-tree-find’ is usually an order of magnitude
 faster, but of course will not work if you do not have GNU/find
 installed.
 
@@ -359,7 +359,7 @@ installed.
 EMMS-SOURCE-FILE-DIRECTORY-TREE-FUNCTION.
 
 
-File: docrNsAbE.info,  Node: Setup Examples,  Prev: Finding files and speed,  Up: Configuration
+File: dociw1WWj.info,  Node: Setup Examples,  Prev: Finding files and speed,  Up: Configuration
 
 5.2 Setup Examples
 ==================
@@ -370,8 +370,8 @@ default Emms setup.
 
    The following excerpt includes dbus integration, defining a "recent"
 filter for the *Note The Browser::, persistent playlist via
-'emms-history.el', and enabling sending track information with
-'emms-librefm-stream.el':
+‘emms-history.el’, and enabling sending track information with
+‘emms-librefm-stream.el’:
 
        ;; notifications
        (require 'emms-dbus)
@@ -396,7 +396,7 @@ filter for the *Note The Browser::, persistent playlist via
    In the following it is possible to see how some of defaults are set
 regarding saving playlists, playlist interaction, adding special
 arguments to a specific player backend and configuring player-specific
-volume control options enabled via 'emms-volume.el'.
+volume control options enabled via ‘emms-volume.el’.
 
        (setq-default
         emms-source-file-default-directory "/mnt/db/mediaCore/sound_music/"
@@ -414,7 +414,7 @@ volume control options enabled via 'emms-volume.el'.
         emms-volume-mpv-method 'smart)
 
 
-File: docrNsAbE.info,  Node: Getting Help,  Next: Formats and Freedom,  Prev: Configuration,  Up: Top
+File: dociw1WWj.info,  Node: Getting Help,  Next: Formats and Freedom,  Prev: Configuration,  Up: Top
 
 6 Getting Help
 **************
@@ -430,7 +430,7 @@ newsgroup which mirrors this mailing address at gmane.emacs.emms.user.
    Emms also has a website at <http://www.gnu.org/software/emms/>.
 
 
-File: docrNsAbE.info,  Node: Formats and Freedom,  Next: Basic Commands,  Prev: Getting Help,  Up: Top
+File: dociw1WWj.info,  Node: Formats and Freedom,  Next: Basic Commands,  Prev: Getting Help,  Up: Top
 
 7 Formats and Freedom
 *********************
@@ -457,7 +457,7 @@ code for a reference implementation freely available.  For more
 information about FLAC, go to <http://flac.sourceforge.net/>.
 
 
-File: docrNsAbE.info,  Node: Basic Commands,  Next: The Core File,  Prev: Formats and Freedom,  Up: Top
+File: dociw1WWj.info,  Node: Basic Commands,  Next: The Core File,  Prev: Formats and Freedom,  Up: Top
 
 8 Basic Commands
 ****************
@@ -487,11 +487,11 @@ database and files.
  -- Function: emms-play-file file
      A source for a single file - either FILE, or queried from the user.
      If called with a prefix the file will be added like
-     'emms-add-file'.
+     ‘emms-add-file’.
  -- Function: emms-add-file file
      A source for a single file - either FILE, or queried from the user.
      If called with a prefix the file will be played like
-     'emms-play-file'.
+     ‘emms-play-file’.
  -- Function: emms-play-directory dir
      A source for a whole directory tree - either DIR, or queried from
      the user.
@@ -549,18 +549,18 @@ basic user commands (which you might want to bind to keystrokes):
      Describe the current Emms track in the minibuffer.  If INSERTP is
      non-nil, insert the description into the current buffer instead.
      This function uses EMMS-SHOW-FORMAT to format the current track.
-   The command 'emms-show-all' will pop up a window with the complete
-information about the track being played.  'emms-show-all' is provided
-by 'emms-show-all.el', which is included in the 'emms-all' setup level.
+   The command ‘emms-show-all’ will pop up a window with the complete
+information about the track being played.  ‘emms-show-all’ is provided
+by ‘emms-show-all.el’, which is included in the 'emms-all' setup level.
 See *Note Setup::.
 
 
-File: docrNsAbE.info,  Node: The Core File,  Next: Sources,  Prev: Basic Commands,  Up: Top
+File: dociw1WWj.info,  Node: The Core File,  Next: Sources,  Prev: Basic Commands,  Up: Top
 
 9 The Core File
 ***************
 
-The core file 'emms.el' provides the all basic functions for playing
+The core file ‘emms.el’ provides the all basic functions for playing
 music, generating playlists and defining players.
 
 * Menu:
@@ -570,7 +570,7 @@ music, generating playlists and defining players.
 * Core Functions::     Providing the basic functionality of Emms.
 
 
-File: docrNsAbE.info,  Node: User Variables,  Next: Hooks,  Up: The Core File
+File: dociw1WWj.info,  Node: User Variables,  Next: Hooks,  Up: The Core File
 
 9.1 User Variables
 ==================
@@ -581,7 +581,7 @@ The core file defines a number of user variables.
      A list of players Emms can use.  You need to set this in order to
      use Emms to play media.
  -- User Option: emms-show-format
-     The format to use for 'emms-show'.  Any "%s" is replaced by what
+     The format to use for ‘emms-show’.  Any "%s" is replaced by what
      EMMS-TRACK-DESCRIPTION-FUNCTION returns for the currently playing
      track.
  -- User Option: emms-repeat-playlist
@@ -592,10 +592,10 @@ The core file defines a number of user variables.
      Function for describing an Emms track in a user-friendly way.
  -- User Option: emms-sort-lessp-function
      A function that compares two tracks, and returns non-nil if the
-     first track should be sorted before the second (see also 'sort').
+     first track should be sorted before the second (see also ‘sort’).
 
 
-File: docrNsAbE.info,  Node: Hooks,  Next: Core Functions,  Prev: User Variables,  Up: The Core File
+File: dociw1WWj.info,  Node: Hooks,  Next: Core Functions,  Prev: User Variables,  Up: The Core File
 
 9.2 Hooks
 =========
@@ -628,7 +628,7 @@ Emms.
      EMMS-PLAYER-PAUSED-P to find the current state.
 
 
-File: docrNsAbE.info,  Node: Core Functions,  Prev: Hooks,  Up: The Core File
+File: dociw1WWj.info,  Node: Core Functions,  Prev: Hooks,  Up: The Core File
 
 9.3 Core Functions
 ==================
@@ -640,10 +640,10 @@ of Emms.
 
  -- Function: emms-next-noerror
      Start playing the next track in the Emms playlist.  Unlike
-     'emms-next', this function doesn't signal an error when called at
+     ‘emms-next’, this function doesn't signal an error when called at
      the end of the playlist.  This function should only be called when
      no player is playing.  This is a good function to put in
-     'emms-player-finished-hook'.
+     ‘emms-player-finished-hook’.
  -- Function: emms-playlist-next
      Move to the next track in the current buffer.
  -- Function: emms-playlist-previous
@@ -697,9 +697,9 @@ of Emms.
      Seek the current player by DURATION from its current position.  The
      argument DURATION can be:
 
-        - A single number, in which case it is interpreted as seconds.
+        − A single number, in which case it is interpreted as seconds.
 
-        - A string of form [-][HH:]MM:SS.m, where HH is hours, MM is
+        − A string of form [-][HH:]MM:SS.m, where HH is hours, MM is
           minutes, and SS is seconds.
 
      In both forms seconds can be a floating point number.  A negative
@@ -707,7 +707,7 @@ of Emms.
 
  -- Function: emms-seek-to timestamp
      Seek the current player to TIMESTAMP.  Acceptable forms for
-     TIMESTAMP are the same as time duration in 'emms-seek', except that
+     TIMESTAMP are the same as time duration in ‘emms-seek’, except that
      timestamps cannot be negative.
 
  -- Function: emms-seek-forward
@@ -719,7 +719,7 @@ of Emms.
 Commands::.
 
 
-File: docrNsAbE.info,  Node: Sources,  Next: Simple Players,  Prev: The Core File,  Up: Top
+File: dociw1WWj.info,  Node: Sources,  Next: Simple Players,  Prev: The Core File,  Up: Top
 
 10 Sources
 **********
@@ -729,7 +729,7 @@ sources of its own.  Sources are designed so that creating new ones will
 be easy.
 
    For examples of Emms sources for files and directories see
-'emms-source-file.el'.
+‘emms-source-file.el’.
 
  -- User Option: emms-source-file-default-directory
      The default directory to look for media files.
@@ -760,7 +760,7 @@ be easy.
      An Emms source that will find files in DIR or
      EMMS-SOURCE-FILE-DEFAULT-DIRECTORY that match REGEXP.
  -- Function: emms-source-beets database filter sort
-     An Emms source that will read a 'beets' library database (requires
+     An Emms source that will read a ‘beets’ library database (requires
      Emacs to be built with SQLite support).  With prefix argument
      FILTER, interactively filter the database.  With a double (or more)
      prefix argument, also set SORT interactively; otherwise use
@@ -779,7 +779,7 @@ be easy.
      Search for REGEXP and display the results in a locate buffer
 
 
-File: docrNsAbE.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  Up: Top
+File: dociw1WWj.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  Up: Top
 
 11 Simple Players
 *****************
@@ -804,7 +804,7 @@ File: docrNsAbE.info,  Node: Simple Players,  Next: Playlists,  Prev: Sources,  
      and the sentinel string STR.
 
 
-File: docrNsAbE.info,  Node: Playlists,  Next: Track Information,  Prev: Simple Players,  Up: Top
+File: dociw1WWj.info,  Node: Playlists,  Next: Track Information,  Prev: Simple Players,  Up: Top
 
 12 Playlists
 ************
@@ -822,7 +822,7 @@ configuration see *Note Configuration::.
    You can create any number of playlist buffers you wish.  At any time
 Emms has a single "current" buffer through which it proceeds track by
 track.  A saved playlist can be added to the current buffer by calling
-'M-x emms-add-playlist' or 'M-x emms-play-playlist', which also plays
+‘M-x emms-add-playlist’ or ‘M-x emms-play-playlist’, which also plays
 the tracks immediately.
 
    The current Emms playlist buffer is stored in the variable
@@ -851,17 +851,17 @@ EMMS-PLAYLIST-BUFFER.
      Display the total playing time of the current playlist.
 
  -- Function: emms-playlist-total-playing-time
-     Alias for 'emms-playlist-length'.
+     Alias for ‘emms-playlist-length’.
 
 
-File: docrNsAbE.info,  Node: Track Information,  Next: Interactive Playlists,  Prev: Playlists,  Up: Top
+File: dociw1WWj.info,  Node: Track Information,  Next: Interactive Playlists,  Prev: Playlists,  Up: Top
 
 13 Track Information
 ********************
 
 By default Emms will only list tracks as file names or URLs in playlists
 (*note Playlists::) and the browser (*note The Browser::).  However,
-Emms can be configured to utilize so-called "info methods" to augment
+Emms can be configured to utilize so-called “info methods” to augment
 tracks with metadata information, such as artist name, track name, album
 title, and the like.  We describe these methods and their use in this
 chapter.
@@ -878,58 +878,58 @@ or MP3, while some methods support a wide variety of formats.
    If caching is enabled (it is by default) then the metadata for each
 track will be stored in the cache for faster retrieval.  That means if
 you change info method and want updated tracks, you will have to reset
-the cache 'M-x emms-cache-reset' and then repopulate with 'M-x
-emms-add-directory-tree RET ~/Music/ RET' or similar.
+the cache ‘M-x emms-cache-reset’ and then repopulate with ‘M-x
+emms-add-directory-tree RET ~/Music/ RET’ or similar.
 
    Automatic track information retrieval is enabled by default in the
-'emms-all' setup level (*note Setup::).  That setup level configures
-Emms to use 'emms-info-native' and 'emms-info-cueinfo' methods, as they
+‘emms-all’ setup level (*note Setup::).  That setup level configures
+Emms to use ‘emms-info-native’ and ‘emms-info-cueinfo’ methods, as they
 are the only methods that do not rely on additional software.
 
    Here is a list of all info methods distributed with Emms and their
 software requirements:
 
-'emms-info-native'
+‘emms-info-native’
      This method is implemented completely in Emacs Lisp and hence does
      not require any external software.  It supports Ogg Vorbis, Opus,
      FLAC and MP3 files.
 
-'emms-info-tinytag'
-     This method utilizes a small Python library 'tinytag'.  It supports
+‘emms-info-tinytag’
+     This method utilizes a small Python library ‘tinytag’.  It supports
      MP3, Ogg Vorbis, Opus, MP4, M4A, FLAC, WMA and WAV formats.
 
-'emms-info-exiftool'
-     This method calls 'exiftool' utility written in Perl.  It supports
+‘emms-info-exiftool’
+     This method calls ‘exiftool’ utility written in Perl.  It supports
      dozens of media file formats, far too many to list here.
 
-'emms-info-libtag'
-     This method calls a small "shim" executable 'emms-print-metadata'
+‘emms-info-libtag’
+     This method calls a small "shim" executable ‘emms-print-metadata’
      built around TagLib library.  It supports MP3, Ogg Vorbis, Opus,
      FLAC, MPC, Speex, WavPack, TrueAudio, WAV, AIFF, MP4 and ASF
      formats.
 
-'emms-info-metaflac'
-     This method calls 'metaflac' utility.  It works only with FLAC
+‘emms-info-metaflac’
+     This method calls ‘metaflac’ utility.  It works only with FLAC
      files.
 
-'emms-info-mp3info'
-     This method calls 'mp3info' utility.  It works only with MP3 files
+‘emms-info-mp3info’
+     This method calls ‘mp3info’ utility.  It works only with MP3 files
      that have older id3v1 tags.
 
-'emms-info-ogginfo'
-     This method calls 'ogginfo' utility.  It supports Ogg Vorbis and
+‘emms-info-ogginfo’
+     This method calls ‘ogginfo’ utility.  It supports Ogg Vorbis and
      Theora formats.
 
-'emms-info-opusinfo'
-     This method calls 'opusinfo' utility.  It works only with Opus
+‘emms-info-opusinfo’
+     This method calls ‘opusinfo’ utility.  It works only with Opus
      files.
 
-'emms-info-cueinfo'
+‘emms-info-cueinfo’
      This is a special method that parses track information from an
      accompanying cue file for FLAC and APE files (*note APE / FLAC
      Commands::).  It does not require any additional software.
 
-   To use any of the methods, add the method to 'emms-info-functions'
+   To use any of the methods, add the method to ‘emms-info-functions’
 list.  For example:
 
      (require 'emms-info-native)
@@ -941,11 +941,11 @@ You can also use a combination of format-specific tools if needed:
      (require 'emms-info-ogginfo)
      (add-to-list 'emms-info-functions 'emms-info-mp3info 'emms-info-ogginfo)
 
-In this case both 'emms-info-mp3info' and 'emms-info-ogginfo' will be
+In this case both ‘emms-info-mp3info’ and ‘emms-info-ogginfo’ will be
 called for each track.
 
    There are a number of user variables which control the behavior of
-'emms-info':
+‘emms-info’:
 
  -- User Option: emms-info-auto-update
      Non-nil when Emms should update track information if the file
@@ -954,9 +954,9 @@ called for each track.
 
  -- User Option: emms-info-asynchronously
      Non-nil when track information should be loaded asynchronously.
-     This requires the feature 'later-do' which is provided by the file
-     'later-do.el', which comes with Emms.  See variable
-     'emms-later-do-batch' for performance tweaking.
+     This requires the feature ‘later-do’ which is provided by the file
+     ‘later-do.el’, which comes with Emms.  See variable
+     ‘emms-later-do-batch’ for performance tweaking.
 
  -- User Option: emms-info-functions
      A list of functions (info methods) which add information to tracks.
@@ -970,12 +970,12 @@ called for each track.
 * Defining Info Methods::    How to define new info methods.
 
 
-File: docrNsAbE.info,  Node: Metadata Utilities,  Next: Defining Info Methods,  Up: Track Information
+File: dociw1WWj.info,  Node: Metadata Utilities,  Next: Defining Info Methods,  Up: Track Information
 
 13.1 Metadata Utilities
 =======================
 
-With the exception of 'emms-info-native' and 'emms-info-cueinfo', Emms
+With the exception of ‘emms-info-native’ and ‘emms-info-cueinfo’, Emms
 info methods require external metadata utilities to read metadata from
 media files.  If you plan to use a certain info method, make sure you
 have the corresponding utility installed.  All of these utilities are
@@ -988,9 +988,9 @@ tinytag
 tinytag is a Python library for reading metadata from music files.  It
 is available at <https://pypi.org/project/tinytag/>.  Naturally a
 working Python interpreter is also required.  The corresponding Emms
-info method is 'emms-info-tinytag'.
+info method is ‘emms-info-tinytag’.
 
-   It is best to configure 'emms-info-tinytag' as the sole info method
+   It is best to configure ‘emms-info-tinytag’ as the sole info method
 for Emms, because competing and overlapping methods can cause confusion.
 To use it, add the following into your Emacs initialization file:
 
@@ -1004,9 +1004,9 @@ ExifTool is a platform-independent Perl library and a command-line
 application for reading, writing and editing meta information in a wide
 variety of files.  It is available at <https://exiftool.org/>.
 Naturally a working Perl interpreter is also required.  The
-corresponding Emms info method is 'emms-info-exiftool'.
+corresponding Emms info method is ‘emms-info-exiftool’.
 
-   It is best to configure 'emms-info-exiftool' as the sole info method
+   It is best to configure ‘emms-info-exiftool’ as the sole info method
 for Emms, because competing and overlapping methods can cause confusion.
 To use it, add the following into your Emacs initialization file:
 
@@ -1019,26 +1019,26 @@ TagLib
 TagLib is a library for reading and editing metadata of several popular
 audio formats.  It is available at <http://taglib.github.io/>.  Because
 TagLib is a C++ library instead of an executable program, you have to
-build and install a small "shim" executable 'emms-print-metadata' around
-it.  'emms-info-libtag' will then call this executable to read metadata
+build and install a small "shim" executable ‘emms-print-metadata’ around
+it.  ‘emms-info-libtag’ will then call this executable to read metadata
 from media files.
 
-   To compile 'emms-print-metadata' invoke
+   To compile ‘emms-print-metadata’ invoke
 
-   'make emms-print-metadata'
+   ‘make emms-print-metadata’
 
 in Emms directory.  For this to succeed you need to have a working C++
 compiler and TagLib development libraries installed on your system.  The
 resultant binary executable will be installed when you invoke
 
-   'make install' as in *Note Compiling Emms::.
+   ‘make install’ as in *Note Compiling Emms::.
 
-It is of course also possible to install only the 'emms-print-metadata'
+It is of course also possible to install only the ‘emms-print-metadata’
 binary where your system can find and execute it without installing all
 of Emms via the make command.
 
-   Once 'emms-print-metadata' is available, it is best to configure
-'emms-info-libtag' as the sole info method for Emms, because competing
+   Once ‘emms-print-metadata’ is available, it is best to configure
+‘emms-info-libtag’ as the sole info method for Emms, because competing
 and overlapping methods can cause confusion.  To use it, add the
 following into your Emacs initialization file:
 
@@ -1048,10 +1048,10 @@ following into your Emacs initialization file:
 metaflac
 ........
 
-'metaflac' is the command-line FLAC file metadata editor.  It is
+‘metaflac’ is the command-line FLAC file metadata editor.  It is
 included in FLAC source distribution available at
 <https://github.com/xiph/flac>.  The corresponding info method is
-'emms-info-metaflac'.  To use it, add the following into your Emacs
+‘emms-info-metaflac’.  To use it, add the following into your Emacs
 initialization file:
 
      (require 'emms-info-metaflac)
@@ -1062,10 +1062,10 @@ MP3info
 
 MP3info is a small utility for reading and modifying id3v1 tags from MP3
 files.  Note that more recent id3v2 tags are not supported; for those
-you need to use another info method, for example 'emms-info-native'.
+you need to use another info method, for example ‘emms-info-native’.
 MP3info is available at <https://ibiblio.org/mp3info/>.
 
-   The corresponding info method is 'emms-info-mp3info'.  To use it, add
+   The corresponding info method is ‘emms-info-mp3info’.  To use it, add
 the following into your Emacs initialization file:
 
      (require 'emms-info-mp3info)
@@ -1074,10 +1074,10 @@ the following into your Emacs initialization file:
 ogginfo
 .......
 
-'ogginfo' is a small utility for extracting information about Ogg Vorbis
+‘ogginfo’ is a small utility for extracting information about Ogg Vorbis
 and Theora files.  It is part of Vorbis Tools source distribution
 available at <https://github.com/xiph/vorbis-tools>.  The corresponding
-info method is 'emms-info-ogginfo'.  To use it, add the following into
+info method is ‘emms-info-ogginfo’.  To use it, add the following into
 your Emacs initialization file:
 
      (require 'emms-info-ogginfo)
@@ -1086,88 +1086,88 @@ your Emacs initialization file:
 opusinfo
 ........
 
-'opusinfo' is a small utility for extracting information about Opus
+‘opusinfo’ is a small utility for extracting information about Opus
 files.  It is part of Opus Tools source distribution available at
 <https://github.com/xiph/opus-tools>.  The corresponding info method is
-'emms-info-opusinfo'.  To use it, add the following into your Emacs
+‘emms-info-opusinfo’.  To use it, add the following into your Emacs
 initialization file:
 
      (require 'emms-info-opusinfo)
      (add-to-list 'emms-info-functions 'emms-info-opusinfo)
 
 
-File: docrNsAbE.info,  Node: Defining Info Methods,  Prev: Metadata Utilities,  Up: Track Information
+File: dociw1WWj.info,  Node: Defining Info Methods,  Prev: Metadata Utilities,  Up: Track Information
 
 13.2 Defining Info Methods
 ==========================
 
 An info method essentially consists of a function which, given an Emms
-track, sets the appropriate "info-symbols" for that track.  Info symbols
-are keys that have an associated value stored in the "metadata cache".
+track, sets the appropriate “info-symbols” for that track.  Info symbols
+are keys that have an associated value stored in the “metadata cache”.
 While info symbols can have arbitrary names, the following symbols are
 recognized by Emms:
 
-'info-album'
+‘info-album’
      Album title.
 
-'info-albumsort'
+‘info-albumsort’
      Album title for collation.
 
-'info-artist'
+‘info-artist’
      Artist name.
 
-'info-artistsort'
+‘info-artistsort’
      Artist name for collation.
 
-'info-albumartist'
+‘info-albumartist’
      Album artist name.
 
-'info-albumartistsort'
+‘info-albumartistsort’
      Album artist name for collation.
 
-'info-composer'
+‘info-composer’
      Composer name.
 
-'info-composersort'
+‘info-composersort’
      Composer name for collation.
 
-'info-date'
+‘info-date’
      Release date.
 
-'info-originaldate'
+‘info-originaldate’
      Original release date.
 
-'info-performer'
+‘info-performer’
      Performer name.
 
-'info-title'
+‘info-title’
      Track title.
 
-'info-titlesort'
+‘info-titlesort’
      Track title for collation.
 
-'info-tracknumber'
+‘info-tracknumber’
      Track number.
 
-'info-discnumber'
+‘info-discnumber’
      Disc number.
 
-'info-year'
+‘info-year’
      Release year.
 
-'info-originalyear'
+‘info-originalyear’
      Original release year.
 
-'info-note'
+‘info-note’
      Free-form note.
 
-'info-genre'
+‘info-genre’
      Genre.
 
-'info-label'
+‘info-label’
      Record label.
 
-'info-playing-time'
+‘info-playing-time’
      Playing time in seconds.
 
 An info method does not need to add all of these symbols into the given
@@ -1176,17 +1176,17 @@ used by Emms.
 
    We can for example look at the predefined method for retrieving
 information about audio tracks in the Ogg format.  The function
-'emms-info-ogginfo' provided by 'emms-info-ogginfo.el' accepts an Emms
-track TRACK as a single argument.  It uses 'ogginfo' utility to extract
+‘emms-info-ogginfo’ provided by ‘emms-info-ogginfo.el’ accepts an Emms
+track TRACK as a single argument.  It uses ‘ogginfo’ utility to extract
 a list of key-value metadata pairs from the file represented by TRACK.
 Next, it sets the appropriate info symbols for TRACK by calling
-'emms-track-set'.  Info symbols are interned from the extracted keys.
+‘emms-track-set’.  Info symbols are interned from the extracted keys.
 Those keys can be arbitrary strings, but they typically coincide with
 the keys listed above; for example "album" and "artist" form info
-symbols 'info-album' and 'info-artist'.
+symbols ‘info-album’ and ‘info-artist’.
 
 
-File: docrNsAbE.info,  Node: Interactive Playlists,  Next: Markable Playlists,  Prev: Track Information,  Up: Top
+File: dociw1WWj.info,  Node: Interactive Playlists,  Next: Markable Playlists,  Prev: Track Information,  Up: Top
 
 14 Interactive Playlists
 ************************
@@ -1194,7 +1194,7 @@ File: docrNsAbE.info,  Node: Interactive Playlists,  Next: Markable Playlists,  
 Emms provides a visual, interactive playlist mode as well as the ability
 to use playlists without ever looking at then.  This visual, interactive
 mode is called the 'emms-playlist-mode' and is defined in
-'emms-playlist-mode.el'.
+‘emms-playlist-mode.el’.
 
    The interactive playlist mode is enabled by default in the 'emms-all'
 setup level.  For more information about Emms setup levels see *Note
@@ -1205,7 +1205,7 @@ Setup::.
      emms-playlist-mode.
 
    If you wish to make this the default Emms playlist mode, add the
-following to your '.emacs'.
+following to your ‘.emacs’.
 
      (setq emms-playlist-default-major-mode 'emms-playlist-mode)
 
@@ -1216,95 +1216,95 @@ will be highlighted.
    When in the interactive playlist mode we can perform different
 actions on the current playlist.
 
-'a'
+‘a’
      Add files in the playlist at point to the current playlist buffer.
      If we are in the current playlist, make a new playlist buffer and
      set it as current.
 
-'i'
+‘i’
      Insert track at point into active playlist.
 
-'b'
+‘b’
      Set the current playlist buffer.
 
-'n'
+‘n’
      Start playing the next track in the playlist.
 
-'p'
+‘p’
      Start playing the previous track in the playlist.
 
-'s'
+‘s’
      Stop playing.
 
-'P'
+‘P’
      Pause.
 
-'>'
+‘>’
      Seek ten seconds forward.
 
-'<'
+‘<’
      Seek ten seconds backward.
 
-'f'
+‘f’
      Describe the currently playing track in the minibuffer.
 
-'c'
+‘c’
      Display the current track in the center of the screen.
 
-'RET'
+‘RET’
      Start playing the track under point.  Note that this is also
-     available with '<mouse-2>'.
+     available with ‘<mouse-2>’.
 
-'SPC'
+‘SPC’
      Scroll up a near full page.
 
-'M-<'
+‘M-<’
      Go to the first track in the playlist.
 
-'M->'
+‘M->’
      Go to the last track in the playlist.
 
-'r'
+‘r’
      Go to a randomly selected track in the playlist.
 
-'q'
+‘q’
      Put the interactive playlist buffer at the end of the list of all
      buffers.
 
-'C-x C-s'
+‘C-x C-s’
      Save the current playlist buffer to a file.  By default, Emms will
      ask you for confirmation before overwriting an existing playlist.
      You can silently overwrite existing playlist by setting
      EMMS-SOURCE-PLAYLIST-ASK-BEFORE-OVERWRITE to nil.
 
-'?'
+‘?’
      Describe the mode.
 
-'C-i'
+‘C-i’
      Shift the track at point up one line.
 
-'C-o'
+‘C-o’
      Shift the track at point down one line.
 
-'M-n'
+‘M-n’
      Switch to the next playlist buffer.
 
-'M-p'
+‘M-p’
      Switch to the previous playlist buffer.
 
    We can also edit the playlist using familiar GNU/Emacs commands:
 
-'C-k'
+‘C-k’
      Remove the track under point from the playlist buffer.  Also
-     available using the 'd' key.
+     available using the ‘d’ key.
 
-'C-y'
-     See the command 'yank'
+‘C-y’
+     See the command ‘yank’
 
-'M-y'
-     See the command 'yank-pop'.
+‘M-y’
+     See the command ‘yank-pop’.
 
-'C-j'
+‘C-j’
      Insert a newline at point.
 
    We can use the regular GNU/Emacs killing and yanking commands to move
@@ -1315,12 +1315,12 @@ program and can therefore be used to include titles and annotations
 within the playlist.
 
 
-File: docrNsAbE.info,  Node: Markable Playlists,  Next: Extending Emms,  Prev: Interactive Playlists,  Up: Top
+File: dociw1WWj.info,  Node: Markable Playlists,  Next: Extending Emms,  Prev: Interactive Playlists,  Up: Top
 
 15 Markable Playlists
 *********************
 
-The Markable Playlists provided by the file 'emms-mark.el' are an
+The Markable Playlists provided by the file ‘emms-mark.el’ are an
 alternative to the default interactive playlists, *Note Interactive
 Playlists::.  They allow marking tracks with keybindings familiar to
 users of dired.
@@ -1329,48 +1329,48 @@ users of dired.
 
      (require 'emms-mark)
 
-   to your '.emacs'.  Then you can activate 'emms-mark-mode' by
-executing 'M-x emms-mark-mode' in a playlist buffer.  You can return to
-the default interactive playlist mode with 'M-x emms-mark-mode-disable'.
+   to your ‘.emacs’.  Then you can activate ‘emms-mark-mode’ by
+executing ‘M-x emms-mark-mode’ in a playlist buffer.  You can return to
+the default interactive playlist mode with ‘M-x emms-mark-mode-disable’.
 
    If you wish to make this the default Emms playlist mode, add the
-following to your '.emacs'.
+following to your ‘.emacs’.
 
      (setq emms-playlist-default-major-mode 'emms-mark-mode)
 
-'m'
+‘m’
      Marks the current track and sets point one line forward.  If a
      prefix argument ARG is given, it will mark the next ARG tracks and
      set point accordingly.  A negative argument marks backward.
 
-'U'
+‘U’
      Unmarks all tracks in the playlist.
 
-'t'
+‘t’
      Toggles mark on the current track.
 
-'u'
-     Unmarks same way as 'emms-mark-forward' marks.
+‘u’
+     Unmarks same way as ‘emms-mark-forward’ marks.
 
-'% m'
+‘% m’
      Marks all tracks in the playlist matching the given regular
      expression.  A prefix argument means to unmark them instead.
 
    When tracks are marked you can operate on them:
 
-'D'
+‘D’
      Deletes the marked tracks from the playlist.
 
-'K'
+‘K’
      Deletes the marked tracks from the playlist and places them in the
-     kill-ring, so that you can 'yank' in into another playlist.
+     kill-ring, so that you can ‘yank’ in into another playlist.
 
-'W'
-     Adds the marked tracks to the kill-ring, so that you can 'yank'
+‘W’
+     Adds the marked tracks to the kill-ring, so that you can ‘yank’
      them into another playlist.
 
    emms-mark is also intent to provide a way for user to select tracks
-for other command to operate on them.  Currently, 'emms-tag-editor.el'
+for other command to operate on them.  Currently, ‘emms-tag-editor.el’
 uses the emms-mark to edit the tags of selected tracks.  Two functions
 are useful for the elisp programer to handle marked tracks.
 
@@ -1386,7 +1386,7 @@ are useful for the elisp programer to handle marked tracks.
      'mapcar').
 
 
-File: docrNsAbE.info,  Node: Extending Emms,  Next: The Browser,  Prev: Markable Playlists,  Up: Top
+File: dociw1WWj.info,  Node: Extending Emms,  Next: The Browser,  Prev: Markable Playlists,  Up: Top
 
 16 Extending Emms
 *****************
@@ -1397,36 +1397,36 @@ customise it to your needs.
 * Menu:
 
 * New Player::               How to define a new player.
-* Simple Player for `play':: An example player using 'play'.
-* More Complex Player::      Example of a complex player using 'mpg321'.
+* Simple Player for `play':: An example player using ‘play’.
+* More Complex Player::      Example of a complex player using ‘mpg321’.
 
 
-File: docrNsAbE.info,  Node: New Player,  Next: Simple Player for `play',  Up: Extending Emms
+File: dociw1WWj.info,  Node: New Player,  Next: Simple Player for `play',  Up: Extending Emms
 
 16.1 New Player
 ===============
 
-The file 'emms-player-simple.el' defines some easy players to start
+The file ‘emms-player-simple.el’ defines some easy players to start
 with, but it shouldn't be hard to provide a function for your favourite
 player.  We will start with an easy example that shows how we can use
-the 'play' command under Unix to play our WAV files.
+the ‘play’ command under Unix to play our WAV files.
 
 
-File: docrNsAbE.info,  Node: Simple Player for `play',  Next: More Complex Player,  Prev: New Player,  Up: Extending Emms
+File: dociw1WWj.info,  Node: Simple Player for `play',  Next: More Complex Player,  Prev: New Player,  Up: Extending Emms
 
 16.2 Simple Player for 'play'
 =============================
 
 Play is a very easy command line player for various format.  If you want
 your emms to play WAV files just put the following lines in you
-'.emacs':
+‘.emacs’:
 
      (require 'emms-player-simple)
      (define-emms-simple-player play '(file) "\\.wav$" "play")
 
    Huh!  Wasn't that easy?
 
-   The macro function 'define-emms-simple-player' takes a minimum of
+   The macro function ‘define-emms-simple-player’ takes a minimum of
 three arguments.  The first argument (_play_ in our example) defines the
 name of the player.  It's used to name the player functions.  The second
 is a regexp, that defines which files to play with our player.
@@ -1448,12 +1448,12 @@ possible volume use the following line:
 
    Please notice that you have to add the arguments as strings!
 
-   The command line tool you use for 'define-emms-simple-player' has to
+   The command line tool you use for ‘define-emms-simple-player’ has to
 take one song as argument and stop after playing that particular song.
 For any other concept you will need to customise emms a bit more...
 
 
-File: docrNsAbE.info,  Node: More Complex Player,  Prev: Simple Player for `play',  Up: Extending Emms
+File: dociw1WWj.info,  Node: More Complex Player,  Prev: Simple Player for `play',  Up: Extending Emms
 
 16.3 More Complex Player
 ========================
@@ -1467,8 +1467,8 @@ actually can pause a track, restart it and show rest time.  We won't
 implement all of that, but after that chapter you will know how to
 define it.
 
-   The command 'define-emms-simple-player' is just a abstraction layer
-for 'define-emms-player', which is a little bit more complicated but
+   The command ‘define-emms-simple-player’ is just a abstraction layer
+for ‘define-emms-player’, which is a little bit more complicated but
 much more powerful!
 
      (define-emms-player "emms-mpg321-remote"
@@ -1476,7 +1476,7 @@ much more powerful!
        :stop 'emms-mpg321-remote-stop
        :playablep 'emms-mpg321-remote-playable-p)
 
-   So, that is almost all!  'define-emms-player' takes a minimum of
+   So, that is almost all!  ‘define-emms-player’ takes a minimum of
 three arguments.  The first is the name of the player.  The rest are
 methods with functions to call.  Three methods are required: start, stop
 and playable.  Start says Emms how to start a track (sic!), stop how to
@@ -1507,7 +1507,7 @@ filter and call emms-mpg321-remote-stop.
        (when (string-match "(at-sign)P 0" output)
          (emms-mpg321-remote-stop)))
 
-   'emms-mpg321-remote-stop' won't do anything interesting.  It just
+   ‘emms-mpg321-remote-stop’ won't do anything interesting.  It just
 test if there are other files to play and close the process otherwise.
 
      (defun emms-mpg321-remote-stop ()
@@ -1515,18 +1515,18 @@ test if there are other files to play and close the process otherwise.
          (process-send-string "mpg321-remote-process" "Q\n"))
 
    And to make that a playable example I also added
-'emms-mpg321-remote-playablep', which I really just steal from
-'emms-player-simple.el'
+‘emms-mpg321-remote-playablep’, which I really just steal from
+‘emms-player-simple.el’
 
      (defun emms-mpg321-remote-playablep (track)
             "Return non-nil when we can play this track."
             (and (emms-track-file-p track)
 
    Now we have a ready player and we could add commands like
-'emms-mpg321-remote-pause' for example.
+‘emms-mpg321-remote-pause’ for example.
 
 
-File: docrNsAbE.info,  Node: The Browser,  Next: The Filter System,  Prev: Extending Emms,  Up: Top
+File: dociw1WWj.info,  Node: The Browser,  Next: The Filter System,  Prev: Extending Emms,  Up: Top
 
 17 The Browser
 **************
@@ -1534,8 +1534,8 @@ File: docrNsAbE.info,  Node: The Browser,  Next: The Filter System,  Prev: Exten
 The Browser allows you to browse the metadata cache and add tracks to
 your playlist.  It includes a powerful interactive mode.
 
-   The Browser is defined in 'emms-browser.el' and is included in the
-'emms-all' setup level.  For more information about Emms setup levels
+   The Browser is defined in ‘emms-browser.el’ and is included in the
+‘emms-all’ setup level.  For more information about Emms setup levels
 see *Note Setup::.
 
    You can also manually add the Browser to your Emms setup by loading
@@ -1543,7 +1543,7 @@ it explicitly with:
 
      (require 'emms-browser)
 
-   To be properly useful, you should do M-x 'emms-add-directory-tree' to
+   To be properly useful, you should do M-x ‘emms-add-directory-tree’ to
 all the files you own at least once so that the cache is fully
 populated.
 
@@ -1555,7 +1555,7 @@ populated.
 * Filtering Tracks - deprecated::  Displaying a subset of the tracks.
 
 
-File: docrNsAbE.info,  Node: Browser Interface,  Next: Displaying Covers,  Up: The Browser
+File: dociw1WWj.info,  Node: Browser Interface,  Next: Displaying Covers,  Up: The Browser
 
 17.1 Browser Interface
 ======================
@@ -1591,276 +1591,276 @@ browser.
 collection and playlists.  The Browser is interactive and has its own
 keybindings.
 
-'C-j'
+‘C-j’
      Add all tracks at point, and play the first added track.
 
-'RET'
+‘RET’
      Add all tracks at point.
 
-'SPC'
+‘SPC’
      Show or hide (kill) subitems under the current line.
 
-'1'
+‘1’
      Collapse everything.
 
-'2'
+‘2’
      Expand all top level items one level.
 
-'3'
+‘3’
      Expand all top level items two levels.
 
-'4'
+‘4’
      Expand all top level items three levels.
 
-'C'
+‘C’
      Clear the playlist.
 
-'E'
+‘E’
      Expand everything.
 
-'d'
+‘d’
      View the current directory in dired.
 
-'q'
+‘q’
      Bury the browser buffer.
 
-'r'
+‘r’
      Jump to a random track.
 
-'/'
+‘/’
      Isearch through the buffer.
 
-'<'
+‘<’
      Redisplay with the previous filter.
 
-'>'
+‘>’
      Redisplay with the next filter.
 
-'?'
+‘?’
      See the Emacs documentation for the function.
 
-'C-/'
+‘C-/’
      Undo the previous playlist action.
 
-'<C-return>'
+‘<C-return>’
      Add all tracks at point, and play the first added track.
 
-'<backtab>'
+‘<backtab>’
      Jump to the previous non-track element.
 
-'<tab>'
+‘<tab>’
      Jump to the next non-track element.
 
-'s A'
+‘s A’
      Search the collection by album.
 
-'s o'
+‘s o’
      Search the collection by artist.
 
-'s a'
+‘s a’
      Search the collection by artist.
 
-'s s'
+‘s s’
      Search the collection by names.
 
-'s t'
+‘s t’
      Search the collection by title.
 
-'s h'
+‘s h’
      Show the currently active searches in the search cache.
 
-'b 1'
+‘b 1’
      Browse the collection by artist.
 
-'b 2'
+‘b 2’
      Browse the collection by album.
 
-'b 3'
+‘b 3’
      Browse the collection by genre.
 
-'b 4'
+‘b 4’
      Browse the collection by year.
 
-'b 5'
+‘b 5’
      Browse the collection by composer.
 
-'b 6'
+‘b 6’
      Browse the collection by performer.
 
-'b 7'
+‘b 7’
      Browse the collection by albumartist.
 
-'W a p'
+‘W a p’
      Lookup the album using Pitchfork.
 
-'W o w'
+‘W o w’
      Lookup the album artist using Wikipedia.
 
-'W A w'
+‘W A w’
      Lookup the artist using Wikipedia.
 
-'W c w'
+‘W c w’
      Lookup the composer using Wikipedia.
 
-'W p w'
+‘W p w’
      Lookup the performer using Wikipedia.
 
-'W a w'
+‘W a w’
      Lookup the album using Wikipedia.
 
-'+'
+‘+’
      Raise the volume
 
-'-'
+‘-’
      Lower the volume
 
-'i s'
+‘i s’
      Print what is known about the filters and cache
 
-'i c'
+‘i c’
      Show the current search cache stack.
 
-'i S'
+‘i S’
      Show the cache names in the stash.
 
-'i f'
+‘i f’
      Show the filters there are.
 
-'i m'
+‘i m’
      Show the menu tree of filters as a menu.
 
-'i F'
+‘i F’
      Show the filter factories we have.
 
-'i r'
+‘i r’
      Show the filters in the filter ring.
 
-'f q'
+‘f q’
      Pop the filter stack returning to last filter.
 
-'f r'
+‘f r’
      Reverse the last two entries in the filter stack.
 
-'f R'
+‘f R’
      Reverse the last two entries in the filter stack, and pop the top
      one.
 
-'f S'
+‘f S’
      Squash the filter stack, keep the top entry.
 
-'f k'
+‘f k’
      Register the current filter into the list of filters for the
      session.  If EMMS-FILTERS-MULTI-FILTER-SAVE-FILE is set, append the
      filter definition there.
 
-'f h'
+‘f h’
      Build a cache from the current filter and push it to the cache
      stack.
 
-'f c'
+‘f c’
      Clear the meta filter stack and the current filter function.
 
-'>'
+‘>’
      Move to the next filter in the filter ring.
 
-'<'
+‘<’
      Move to the previous filter in the filter ring.
 
-'f !'
+‘f !’
      Set the ring filter to no filter.
 
-'f p'
+‘f p’
      Push a filter to the meta-filter stack.
 
-'f s'
+‘f s’
      Clear the stack and select a filter to push to the stack.
 
-'f o'
+‘f o’
      Add a filter to the current/last filter list in the current filter.
      Creates an OR.
 
-'f a'
+‘f a’
      Select a filter to start a new list of filters, creates an AND.
 
-'f n'
+‘f n’
      Select a filter to start a new list of filters, creates an AND-NOT
      list of filters.
 
-'c C'
+‘c C’
      Reset the cache stack, the filter stack and the filter-ring.
 
-'c p'
+‘c p’
      Cache/Store a filter and cache to the stack.
 
-'c z'
+‘c z’
      Stash the current cache for later, pop it from the stack.
 
-'c Z'
+‘c Z’
      Stash the current cache for later.
 
-'c P'
+‘c P’
      Pop the current cache from the stack.
 
-'c h'
+‘c h’
      Create a cache from the current filter and push to the stack.
 
-'c r'
+‘c r’
      Swap the top two caches on the stack.
 
-'c q'
+‘c q’
      Pop the top cache from the stack.
 
-'c R'
+‘c R’
      Swap the top two caches on the stack, then pop the top one.
 
-'c S'
+‘c S’
      Squash the cache stack, keep the top entry.
 
-'c c'
+‘c c’
      Clear all the caches down to the main cache.
 
-'s o'
+‘s o’
      A fields search, quick one-shot for Album artist, push results to
      the cache stack.
 
-'s a'
+‘s a’
      A fields search, quick one-shot for Artist, push results to the
      cache stack.
 
-'s c'
+‘s c’
      A fields search, quick one-shot for Composer, push results to the
      cache stack.
 
-'s p'
+‘s p’
      A fields search, quick one-shot for Permformer, push results to the
      cache stack.
 
-'s A'
+‘s A’
      A fields search, quick one-shot for Album title, push results to
      the cache stack.
 
-'s t'
+‘s t’
      A fields search, quick one-shot for Song title, push results to the
      cache stack.
 
-'s T'
+‘s T’
      A fields search, quick one-shot for Album and song titles, push
      results to the cache stack.
 
-'s n'
+‘s n’
      A fields search, quick one-shot for all names, push results to the
      cache stack.
 
-'s s'
+‘s s’
      A fields search, quick one-shot for all names and titles, push
      results to the cache stack.
 
-'s e'
+‘s e’
      A fields search, quick one-shot in all text fields, push results to
      the cache stack.
 
 
-File: docrNsAbE.info,  Node: Displaying Covers,  Next: Changing Looks,  Prev: Browser Interface,  Up: The Browser
+File: dociw1WWj.info,  Node: Displaying Covers,  Next: Changing Looks,  Prev: Browser Interface,  Up: The Browser
 
 17.2 Displaying Covers
 ======================
@@ -1870,7 +1870,7 @@ The browser will attempt to display cover images if they're available.
    Customize EMMS-BROWSER-COVERS to configure how EMMS should retrieve
 the covers.
 
-   By default it looks for images 'cover_small.jpg', 'cover_med.jpg',
+   By default it looks for images ‘cover_small.jpg’, ‘cover_med.jpg’,
 etc.  Note that you'll probably want to resize your existing covers to
 particular sizes.  Suggested sizes are 100x100 for small, and 200x200
 for medium.
@@ -1909,7 +1909,7 @@ the following code to your .emacs:
 (http://repose.cx/cover_small.jpg).
 
 
-File: docrNsAbE.info,  Node: Changing Looks,  Next: Filtering Tracks - deprecated,  Prev: Displaying Covers,  Up: The Browser
+File: dociw1WWj.info,  Node: Changing Looks,  Next: Filtering Tracks - deprecated,  Prev: Displaying Covers,  Up: The Browser
 
 17.3 Changing Looks
 ===================
@@ -1958,7 +1958,7 @@ artist->album->track when you switch to the 'singles' filter:
 
    Furthermore, you can customize EMMS-BROWSER-GET-TRACK-FIELD-FUNCTION
 to choose which the metadata fields used for the different tree nodes
-(''info-artist', 'info-year', etc.).  For instance, you can choose
+(‘'info-artist’, ‘info-year’, etc.).  For instance, you can choose
 whether to organize the tree by artist, album artist or performer.
 
 Changing Display Format
@@ -2018,10 +2018,10 @@ The faces used to display the various fields are also customizable.
 They are in the format emms-browser-<type>-face, where type is one of
 "year/genre", "artist", "album" or "track".  Note that faces lack the
 initial "info-" part.  For example, to change the artist face, type M-x
-'customize-face' 'emms-browser-artist-face'.
+‘customize-face’ ‘emms-browser-artist-face’.
 
 
-File: docrNsAbE.info,  Node: Filtering Tracks - deprecated,  Prev: Changing Looks,  Up: The Browser
+File: dociw1WWj.info,  Node: Filtering Tracks - deprecated,  Prev: Changing Looks,  Up: The Browser
 
 17.4 Filtering Tracks - deprecated
 ==================================
@@ -2089,7 +2089,7 @@ functions to check the type of a file, etc.
                (emms-browser-filter-only-dir "~/Media/pending") track)))))
 
 
-File: docrNsAbE.info,  Node: The Filter System,  Next: Sorting Playlists,  Prev: The Browser,  Up: Top
+File: dociw1WWj.info,  Node: The Filter System,  Next: Sorting Playlists,  Prev: The Browser,  Up: Top
 
 18 The Filter System
 ********************
@@ -2099,7 +2099,7 @@ search and narrow your track data.  It is based on a very powerful
 interactive system consistenting of filter and cache stacks which allow
 the creation and manipulation of complex filters and results caches.
 
-   The Filter system is defined in 'emms-filters.el' and is included as
+   The Filter system is defined in ‘emms-filters.el’ and is included as
 part of the Emms-Browser.
 
    Emms-Filters allows you to filter and search the metadata cache.
@@ -2119,7 +2119,7 @@ This manages the search and filter functionalities of emms-browser.
 * Showing State::          Showing the current state of the filter system.
 
 
-File: docrNsAbE.info,  Node: Filters and Searches,  Next: Backward Compatibility,  Up: The Filter System
+File: dociw1WWj.info,  Node: Filters and Searches,  Next: Backward Compatibility,  Up: The Filter System
 
 18.1 Filters and Searches
 =========================
@@ -2160,7 +2160,7 @@ and is selectable with < and >.  The active filter on the ring combines
 with the filter stack to show the rendered results.
 
 
-File: docrNsAbE.info,  Node: Backward Compatibility,  Next: Filter Components,  Prev: Filters and Searches,  Up: The Filter System
+File: dociw1WWj.info,  Node: Backward Compatibility,  Next: Filter Components,  Prev: Filters and Searches,  Up: The Filter System
 
 18.2 Backward Compatibility
 ===========================
@@ -2179,14 +2179,14 @@ underneath the API it uses the filter system for all of its purposes.
    Emms-browser-make-filter and emms-browser-search-by use emms-filters
 for their current functionality.  The search-by functionality is quite
 simple.  Emulating the browser filters was more complicated and has a
-thin compatibility layer in 'emms-browser.el'.
+thin compatibility layer in ‘emms-browser.el’.
 
    In all cases, obtaining the same functionalities soley within
 emms-filters is simpler and and more powerful.
 
    Emms-browser-filter functions are specified to return an inverted
-value.  the old 'emms-browser-make-filter' had a slightly different
-mechanism from the filter system's 'emms-filters-make-filter'.
+value.  the old ‘emms-browser-make-filter’ had a slightly different
+mechanism from the filter system's ‘emms-filters-make-filter’.
 emms-browser-make-filter has been modified to pass its filters to the
 emms-filter system.  Those filters will be properly inverted and added
 to the known emms-filters-filters and to the emms-filters-filter-ring
@@ -2250,27 +2250,27 @@ interactively while searching your tracks.
 
    Here is a summary of differences and features of the filter system.
 
-   * Filters, no matter the complexity, are defined entirely as data.
-   * Filters can be combined with AND, OR as well as AND-NOT.
-   * Filters return true if they match the tracks.
-   * Filters are lambda functions created with factories from data.
-   * There is no difference between a search function and a filter
+   • Filters, no matter the complexity, are defined entirely as data.
+   • Filters can be combined with AND, OR as well as AND-NOT.
+   • Filters return true if they match the tracks.
+   • Filters are lambda functions created with factories from data.
+   • There is no difference between a search function and a filter
      function.
-   * The factory should wrap the lambda in a let with lexical-binding t.
-   * The factories and the filters must both be registered with
+   • The factory should wrap the lambda in a let with lexical-binding t.
+   • The factories and the filters must both be registered with
      Emms-filters.
-   * Registered factories have a built in interactive prompting system.
-   * Any results can be pushed to the cache stack for future filters and
+   • Registered factories have a built in interactive prompting system.
+   • Any results can be pushed to the cache stack for future filters and
      searches.
-   * Complex filters are created interactively on the filter stack.
-   * Searches are interactively created filters which leave a cache on
+   • Complex filters are created interactively on the filter stack.
+   • Searches are interactively created filters which leave a cache on
      the stack.
-   * Interactively created filters can be saved as data for later use.
-   * Interactively created filters remain in the filter selection menu
+   • Interactively created filters can be saved as data for later use.
+   • Interactively created filters remain in the filter selection menu
      for the session.
 
 
-File: docrNsAbE.info,  Node: Filter Components,  Next: Filter Factories,  Prev: Backward Compatibility,  Up: The Filter System
+File: dociw1WWj.info,  Node: Filter Components,  Next: Filter Factories,  Prev: Backward Compatibility,  Up: The Filter System
 
 18.3 Filter Components
 ======================
@@ -2287,19 +2287,19 @@ results into a reduced database cache for subsequent filters.
 filters.  This filter is combined with the current filter stack to
 render results.
 
-   * Filter Factories - To make filter functions.
-   * Filters - Defined as data.  Dynamically created lambda functions.
-   * Filter menu - A customizable ring of factories and their rings of
+   • Filter Factories - To make filter functions.
+   • Filters - Defined as data.  Dynamically created lambda functions.
+   • Filter menu - A customizable ring of factories and their rings of
      filters.
-   * Multi-filter - A filter factory to create filters made of filters.
-   * Meta-filter - A multi-filter data definition.
-   * The filter stack - A meta-filter manipulator and multi-filter
+   • Multi-filter - A filter factory to create filters made of filters.
+   • Meta-filter - A multi-filter data definition.
+   • The filter stack - A meta-filter manipulator and multi-filter
      creator.
-   * The cache stack - A stack of database caches.
-   * The filter ring - A subset of convenient to use filters.
+   • The cache stack - A stack of database caches.
+   • The filter ring - A subset of convenient to use filters.
 
 
-File: docrNsAbE.info,  Node: Filter Factories,  Next: Factory Registration,  Prev: Filter Components,  Up: The Filter System
+File: dociw1WWj.info,  Node: Filter Factories,  Next: Factory Registration,  Prev: Filter Components,  Up: The Filter System
 
 18.4 Filter Factories
 =====================
@@ -2340,7 +2340,7 @@ comparison function we would like.
                 (funcall local-operator local-compare-val track-val))))))
 
 
-File: docrNsAbE.info,  Node: Factory Registration,  Next: Defined Factories,  Prev: Filter Factories,  Up: The Filter System
+File: dociw1WWj.info,  Node: Factory Registration,  Next: Defined Factories,  Prev: Filter Factories,  Up: The Filter System
 
 18.5 Factory Registration
 =========================
@@ -2356,11 +2356,11 @@ read the value and coerce the value to the type as needed.
 
    These are the known coercion types.
 
-   * :number
-   * :string
-   * :list
-   * :symbol
-   * :function
+   • :number
+   • :string
+   • :list
+   • :symbol
+   • :function
 
    Here is the Genre Factory which is actually made from the
 field-compare factory.  This is a common pattern to create a simpler
@@ -2396,7 +2396,7 @@ to compare must be a number and will be coerced as needed.
                                      (:number . nil))))
 
 
-File: docrNsAbE.info,  Node: Defined Factories,  Next: Defining Filters,  Prev: Factory Registration,  Up: The Filter System
+File: dociw1WWj.info,  Node: Defined Factories,  Next: Defining Filters,  Prev: Factory Registration,  Up: The Filter System
 
 18.6 Defined Factories
 ======================
@@ -2413,37 +2413,37 @@ are all just specialized field compare or the fields search factories.
 
    Filter factories include the following.
 
-   * Album
-   * Album-artist
-   * All text fields
-   * Artist
-   * Artists
-   * Artists and composer
-   * Composer
-   * Directory
-   * Duration less
-   * Duration more
-   * Fields search
-   * Genre
-   * Greater than Year
-   * Less than Year
-   * Multi-filter
-   * Names
-   * Names and titles
-   * Not played since
-   * Notes
-   * Number field compare
-   * Orchestra
-   * Performer
-   * Played since
-   * String field compare
-   * Title
-   * Titles
-   * Track type
-   * Year range
+   • Album
+   • Album-artist
+   • All text fields
+   • Artist
+   • Artists
+   • Artists and composer
+   • Composer
+   • Directory
+   • Duration less
+   • Duration more
+   • Fields search
+   • Genre
+   • Greater than Year
+   • Less than Year
+   • Multi-filter
+   • Names
+   • Names and titles
+   • Not played since
+   • Notes
+   • Number field compare
+   • Orchestra
+   • Performer
+   • Played since
+   • String field compare
+   • Title
+   • Titles
+   • Track type
+   • Year range
 
 
-File: docrNsAbE.info,  Node: Defining Filters,  Next: The Filter Stack,  Prev: Defined Factories,  Up: The Filter System
+File: dociw1WWj.info,  Node: Defining Filters,  Next: The Filter Stack,  Prev: Defined Factories,  Up: The Filter System
 
 18.7 Defining Filters
 =====================
@@ -2464,8 +2464,8 @@ Parameters>)
                          ("Genre" "Jazz"       "jazz")))
 
    Filters can be easily created interactivly.  Just push a filter onto
-the stack with 'emms-filters-push', 'emms-filters-and',
-'emms-filters-or', 'emms-filters-and-not', or 'emms-filters-squash',
+the stack with ‘emms-filters-push’, ‘emms-filters-and’,
+‘emms-filters-or’, ‘emms-filters-and-not’, or ‘emms-filters-squash’,
 select 'new filter' then your factory and follow the prompts.
 
    Filters are added by name to their respective factory's filter ring.
@@ -2529,20 +2529,20 @@ will temporarily add the multi-filter defined by the filter stack to the
 multi-filter ring.
 
    There are other ways to add to the filter menu tree.
-'emms-filters-add-to-filter-menu-from-filter-list' is used to
+‘emms-filters-add-to-filter-menu-from-filter-list’ is used to
 deconstruct a variable holding filter defintions as in the example above
 in order to create a new ring in the menu tree.
 
-   In turn that function uses 'emms-filters-add-to-filter-menu' which
+   In turn that function uses ‘emms-filters-add-to-filter-menu’ which
 takes a folder name and a filter or list of filters to place in the
-ring.  The function 'emms-filters-add-name-to-filter-menu' will add a
+ring.  The function ‘emms-filters-add-name-to-filter-menu’ will add a
 filter by name to an existing filter folder/factory.
 
    It is also possible to view the filter menu tree as a message with
-'emms-filters-show-filter-menu'
+‘emms-filters-show-filter-menu’
 
 
-File: docrNsAbE.info,  Node: The Filter Stack,  Next: The Cache Stack,  Prev: Defining Filters,  Up: The Filter System
+File: dociw1WWj.info,  Node: The Filter Stack,  Next: The Cache Stack,  Prev: Defining Filters,  Up: The Filter System
 
 18.8 The Filter Stack
 =====================
@@ -2561,7 +2561,7 @@ meta-filter).  Filter names for meta-filters can be easily constructed
 from the filters they are made from.  They aren't short but they work
 well enough.
 
-   To use a filter, 'emms-filters-push' it to create a new current
+   To use a filter, ‘emms-filters-push’ it to create a new current
 filter on the stack.  It will become a meta-filter on the filter stack
 and the current active filter will be a multi-filter version of it.  The
 functions required to construct the current multi-filter are resolved at
@@ -2572,7 +2572,7 @@ re-filtering of tracks uses the current ring filter and the current
 filter together.
 
    A filter on the stack can be 'kept'.  The function
-'emms-filters-keep' will create and register a multi-filter of the
+‘emms-filters-keep’ will create and register a multi-filter of the
 current filter, adding it to the multi-filter menu.  This only lasts
 until the current Emacs session ends.  If
 EMMS-FILTERS-MULTI-FILTER-SAVE-FILE is set, keep will append a usable
@@ -2582,22 +2582,22 @@ filter definition to the file for reuse as you wish.
 should be self explanatory, Squash clears the stack, leaving the topmost
 filter.  Smash is a clear followed by a push.
 
-   * 'emms-filters-pop'
-   * 'emms-filters-squash'
-   * 'emms-filters-smash'
-   * 'emms-filters-clear'
-   * 'emms-filters-swap'
-   * 'emms-filters-swap-pop'
-   * 'emms-filters-keep'
+   • ‘emms-filters-pop’
+   • ‘emms-filters-squash’
+   • ‘emms-filters-smash’
+   • ‘emms-filters-clear’
+   • ‘emms-filters-swap’
+   • ‘emms-filters-swap-pop’
+   • ‘emms-filters-keep’
 
-   An initial filter can be created with 'emms-filters-push' or
-'emms-filters-smash' which is a clear followed by a push.
+   An initial filter can be created with ‘emms-filters-push’ or
+‘emms-filters-smash’ which is a clear followed by a push.
 
-   Adding to the filter stack is done with 'emms-filters-and',
-'emms-filters-or', 'emms-filters-and-not',
+   Adding to the filter stack is done with ‘emms-filters-and’,
+‘emms-filters-or’, ‘emms-filters-and-not’,
 
 
-File: docrNsAbE.info,  Node: The Cache Stack,  Next: Showing State,  Prev: The Filter Stack,  Up: The Filter System
+File: dociw1WWj.info,  Node: The Cache Stack,  Next: Showing State,  Prev: The Filter Stack,  Up: The Filter System
 
 18.9 The Cache Stack
 ====================
@@ -2611,7 +2611,7 @@ created them.
    Filtering and displaying of tracks is done against the top cache on
 the stack.
 
-   The function, 'emms-filters-hard-filter' is the most common way to
+   The function, ‘emms-filters-hard-filter’ is the most common way to
 create an entry on the cache stack.  It creates a cache from the current
 filter and cache, and pushes it to the stack.  This does render the
 current filter as non-effective, so it can be cleared, or continue to
@@ -2631,12 +2631,12 @@ browser.  One shots were created to emulate the browser's behavior of
 creating a subset cache from search-by.  One shots push a filter, save
 to the cache stack and pop the filter, leaving only the cache.
 
-   Using 'emms-filters-one-shot' will push a filter, push a cache, then
+   Using ‘emms-filters-one-shot’ will push a filter, push a cache, then
 pop the filter.  It will interactively prompt for a factory, the filter,
 and then the filter parameters to create a filter if none is given.
-'emms-filters-quick-one-shot' takes a factory name, and invokes the
+‘emms-filters-quick-one-shot’ takes a factory name, and invokes the
 interactive creation of a new filter with that factory directly.  The
-command 'emms-filters-fields-search-quick-one-shot' is a one-shot using
+command ‘emms-filters-fields-search-quick-one-shot’ is a one-shot using
 the fields-search filter factory, while adding to the fields-search ring
 in the filter menu-tree.  The fields-search factory is the filter
 system's way of emulating browser's search-by functionality.
@@ -2652,23 +2652,23 @@ directly.
 
    Manipulating the cache stack is similar to manipulating the filter
 stack, The usual stack commands are:
-   * 'emms-filters-pop-cache'
-   * 'emms-filters-squash-caches'
-   * 'emms-filters-clear-caches'
-   * 'emms-filters-swap-cache'
-   * 'emms-filters-swap-pop-cache'
-   * 'emms-filters-push-cache'
-   * 'emms-filters-stash-cache'
-   * 'emms-filters-stash-pop-cache'
+   • ‘emms-filters-pop-cache’
+   • ‘emms-filters-squash-caches’
+   • ‘emms-filters-clear-caches’
+   • ‘emms-filters-swap-cache’
+   • ‘emms-filters-swap-pop-cache’
+   • ‘emms-filters-push-cache’
+   • ‘emms-filters-stash-cache’
+   • ‘emms-filters-stash-pop-cache’
 
-   The functions 'emms-filters-push-cache', 'emms-filters-stash-cache'
-and 'emms-filters-stash-pop-cache' allow for a cache to be stashed and
+   The functions ‘emms-filters-push-cache’, ‘emms-filters-stash-cache’
+and ‘emms-filters-stash-pop-cache’ allow for a cache to be stashed and
 then later pushed back to the stack.  The current cache on the stack can
 be stashed at anytime.  The stashed caches will be a selection ring for
-'emms-filters-push-cache'.
+‘emms-filters-push-cache’.
 
 
-File: docrNsAbE.info,  Node: Showing State,  Prev: The Cache Stack,  Up: The Filter System
+File: dociw1WWj.info,  Node: Showing State,  Prev: The Cache Stack,  Up: The Filter System
 
 18.10 Showing State
 ===================
@@ -2679,42 +2679,42 @@ messages which can be easily dismissed.  Just below them, are equivalent
 functions that give formatted string versions for use as you like.
 
    The registered filter factories can be shown with
-'emms-filters-show-filter-factories', the registered filters can be
-shown with 'emms-filters-show-filters'.  The
-'emms-filters-show-filter-menu' will show the current filter menu tree.
+‘emms-filters-show-filter-factories’, the registered filters can be
+shown with ‘emms-filters-show-filters’.  The
+‘emms-filters-show-filter-menu’ will show the current filter menu tree.
 
    The current filter ring can be shown with
-'emms-filters-show-filter-ring' and the filter stack can be shown with
-'emms-filters-current-meta-filter'.
+‘emms-filters-show-filter-ring’ and the filter stack can be shown with
+‘emms-filters-current-meta-filter’.
 
    In code, the current filter name can be obtained with the
-'emms-filters-current-meta-filter-name'.  The current ring filter name
-can be obtained with 'emms-filters-current-ring-filter-name'
+‘emms-filters-current-meta-filter-name’.  The current ring filter name
+can be obtained with ‘emms-filters-current-ring-filter-name’
 
-   Showing the cache stack is done with 'emms-filters-show-cache-stack'.
-Any stashed caches can be seen with 'emms-filters-show-cache-stash'
-which will also appear in the menu invoked by 'emms-filters-push-cache'.
+   Showing the cache stack is done with ‘emms-filters-show-cache-stack’.
+Any stashed caches can be seen with ‘emms-filters-show-cache-stash’
+which will also appear in the menu invoked by ‘emms-filters-push-cache’.
 
    Finally for a more complete report of the system use
-'emms-filters-status-print' which is a message of the formatted string
-given by 'emms-filters-status'.
+‘emms-filters-status-print’ which is a message of the formatted string
+given by ‘emms-filters-status’.
 
-   In turn, the 'emms-filters-status' is simply a format of the
+   In turn, the ‘emms-filters-status’ is simply a format of the
 following four functions that give formatted strings of the moving parts
 of the filter system.
 
-   * 'emms-filters-current-ring-filter'
-   * 'emms-filters-current-meta-filter'
-   * 'emms-filters-format-stack'
-   * 'emms-filters-format-cache-stack'
+   • ‘emms-filters-current-ring-filter’
+   • ‘emms-filters-current-meta-filter’
+   • ‘emms-filters-format-stack’
+   • ‘emms-filters-format-cache-stack’
 
 
-File: docrNsAbE.info,  Node: Sorting Playlists,  Next: Persistent Playlists,  Prev: The Filter System,  Up: Top
+File: dociw1WWj.info,  Node: Sorting Playlists,  Next: Persistent Playlists,  Prev: The Filter System,  Up: Top
 
 19 Sorting Playlists
 ********************
 
-The 'emms-playlist-sort' module, defined in the 'emms-playlist-sort.el'
+The 'emms-playlist-sort' module, defined in the ‘emms-playlist-sort.el’
 package provides functions for sorting Emms playlists, as well as
 keyboard shortcuts for invoking the functions in the playlist buffer.
 Most of the functions will sort in reverse order if the command is
@@ -2768,12 +2768,12 @@ preceded by a prefix.  'emms-playlist-sort' can be loaded by invoking:
      Alias for 'emms-playlist-sort-by-random' and 'emms-shuffle'.
 
 
-File: docrNsAbE.info,  Node: Persistent Playlists,  Next: Editing Tracks,  Prev: Sorting Playlists,  Up: Top
+File: dociw1WWj.info,  Node: Persistent Playlists,  Next: Editing Tracks,  Prev: Sorting Playlists,  Up: Top
 
 20 Persistent Playlists
 ***********************
 
-The Emms module 'emms-history.el' makes playlists persistent over emacs
+The Emms module ‘emms-history.el’ makes playlists persistent over emacs
 sessions.  To make use of this feature put this into your ~/.emacs.
 
      (require 'emms-history)
@@ -2797,7 +2797,7 @@ into your ~/.emacs.
      (require 'emms-history)
      (emms-history-load)
 
-   Normally 'emms-history' only restores playlists.  If you want it to
+   Normally ‘emms-history’ only restores playlists.  If you want it to
 start playback afterwards, you can tweak this variable.
 
  -- User Option: emms-history-start-playing
@@ -2805,16 +2805,16 @@ start playback afterwards, you can tweak this variable.
      'emms-history-load' was invoked.  The default value is nil.
 
 
-File: docrNsAbE.info,  Node: Editing Tracks,  Next: Emms Mode Line,  Prev: Persistent Playlists,  Up: Top
+File: dociw1WWj.info,  Node: Editing Tracks,  Next: Emms Mode Line,  Prev: Persistent Playlists,  Up: Top
 
 21 Editing Tracks
 *****************
 
-Using 'emms-tag-editor.el', emms can set tag informations of tracks and
+Using ‘emms-tag-editor.el’, emms can set tag informations of tracks and
 write them back to the file with the help of external programs, such as
 'mid3v2' and 'vorbiscomment'.
 
-   Use the keybinding 'E' to edit the tags of track under point in the
+   Use the keybinding ‘E’ to edit the tags of track under point in the
 playlist or all marked tracks (*note Markable Playlists:: for how to
 mark tracks).  The track's tag informations are listed in a special
 buffer '*Emms-TAGS*' in text format.  Field names are marked in bold
@@ -2822,7 +2822,7 @@ face and are not editable.  Any tag information is placed behind an
 equal sign and is changable.  A special field 'name' is the track's file
 name.  If any change is made in this field, the track's file will be
 renamed to the new name.  When you finished editing the tag infos use
-'C-c C-c' (which calls 'emms-tag-editor-submit-and-exit') to submit the
+‘C-c C-c’ (which calls ‘emms-tag-editor-submit-and-exit’) to submit the
 changes and close the '*Emms-TAGS*' buffer.
 
    There are a few commands to perform changes on all tracks.
@@ -2882,7 +2882,7 @@ or all files of the marked tracks according to the value this variable.
      renamed according this format specification.  The file extension
      will be added automatically.
 
-     It uses the format specs defined in 'emms-tag-editor-tags'.
+     It uses the format specs defined in ‘emms-tag-editor-tags’.
 
      The default value is "%a - %l - %n - %t", so that files are named
 
@@ -2897,21 +2897,21 @@ or all files of the marked tracks according to the value this variable.
      renaming a file.
 
    To perform the renaming put point on the track you want to rename or
-mark some tracks.  Then hit 'R' which calls this function:
+mark some tracks.  Then hit ‘R’ which calls this function:
 
  -- Function: emms-tag-editor-rename
      Rename the file corresponding to track at point or all marked
-     tracks according to the value of 'emms-tag-editor-rename-format'.
+     tracks according to the value of ‘emms-tag-editor-rename-format’.
 
 
-File: docrNsAbE.info,  Node: Emms Mode Line,  Next: Limiting,  Prev: Editing Tracks,  Up: Top
+File: dociw1WWj.info,  Node: Emms Mode Line,  Next: Limiting,  Prev: Editing Tracks,  Up: Top
 
 22 Emms Mode Line
 *****************
 
 We can display information about the currenty playing track on the Emacs
 mode line using the package 'emms-mode-line' which is provided by the
-file 'emms-mode-line.el'.
+file ‘emms-mode-line.el’.
 
    To activate this feature invoke:
 
@@ -2920,7 +2920,7 @@ file 'emms-mode-line.el'.
 
    It is also possible to display the amount of time a track has been
 playing.  This feature is defined in the 'emms-playing-time' package
-which is provided by the file 'emms-playing-time.el'.
+which is provided by the file ‘emms-playing-time.el’.
 
    To use this feature invoke:
 
@@ -2928,7 +2928,7 @@ which is provided by the file 'emms-playing-time.el'.
      (emms-playing-time 1)
 
    A graphical icon can be displayed in the modeline when Emms is
-playing.  This feature is provided by 'emms-mode-line-icon.el'.  To
+playing.  This feature is provided by ‘emms-mode-line-icon.el’.  To
 enable invoke the following and make sure that
 EMMS-MODE-LINE-ICON-ENABLED-P is set to a non-nil value:
 
@@ -2949,12 +2949,12 @@ call 'emms-playing-time-enable-display' and
      Remove playing time from mode line.
 
 
-File: docrNsAbE.info,  Node: Limiting,  Next: Music Player Daemon,  Prev: Emms Mode Line,  Up: Top
+File: dociw1WWj.info,  Node: Limiting,  Next: Music Player Daemon,  Prev: Emms Mode Line,  Up: Top
 
 23 Limiting
 ***********
 
-The package 'emms-playlist-limit', provided by 'emms-playlist-limit.el',
+The package 'emms-playlist-limit', provided by ‘emms-playlist-limit.el’,
 allows creating a new playlist derived from the playlist in the current
 buffer.  For instance, it is possible to create a new playlist
 containing only a certain artist or genre from the playlist in the
@@ -2963,77 +2963,77 @@ current buffer.
    If the playlist in the current buffer is the emms current playlist
 then the derived playlist becomes current.
 
-'/ a'
+‘/ a’
      Create a new playlist buffer and populate it with tracks whose
      artist info field matches the given regular expression (default:
      the artist info field of the track at point).
 
-'/ A'
+‘/ A’
      Create a new playlist buffer and populate it with tracks whose
      album artist info field matches the given regular expression
      (default: the album artist info field of the track at point).
 
-'/ b'
+‘/ b’
      Create a new playlist buffer and populate it with tracks whose
      album info field matches the given regular expression (default: the
      album info field of the track at point).
 
-'/ c'
+‘/ c’
      Create a new playlist buffer and populate it with tracks whose
      composer info field matches the given regular expression (default:
      the composer info field of the track at point).
 
-'/ d'
+‘/ d’
      Create a new playlist buffer and populate it with tracks whose
      track description matches the given regular expression (default:
      the track description of the track at point).
 
-'/ g'
+‘/ g’
      Create a new playlist buffer and populate it with tracks whose
      genre info field matches the given regular expression (default: the
      genre info field of the track at point).
 
-'/ n'
+‘/ n’
      Create a new playlist buffer and populate it with tracks whose name
      matches the given regular expression (default: the name of the
      track at point).
 
-'/ p'
+‘/ p’
      Create a new playlist buffer and populate it with tracks whose
      performer info field matches the given regular expression (default:
      the performer info field of the track at point).
 
-'/ t'
+‘/ t’
      Create a new playlist buffer and populate it with tracks whose
      title info field matches the given regular expression (default: the
      title info field of the track at point).
 
-'/ y'
+‘/ y’
      Create a new playlist buffer and populate it with tracks whose year
      info field matches the given regular expression (default: the year
      info field of the track at point).
 
-'/ /'
+‘/ /’
      Switch to the original playlist buffer (if it still exists).
 
 
-File: docrNsAbE.info,  Node: Music Player Daemon,  Next: Lyrics,  Prev: Limiting,  Up: Top
+File: dociw1WWj.info,  Node: Music Player Daemon,  Next: Lyrics,  Prev: Limiting,  Up: Top
 
 24 Music Player Daemon
 **********************
 
 Emms provides an interface to the Music Player Daemon
 (http://www.musicpd.org/)(MusicPD) software.  The package is called
-'emms-player-mpd' and is provided by the file 'emms-player-mpd.el'.
+'emms-player-mpd' and is provided by the file ‘emms-player-mpd.el’.
 
    The advantages of using MusicPD as an Emms backend include the
 following.
 
-   * minimal CPU usage
+   • minimal CPU usage
 
-   * fast access of track information
+   • fast access of track information
 
-   * optional crossfade
+   • optional crossfade
 
 Setup
 -----
@@ -3069,7 +3069,7 @@ must set the emms-player-mpd-music-directory variable to the value of
 options available as well, but the defaults should be sufficient for
 most uses.
 
-   Once you've done the above, run the 'M-x emms-cache-set-from-mpd-all'
+   Once you've done the above, run the ‘M-x emms-cache-set-from-mpd-all’
 command to fill the Emms cache with the contents of your MusicPD
 database.  The music in your MusicPD database should then be accessible
 via the Emms browser.
@@ -3080,7 +3080,7 @@ playlist contains only stored playlists.
    In order for Emms to synchronize track information correctly with
 MusicPD, you must set the MusicPD server runtime 'consume' option to
 'off'.  This can be accomplished with the mpc command line MusicPD
-client using the command 'mpc consume off'.
+client using the command ‘mpc consume off’.
 
 Commands provided
 -----------------
@@ -3096,7 +3096,7 @@ Commands provided
      Describe the current Emms track in the minibuffer.  If INSERTP is
      non-nil, insert the description into the current buffer instead.
      This function uses EMMS-SHOW-FORMAT to format the current track.
-     It differs from 'emms-show' in that it asks MusicPD for the current
+     It differs from ‘emms-show’ in that it asks MusicPD for the current
      track, rather than Emms.
 
 Updating the MusicPD database
@@ -3130,13 +3130,13 @@ To activate this, add the following to your .emacs.
      (setq emms-volume-change-function 'emms-volume-mpd-change)
 
 
-File: docrNsAbE.info,  Node: Lyrics,  Next: Volume,  Prev: Music Player Daemon,  Up: Top
+File: dociw1WWj.info,  Node: Lyrics,  Next: Volume,  Prev: Music Player Daemon,  Up: Top
 
 25 Lyrics
 *********
 
 We can display the lyrics of a song in time with the music using the
-'emms-lyrics' package provided by the file 'emms-lyrics.el'.
+'emms-lyrics' package provided by the file ‘emms-lyrics.el’.
 
    The lyrics files should have the extention ".lrc", and can be placed
 under either the same directory as the music files or EMMS-LYRICS-DIR.
@@ -3172,7 +3172,7 @@ Customize feature in Emacs.
      If non-nil, display lyrics on modeline.
 
  -- User Option: emms-lyrics-dir
-     Local lyrics repository.  'emms-lyrics-find-lyric' will look for
+     Local lyrics repository.  ‘emms-lyrics-find-lyric’ will look for
      lyrics in current directory(i.e., same as the music file) and this
      directory.
 
@@ -3217,13 +3217,13 @@ functions:
      Toggle displaying Emms lyrics.
 
 
-File: docrNsAbE.info,  Node: Volume,  Next: Streaming Audio,  Prev: Lyrics,  Up: Top
+File: dociw1WWj.info,  Node: Volume,  Next: Streaming Audio,  Prev: Lyrics,  Up: Top
 
 26 Volume
 *********
 
 We can use the 'emms-volume' package, as provided by the
-'emms-volume.el' file, to manipulate the volume.
+‘emms-volume.el’ file, to manipulate the volume.
 
  -- User Option: emms-volume-change-amount
      The amount to use when raising or lowering the volume using the
@@ -3255,22 +3255,22 @@ Instead, bind the following two commands to some keys that you like.
      (global-set-key (kbd "C-c -") 'emms-volume-mode-minus)
 
    Whenever you use one of these keys or call these functions with
-'M-x', Emms will be put into 'emms-volume-minor-mode' for a short period
+‘M-x’, Emms will be put into 'emms-volume-minor-mode' for a short period
 defined by 'emms-volume-mode-timeout'.
 
  -- User Option: emms-volume-mode-timeout
      The timeout in amount of seconds used by 'emms-volume-minor-mode'.
 
    In this interval you can raise/lower the volume simply by pressing
-'+' or '-', which will also reset the timer to its initial value.  So
-instead of pressing 'C-c +' six times to increase volume by six steps of
-'emms-volume-change-amount', you would simply type 'C-c + + + + + +'.
+‘+’ or ‘-’, which will also reset the timer to its initial value.  So
+instead of pressing ‘C-c +’ six times to increase volume by six steps of
+‘emms-volume-change-amount’, you would simply type ‘C-c + + + + + +’.
 
    Emms can change volume with amixer, mpd, PulseAudio and mixerctl out
 of the box, see EMMS-VOLUME-CHANGE-FUNCTION.
 
 
-File: docrNsAbE.info,  Node: Streaming Audio,  Next: Radio Browser,  Prev: Volume,  Up: Top
+File: dociw1WWj.info,  Node: Streaming Audio,  Next: Radio Browser,  Prev: Volume,  Up: Top
 
 27 Streaming Audio
 ******************
@@ -3280,12 +3280,12 @@ possible to add streaming playlists and URLs to any playlist, but Emms
 also comes with a built-in, eclectic list of streaming audio stations.
 (1)
 
-   The 'emms-streams.el' package provides the command 'emms-streams'.
+   The ‘emms-streams.el’ package provides the command ‘emms-streams’.
 
-   Invoking 'emms-streams' will pull up an Emms playlist buffer and
+   Invoking ‘emms-streams’ will pull up an Emms playlist buffer and
 populate it with the built-in list of streaming audio sources.
 
-   If you are using the mpv player, defined by 'emms-player-mpv.el',
+   If you are using the mpv player, defined by ‘emms-player-mpv.el’,
 then you can display the currently streaming track title (if the station
 provides that information) by configuring:
 
@@ -3300,14 +3300,14 @@ project over the years by people who enjoy Emms.  We hope you will enjoy
 them too, and invite you to send in your suggestions to add to the list.
 
 
-File: docrNsAbE.info,  Node: Radio Browser,  Next: APE / FLAC Commands,  Prev: Streaming Audio,  Up: Top
+File: dociw1WWj.info,  Node: Radio Browser,  Next: APE / FLAC Commands,  Prev: Streaming Audio,  Up: Top
 
 28 Radio Browser
 ****************
 
 We can find new internet radio stations to stream by searching the
 database at <https://www.radio-browser.info>.  The
-'emms-radio-browser.el' package provides the following commands to do
+‘emms-radio-browser.el’ package provides the following commands to do
 this:
 
  -- Function: emms-radio-browser-search-by-name
@@ -3322,26 +3322,26 @@ this:
      Pops up a form to search by name, tags, country or language.
      Returns a playlist of matching streams.
 
-   To activate 'emms-radio-browser.el', do
+   To activate ‘emms-radio-browser.el’, do
 
      (require 'emms-radio-browser)
 
-   You will need the 'transient.el' package to be installed (this is
+   You will need the ‘transient.el’ package to be installed (this is
 built-in since emacs v28.1).
 
 
-File: docrNsAbE.info,  Node: APE / FLAC Commands,  Next: Bookmarks,  Prev: Radio Browser,  Up: Top
+File: dociw1WWj.info,  Node: APE / FLAC Commands,  Next: Bookmarks,  Prev: Radio Browser,  Up: Top
 
 29 APE / FLAC Commands
 **********************
 
 Often, a single APE or FLAC file contains a complete album.  We can
 still play next or previous track in the album with the help of
-'emms-cue.el' package, provided there is a corresponding cue sheet file.
-This package also defines 'emms-info-cueinfo' for retreiving the track
+‘emms-cue.el’ package, provided there is a corresponding cue sheet file.
+This package also defines ‘emms-info-cueinfo’ for retreiving the track
 information for APE / FLAC itself.
 
-   To load 'emms-cue.el':
+   To load ‘emms-cue.el’:
 
      (require 'emms-cue)
      (add-to-list 'emms-info-functions 'emms-info-cueinfo)
@@ -3352,73 +3352,73 @@ information for APE / FLAC itself.
      Play previous track from .cue file
 
 
-File: docrNsAbE.info,  Node: Bookmarks,  Next: Managing Playlists,  Prev: APE / FLAC Commands,  Up: Top
+File: dociw1WWj.info,  Node: Bookmarks,  Next: Managing Playlists,  Prev: APE / FLAC Commands,  Up: Top
 
 30 Bookmarks
 ************
 
 Emms can save a "temporal bookmark" in a media file via emms-bookmarks.
-The file 'emms-bookmarks.el' provides the package emms-bookmarks.
+The file ‘emms-bookmarks.el’ provides the package emms-bookmarks.
 
-   While some media is playing, invoking 'M-x emms-bookmarks-add' will
+   While some media is playing, invoking ‘M-x emms-bookmarks-add’ will
 first pause the playback and then prompt for a name describing the
 bookmark.  Tracks can have multiple bookmarks associated with them.
 
    To jump to the next and previous bookmarks in the current track
-invoke 'M-x emms-bookmarks-next' and 'M-x emms-bookmarks-prev'
+invoke ‘M-x emms-bookmarks-next’ and ‘M-x emms-bookmarks-prev’
 respectively.
 
-   To clear all of the bookmarks for the current track invoke 'M-x
-emms-bookmarks-clear'.
+   To clear all of the bookmarks for the current track invoke ‘M-x
+emms-bookmarks-clear’.
 
 
-File: docrNsAbE.info,  Node: Managing Playlists,  Next: GNU FM,  Prev: Bookmarks,  Up: Top
+File: dociw1WWj.info,  Node: Managing Playlists,  Next: GNU FM,  Prev: Bookmarks,  Up: Top
 
 31 Managing Playlists
 *********************
 
 Emms can have multiple playlists, since a playlist is just another
 buffer with a list of tracks.  You can manage multiple playlists using
-'emms-metaplaylist-mode', provided by the file 'emms-metaplaylist-mode'.
+'emms-metaplaylist-mode', provided by the file ‘emms-metaplaylist-mode’.
 
-   Start the playlist manager with 'M-x emms-metaplaylist-mode-go'.  The
+   Start the playlist manager with ‘M-x emms-metaplaylist-mode-go’.  The
 playlist manager will list the playlists and mark the current one.  The
 following commands are available:
 
-'RET'
+‘RET’
      Make the buffer at point the Emms playlist buffer and switch to it.
 
      +
-'V'
+‘V’
      Visit the playlist at point.
 
-'SPC'
+‘SPC’
      Make the buffer at point the Emms playlist buffer (but do not
      switch to it).
 
-'n'
+‘n’
      Move point to the next playlist.
 
-'p'
+‘p’
      Move point to the previous playlist.
 
-'g'
+‘g’
      Update the playlist manager buffer.
 
-'C'
+‘C’
      Create a new Emms playlist buffer.
 
-'C-k'
+‘C-k’
      Kill the Emms playlist buffer at point.
 
-'c'
+‘c’
      Move point to the current playlist buffer.
 
-'q'
+‘q’
      Kill the playlist manager.
 
 
-File: docrNsAbE.info,  Node: GNU FM,  Next: Listenbrainz,  Prev: Managing Playlists,  Up: Top
+File: dociw1WWj.info,  Node: GNU FM,  Next: Listenbrainz,  Prev: Managing Playlists,  Up: Top
 
 32 GNU FM
 *********
@@ -3428,7 +3428,7 @@ running music community websites.  It was created for the music
 community site, Libre.fm (http://libre.fm/).
 
    Emms can send track information, and stream music from GNU FM servers
-using 'emms-librefm-scrobbler.el' and 'emms-librefm-stream.el',
+using ‘emms-librefm-scrobbler.el’ and ‘emms-librefm-stream.el’,
 respectively.
 
    Emms is configured by default to use Libre.fm (http://libre.fm/), but
@@ -3437,9 +3437,9 @@ EMMS-LIBREFM-SCROBBLER-HANDSHAKE-URL to the URL of the GNU FM server.
 
    The recommended way of providing your credentials to the GNU FM
 server is by using an authinfo file.  Add authentication to your
-auth-info file, typically '~/.authinfo.gpg', as:
+auth-info file, typically ‘~/.authinfo.gpg’, as:
      machine libre.fm login USERNAME password PASSWORD
-   If you are using some other server than libre.fm, change "'libre.fm'"
+   If you are using some other server than libre.fm, change "‘libre.fm’"
 to match EMMS-LIBREFM-SCROBBLER-HANDSHAKE-URL.
 
    Alternatively, you can save the password in plaintext in your
@@ -3454,7 +3454,7 @@ init-file by setting these variables:
 * GNU FM Streaming:: Streaming music from a GNU FM server.
 
 
-File: docrNsAbE.info,  Node: Uploading Track Information,  Next: GNU FM Streaming,  Up: GNU FM
+File: dociw1WWj.info,  Node: Uploading Track Information,  Next: GNU FM Streaming,  Up: GNU FM
 
 32.1 Uploading Track Information
 ================================
@@ -3472,12 +3472,12 @@ able to recommend music to users by analyzing their musical taste.
 setup level.
 
    Enable uploading the details of the tracks Emms plays to the GNU FM
-server with 'emms-librefm-scrobbler-enable'.  The track's details will
+server with ‘emms-librefm-scrobbler-enable’.  The track's details will
 be uploaded to the server when the track's playback ends.  You can
-disable this behavior with 'emms-librefm-scrobbler-disable'.
+disable this behavior with ‘emms-librefm-scrobbler-disable’.
 
 
-File: docrNsAbE.info,  Node: GNU FM Streaming,  Prev: Uploading Track Information,  Up: GNU FM
+File: dociw1WWj.info,  Node: GNU FM Streaming,  Prev: Uploading Track Information,  Up: GNU FM
 
 32.2 GNU FM Streaming
 =====================
@@ -3490,11 +3490,11 @@ advantage of it by loading:
    This feature can also be enabled via *Note Setup::, in the 'emms-all'
 setup level.
 
-   Then invoke 'emms-librefm-stream' and enter the URL of the station
+   Then invoke ‘emms-librefm-stream’ and enter the URL of the station
 you wish to listen to, for example "librefm://globaltags/Classical".
 
 
-File: docrNsAbE.info,  Node: Listenbrainz,  Next: D-Bus,  Prev: GNU FM,  Up: Top
+File: dociw1WWj.info,  Node: Listenbrainz,  Next: D-Bus,  Prev: GNU FM,  Up: Top
 
 33 Listenbrainz
 ***************
@@ -3503,14 +3503,14 @@ Listenbrainz offers an alternative store of listening habits using
 information sent by the Emms.
 
    To use this service, you will need to obtain a user token from
-<https://listenbrainz.org/settings/>.  You should store this token in '
-~/.authinfo.gpg' or an equivalent file understood by auth-source with a
+<https://listenbrainz.org/settings/>.  You should store this token in ‘
+~/.authinfo.gpg’ or an equivalent file understood by auth-source with a
 line like this:
 
      machine api.listenbrainz.org password 0abc1de2-245-67fa-8906b-bc123d4dbdaa
 
    Alternatively, you can store the token in plain-text in your init
-file by setting the variable 'emms-listenbrainz-scrobbler-token':
+file by setting the variable ‘emms-listenbrainz-scrobbler-token’:
 
      (setq emms-listenbrainz-scrobbler-token "0abc1de2-245-67fa-8906b-bc123d4dbdaa")
 
@@ -3519,13 +3519,13 @@ file by setting the variable 'emms-listenbrainz-scrobbler-token':
      (require 'emms-listenbrainz-scrobbler)
 
    Enable uploading the details of the tracks Emms plays to the
-listenbrainz server with 'emms-listenbrainz-scrobbler-enable'.  The
+listenbrainz server with ‘emms-listenbrainz-scrobbler-enable’.  The
 track's details will be uploaded to the server when the track's playback
 ends.  You can disable this behavior with
-'emms-listenbrainz-scrobbler-disable'.
+‘emms-listenbrainz-scrobbler-disable’.
 
 
-File: docrNsAbE.info,  Node: D-Bus,  Next: Copying,  Prev: Listenbrainz,  Up: Top
+File: dociw1WWj.info,  Node: D-Bus,  Next: Copying,  Prev: Listenbrainz,  Up: Top
 
 34 D-Bus
 ********
@@ -3537,22 +3537,22 @@ over D-Bus.
 
      (require 'emms-mpris)
 
-   and then turn it on with 'emms-mpris-enable'.  You can turn it off
-with 'emms-mpris-disable'.
+   and then turn it on with ‘emms-mpris-enable’.  You can turn it off
+with ‘emms-mpris-disable’.
 
    At present, the Emms implementation of the MPRIS specification
 (https://specifications.freedesktop.org/mpris-spec/latest/index.html) is
 not complete: changing the volume is not currently supported.
 
 
-File: docrNsAbE.info,  Node: Copying,  Next: The GNU FDL,  Prev: Extending Emms,  Up: Top
+File: dociw1WWj.info,  Node: Copying,  Next: The GNU FDL,  Prev: Extending Emms,  Up: Top
 
 GNU General Public License
 **************************
 
                         Version 3, 29 June 2007
 
-     Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+     Copyright © 2007 Free Software Foundation, Inc. <http://fsf.org/>
 
      Everyone is permitted to copy and distribute verbatim copies of this
      license document, but changing it is not allowed.
@@ -4236,10 +4236,10 @@ mail.
 notice like this when it starts in an interactive mode:
 
      PROGRAM Copyright (C) YEAR NAME OF AUTHOR
-     This program comes with ABSOLUTELY NO WARRANTY; for details type 'show w'.
-     This is free software, and you are welcome to redistribute it under certain conditions; type 'show c' for details.
+     This program comes with ABSOLUTELY NO WARRANTY; for details type ‘show w’.
+     This is free software, and you are welcome to redistribute it under certain conditions; type ‘show c’ for details.
 
-   The hypothetical commands 'show w' and 'show c' should show the
+   The hypothetical commands ‘show w’ and ‘show c’ should show the
 appropriate parts of the General Public License.  Of course, your
 program's commands might be different; for a GUI interface, you would
 use an "about box".
@@ -4257,14 +4257,14 @@ GNU Lesser General Public License instead of this License.  But first,
 please read <http://www.gnu.org/philosophy/why-not-lgpl.html>.
 
 
-File: docrNsAbE.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying,  Up: Top
+File: dociw1WWj.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying,  Up: Top
 
 35 GNU Free Documentation License
 *********************************
 
                       Version 1.2, November 2002
 
-     Copyright (C) 2000,2001,2002 Free Software Foundation, Inc.
+     Copyright © 2000,2001,2002 Free Software Foundation, Inc.
      51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA
 
      Everyone is permitted to copy and distribute verbatim copies
@@ -4273,7 +4273,7 @@ File: docrNsAbE.info,  Node: The GNU FDL,  Next: Concept Index,  Prev: Copying, 
   0. PREAMBLE
 
      The purpose of this License is to make a manual, textbook, or other
-     functional and useful document "free" in the sense of freedom: to
+     functional and useful document “free” in the sense of freedom: to
      assure everyone the effective freedom to copy and redistribute it,
      with or without modifying it, either commercially or
      noncommercially.  Secondarily, this License preserves for the
@@ -4686,7 +4686,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docrNsAbE.info,  Node: Concept Index,  Next: Function Index,  Prev: The GNU FDL,  Up: Top
+File: dociw1WWj.info,  Node: Concept Index,  Next: Function Index,  Prev: The GNU FDL,  Up: Top
 
 Concept Index
 *************
@@ -4765,7 +4765,7 @@ Concept Index
 * website:                               Getting Help.          (line 6)
 
 
-File: docrNsAbE.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
+File: dociw1WWj.info,  Node: Function Index,  Next: Variable Index,  Prev: Concept Index,  Up: Top
 
 Function Index
 **************
@@ -5078,7 +5078,7 @@ Function Index
                                                               (line  71)
 
 
-File: docrNsAbE.info,  Node: Variable Index,  Next: Keybinding Index,  Prev: Function Index,  Up: Top
+File: dociw1WWj.info,  Node: Variable Index,  Next: Keybinding Index,  Prev: Function Index,  Up: Top
 
 Variable Index
 **************
@@ -5122,7 +5122,7 @@ Variable Index
 * emms-volume-mode-timeout:              Volume.              (line  42)
 
 
-File: docrNsAbE.info,  Node: Keybinding Index,  Prev: Variable Index,  Up: Top
+File: dociw1WWj.info,  Node: Keybinding Index,  Prev: Variable Index,  Up: Top
 
 Keybinding Index
 ****************
@@ -5130,8 +5130,8 @@ Keybinding Index
  [index ]
 * Menu:
 
-* + (emms-browser):                      Browser Interface.   (line 155)
 * - (emms-browser):                      Browser Interface.   (line 158)
+* ? (emms-browser):                      Browser Interface.   (line  83)
 * / (emms-browser):                      Browser Interface.   (line  74)
 * / /:                                   Limiting.            (line  66)
 * / a:                                   Limiting.            (line  16)
@@ -5144,10 +5144,7 @@ Keybinding Index
 * / p:                                   Limiting.            (line  51)
 * / t:                                   Limiting.            (line  56)
 * / y:                                   Limiting.            (line  61)
-* 1 (emms-browser):                      Browser Interface.   (line  47)
-* 2 (emms-browser):                      Browser Interface.   (line  50)
-* 3 (emms-browser):                      Browser Interface.   (line  53)
-* 4 (emms-browser):                      Browser Interface.   (line  56)
+* + (emms-browser):                      Browser Interface.   (line 155)
 * < (emms-browser):                      Browser Interface.   (line  77)
 * < (emms-browser) <1>:                  Browser Interface.   (line 210)
 * <backtab> (emms-browser):              Browser Interface.   (line  92)
@@ -5155,7 +5152,10 @@ Keybinding Index
 * <tab> (emms-browser):                  Browser Interface.   (line  95)
 * > (emms-browser):                      Browser Interface.   (line  80)
 * > (emms-browser) <1>:                  Browser Interface.   (line 207)
-* ? (emms-browser):                      Browser Interface.   (line  83)
+* 1 (emms-browser):                      Browser Interface.   (line  47)
+* 2 (emms-browser):                      Browser Interface.   (line  50)
+* 3 (emms-browser):                      Browser Interface.   (line  53)
+* 4 (emms-browser):                      Browser Interface.   (line  56)
 * b 1 (emms-browser):                    Browser Interface.   (line 116)
 * b 2 (emms-browser):                    Browser Interface.   (line 119)
 * b 3 (emms-browser):                    Browser Interface.   (line 122)
@@ -5239,75 +5239,75 @@ Keybinding Index
 
 
 Tag Table:
-Node: Top730
-Node: Introduction4621
-Node: Quickstart Guide6094
-Node: Installation9052
-Node: Compiling Emms9606
-Node: Setup10299
-Node: Configuration11290
-Node: Finding files and speed12770
-Node: Setup Examples13644
-Node: Getting Help15754
-Node: Formats and Freedom16337
-Node: Basic Commands17547
-Node: The Core File21913
-Node: User Variables22352
-Node: Hooks23333
-Node: Core Functions24764
-Node: Sources28201
-Node: Simple Players30850
-Node: Playlists31912
-Node: Track Information33858
-Node: Metadata Utilities38573
-Node: Defining Info Methods43252
-Node: Interactive Playlists45401
-Node: Markable Playlists48683
-Node: Extending Emms51165
-Node: New Player51606
-Node: Simple Player for `play'52000
-Node: More Complex Player53733
-Node: The Browser56736
-Node: Browser Interface57726
-Node: Displaying Covers64026
-Node: Changing Looks66046
-Node: Filtering Tracks - deprecated69950
-Node: The Filter System72134
-Node: Filters and Searches73480
-Node: Backward Compatibility75477
-Node: Filter Components80917
-Node: Filter Factories82151
-Node: Factory Registration84120
-Node: Defined Factories86582
-Node: Defining Filters87776
-Node: The Filter Stack91523
-Node: The Cache Stack93855
-Node: Showing State97311
-Node: Sorting Playlists98999
-Node: Persistent Playlists100758
-Node: Editing Tracks101922
-Node: Emms Mode Line105884
-Node: Limiting107332
-Node: Music Player Daemon109884
-Node: Lyrics113654
-Node: Volume116653
-Node: Streaming Audio118446
-Ref: Streaming Audio-Footnote-1119291
-Node: Radio Browser119642
-Node: APE / FLAC Commands120574
-Node: Bookmarks121284
-Node: Managing Playlists122000
-Node: GNU FM123074
-Node: Uploading Track Information124438
-Node: GNU FM Streaming125325
-Node: Listenbrainz125830
-Node: D-Bus126960
-Node: Copying127518
-Node: The GNU FDL165040
-Node: Concept Index187433
-Node: Function Index192588
-Node: Variable Index214578
-Node: Keybinding Index217198
+Node: Top731
+Node: Introduction4629
+Node: Quickstart Guide6114
+Node: Installation9124
+Node: Compiling Emms9678
+Node: Setup10383
+Node: Configuration11382
+Node: Finding files and speed12870
+Node: Setup Examples13764
+Node: Getting Help15886
+Node: Formats and Freedom16469
+Node: Basic Commands17679
+Node: The Core File22065
+Node: User Variables22508
+Node: Hooks23497
+Node: Core Functions24928
+Node: Sources28381
+Node: Simple Players31038
+Node: Playlists32100
+Node: Track Information34058
+Node: Metadata Utilities38889
+Node: Defining Info Methods43656
+Node: Interactive Playlists45921
+Node: Markable Playlists49335
+Node: Extending Emms51889
+Node: New Player52338
+Node: Simple Player for `play'52740
+Node: More Complex Player54485
+Node: The Browser57516
+Node: Browser Interface58518
+Node: Displaying Covers65154
+Node: Changing Looks67182
+Node: Filtering Tracks - deprecated71102
+Node: The Filter System73286
+Node: Filters and Searches74636
+Node: Backward Compatibility76633
+Node: Filter Components82111
+Node: Filter Factories83361
+Node: Factory Registration85330
+Node: Defined Factories87802
+Node: Defining Filters89052
+Node: The Filter Stack92835
+Node: The Cache Stack95237
+Node: Showing State98773
+Node: Sorting Playlists100537
+Node: Persistent Playlists102300
+Node: Editing Tracks103472
+Node: Emms Mode Line107462
+Node: Limiting108922
+Node: Music Player Daemon111522
+Node: Lyrics115314
+Node: Volume118321
+Node: Streaming Audio120142
+Ref: Streaming Audio-Footnote-1121003
+Node: Radio Browser121354
+Node: APE / FLAC Commands122298
+Node: Bookmarks123020
+Node: Managing Playlists123756
+Node: GNU FM124878
+Node: Uploading Track Information126258
+Node: GNU FM Streaming127153
+Node: Listenbrainz127662
+Node: D-Bus128808
+Node: Copying129374
+Node: The GNU FDL166911
+Node: Concept Index189307
+Node: Function Index194462
+Node: Variable Index216452
+Node: Keybinding Index219072
 
 End Tag Table
 
