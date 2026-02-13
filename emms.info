@@ -1,4 +1,4 @@
-This is emms.info, produced by makeinfo version 7.1.1 from emms.texinfo.
+This is emms.info, produced by makeinfo version 7.2 from emms.texinfo.
 
 © 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016,
 2020, 2021, 2022, 2023, 2024, 2025 Free Software Foundation, Inc.
@@ -5235,78 +5235,77 @@ Keybinding Index
 * W o w (emms-browser):                  Browser Interface.   (line 140)
 * W p w (emms-browser):                  Browser Interface.   (line 149)
 
-
 
 Tag Table:
-Node: Top726
-Node: Introduction4619
-Node: Quickstart Guide6099
-Node: Installation9104
-Node: Compiling Emms9653
-Node: Setup10353
-Node: Configuration11347
-Node: Finding files and speed12830
-Node: Setup Examples13719
-Node: Getting Help15836
-Node: Formats and Freedom16414
-Node: Basic Commands17619
-Node: The Core File22000
-Node: User Variables22438
-Node: Hooks23422
-Node: Core Functions24848
-Node: Sources28296
-Node: Simple Players30948
-Node: Playlists32005
-Node: Track Information33958
-Node: Metadata Utilities38784
-Node: Defining Info Methods43546
-Node: Interactive Playlists45806
-Node: Markable Playlists49215
-Node: Extending Emms51764
-Node: New Player52208
-Node: Simple Player for `play'52605
-Node: More Complex Player54345
-Node: The Browser57371
-Node: Browser Interface58368
-Node: Displaying Covers64999
-Node: Changing Looks67022
-Node: Filtering Tracks - deprecated70937
-Node: The Filter System73116
-Node: Filters and Searches74461
-Node: Backward Compatibility76453
-Node: Filter Components81926
-Node: Filter Factories83171
-Node: Factory Registration85135
-Node: Defined Factories87602
-Node: Defining Filters88847
-Node: The Filter Stack92625
-Node: The Cache Stack95022
-Node: Showing State98553
-Node: Sorting Playlists100312
-Node: Persistent Playlists102070
-Node: Editing Tracks103237
-Node: Emms Mode Line107222
-Node: Limiting108677
-Node: Music Player Daemon111272
-Node: Lyrics115059
-Node: Volume118061
-Node: Streaming Audio119877
-Ref: Streaming Audio-Footnote-1120733
-Node: Radio Browser121084
-Node: APE / FLAC Commands122023
-Node: Bookmarks122740
-Node: Managing Playlists123471
-Node: GNU FM124588
-Node: Uploading Track Information125963
-Node: GNU FM Streaming126853
-Node: Listenbrainz127357
-Node: D-Bus128498
-Node: Copying129059
-Node: The GNU FDL166591
-Node: Concept Index188982
-Node: Function Index194132
-Node: Variable Index216117
-Node: Keybinding Index218732
+Node: Top724
+Node: Introduction4617
+Node: Quickstart Guide6097
+Node: Installation9102
+Node: Compiling Emms9651
+Node: Setup10351
+Node: Configuration11345
+Node: Finding files and speed12828
+Node: Setup Examples13717
+Node: Getting Help15834
+Node: Formats and Freedom16412
+Node: Basic Commands17617
+Node: The Core File21998
+Node: User Variables22436
+Node: Hooks23420
+Node: Core Functions24846
+Node: Sources28294
+Node: Simple Players30946
+Node: Playlists32003
+Node: Track Information33956
+Node: Metadata Utilities38782
+Node: Defining Info Methods43544
+Node: Interactive Playlists45804
+Node: Markable Playlists49213
+Node: Extending Emms51762
+Node: New Player52206
+Node: Simple Player for `play'52603
+Node: More Complex Player54343
+Node: The Browser57369
+Node: Browser Interface58366
+Node: Displaying Covers64997
+Node: Changing Looks67020
+Node: Filtering Tracks - deprecated70935
+Node: The Filter System73114
+Node: Filters and Searches74459
+Node: Backward Compatibility76451
+Node: Filter Components81924
+Node: Filter Factories83169
+Node: Factory Registration85133
+Node: Defined Factories87600
+Node: Defining Filters88845
+Node: The Filter Stack92623
+Node: The Cache Stack95020
+Node: Showing State98551
+Node: Sorting Playlists100310
+Node: Persistent Playlists102068
+Node: Editing Tracks103235
+Node: Emms Mode Line107220
+Node: Limiting108675
+Node: Music Player Daemon111270
+Node: Lyrics115057
+Node: Volume118059
+Node: Streaming Audio119875
+Ref: Streaming Audio-Footnote-1120731
+Node: Radio Browser121082
+Node: APE / FLAC Commands122021
+Node: Bookmarks122738
+Node: Managing Playlists123469
+Node: GNU FM124586
+Node: Uploading Track Information125961
+Node: GNU FM Streaming126851
+Node: Listenbrainz127355
+Node: D-Bus128496
+Node: Copying129057
+Node: The GNU FDL166589
+Node: Concept Index188980
+Node: Function Index194130
+Node: Variable Index216115
+Node: Keybinding Index218730
 
 End Tag Table
 
